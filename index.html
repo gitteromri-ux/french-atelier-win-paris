@@ -163,6 +163,20 @@ header.scrolled .nav-logo-img{height:38px}
 .dine-band .dv{font-family:var(--serif);font-style:italic;color:var(--on-dark-soft);margin-top:.45rem;font-size:1.08rem}
 .day-alert{font-style:italic;color:var(--on-dark-faint);font-size:.88rem;margin-top:1rem;text-align:center}
 
+/* PROGRAM ACCORDION — compact, expandable detail per day */
+.day-acc{border:1px solid rgba(200,165,96,.22);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.03);margin-top:-.4rem}
+.day-acc summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 1.7rem}
+.day-acc summary::-webkit-details-marker{display:none}
+.day-acc summary .da-label{font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);font-weight:600}
+.day-acc summary .da-toggle{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-soft);font-weight:600}
+.day-acc summary .da-toggle::after{content:"+";font-size:1.5rem;line-height:1;color:var(--gold-soft);font-weight:300;transition:transform .3s var(--ease)}
+.day-acc[open] summary .da-toggle::after{transform:rotate(45deg)}
+.day-acc[open] summary .da-toggle .lbl-open{display:none}
+.day-acc summary .da-toggle .lbl-close{display:none}
+.day-acc[open] summary .da-toggle .lbl-close{display:inline}
+.day-acc .da-inner{padding:0 1.4rem 1.6rem}
+.day-acc .prog-grid{margin-top:0}
+
 /* FLIGHT */
 .flight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
 .fcard{background:var(--white);border:1px solid var(--light-line);border-radius:10px;padding:2rem;transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
@@ -305,25 +319,24 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg">
-    <video autoplay muted loop playsinline poster="assets/img-fireworks-eiffel.png">
-      <source src="assets/vid-fireworks.mp4" type="video/mp4">
+    <video autoplay muted loop playsinline poster="assets/img-parade-champs.png">
+      <source src="assets/vid-parade.mp4" type="video/mp4">
       <source src="assets/paris-cityscape.mp4" type="video/mp4">
     </video>
   </div>
   <div class="wrap">
     <div class="hero-content">
-      <div class="hero-tag reveal">A French Atelier Community Celebration</div>
-      <h1 class="reveal reveal-d1">Win a Free Flight to <span class="gold-ital">Paris</span> for Bastille Day</h1>
-      <p class="hero-sub reveal reveal-d2">Three of our most devoted followers and brand ambassadors will fly to Paris this July — and live the Fête Nationale like a true Parisian, with our curated three-day program of insider tips and hidden gems.</p>
+      <div class="hero-tag reveal">French Atelier · Bastille Day 2026</div>
+      <h1 class="reveal reveal-d1">Win a Free Flight to <span class="gold-ital">Paris</span></h1>
+      <p class="hero-sub reveal reveal-d2">Share French Atelier with your friends. The 3 top sharers each win a round-trip flight from the USA to Paris for Bastille Day — plus our insider 3-day program.</p>
       <div class="hero-ctas reveal reveal-d2">
         <a href="#enter" class="btn btn-advisor">Enter to Win</a>
-        <a href="#program" class="btn btn-ghost">See the Paris Program</a>
+        <a href="#prize" class="btn btn-ghost">See What You Win</a>
       </div>
       <div class="hero-meta reveal reveal-d2">
         <div class="item"><span class="k">3</span><span class="v">Winners</span></div>
-        <div class="item"><span class="k">Jul 14</span><span class="v">Bastille Day 2026</span></div>
         <div class="item"><span class="k">USA → Paris</span><span class="v">Round-trip flights</span></div>
-        <div class="item"><span class="k">3 Days</span><span class="v">Insider program</span></div>
+        <div class="item"><span class="k">10+</span><span class="v">Shares to qualify</span></div>
       </div>
     </div>
   </div>
@@ -333,9 +346,9 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem
 <section class="sec culture-dark" id="prize">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow eyebrow-line on-dark reveal">The Grand Prize</p>
-      <h2 class="display-md reveal reveal-d1">What three winners <span class="gold-ital on-dark">will receive</span>.</h2>
-      <p class="lede on-dark reveal reveal-d2">This is not a trip. It is an invitation into the most beautiful moments of French life — the way French Atelier always teaches it.</p>
+      <p class="eyebrow eyebrow-line on-dark reveal">The Prize</p>
+      <h2 class="display-md reveal reveal-d1">Three winners. Three flights to <span class="gold-ital on-dark">Paris</span>.</h2>
+      <p class="lede on-dark reveal reveal-d2">Each winner gets a round-trip flight from the USA to Paris for Bastille Day — plus our complete 3-day insider program. Here's exactly what's included.</p>
     </div>
     <div class="prize-grid">
       <div class="prize-card reveal">
@@ -361,9 +374,9 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem
 <section class="sec sec-paper" id="bastille">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow eyebrow-line reveal" style="justify-content:center">Bastille Day in Paris</p>
-      <h2 class="display-md reveal reveal-d1">The <span class="gold-ital">Fête Nationale</span>, lived from the inside.</h2>
-      <p class="lede reveal reveal-d2">Fireworks over the Eiffel Tower, the Patrouille de France above the Champs-Élysées, golden terrasses and the long Parisian dusk. This is the July you'll wake up to.</p>
+      <p class="eyebrow eyebrow-line reveal" style="justify-content:center">What You'll Experience</p>
+      <h2 class="display-md reveal reveal-d1">This is what <span class="gold-ital">Bastille Day</span> looks like.</h2>
+      <p class="lede reveal reveal-d2">Fireworks over the Eiffel Tower, jets above the Champs-Élysées, golden terrasses and the long Parisian dusk — the July you could be waking up to.</p>
     </div>
     <div class="gallery reveal">
       <div class="gtile g-a"><img src="assets/img-fireworks-eiffel.png" alt="Fireworks bursting over the Eiffel Tower as crowds hold glowing lanterns"><div class="gcap"><div class="ge">July 13 · 23:00</div><div class="gt">Fireworks over the Eiffel Tower</div></div></div>
@@ -376,29 +389,13 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem
   </div>
 </section>
 
-<!-- VIDEO BAND: FIREWORKS -->
-<section class="vband" aria-label="Bastille Day fireworks over the Eiffel Tower">
-  <video autoplay muted loop playsinline poster="assets/img-fireworks-eiffel.png">
-    <source src="assets/vid-fireworks.mp4" type="video/mp4">
-  </video>
-  <div class="vb-inner">
-    <div class="wrap">
-      <div class="reveal">
-        <div class="vb-tag">The 14th of July · Champ-de-Mars</div>
-        <h2 class="vb-title">The sky over Paris, <span class="gold-ital">set alight</span>.</h2>
-        <p class="vb-sub">At 23:00 the national fireworks ignite above the Eiffel Tower while the Concert de Paris plays below. Our winners watch it the Parisian way — picnic blanket, champagne, the whole city looking up together.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- HOW TO PARTICIPATE -->
 <section class="sec sec-light" id="enter">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow eyebrow-line reveal">How to Participate</p>
-      <h2 class="display-md reveal reveal-d1">Four steps to <span class="gold-ital">Paris</span>.</h2>
-      <p class="lede reveal reveal-d2">Share the French Atelier story far and wide. The three participants who share us most — and bring the most engaged new community in — fly to Paris.</p>
+      <p class="eyebrow eyebrow-line reveal">How to Enter</p>
+      <h2 class="display-md reveal reveal-d1">Enter in four <span class="gold-ital">simple steps</span>.</h2>
+      <p class="lede reveal reveal-d2">Share French Atelier with your friends. The three people who share us the most — and bring in the most engaged new community — win the flights.</p>
     </div>
     <div class="steps">
       <div class="step s1 reveal">
@@ -437,29 +434,13 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem
   </div>
 </section>
 
-<!-- VIDEO BAND: PARADE -->
-<section class="vband" aria-label="Patrouille de France flyover on the Champs-Élysées">
-  <video autoplay muted loop playsinline poster="assets/img-parade-champs.png">
-    <source src="assets/vid-parade.mp4" type="video/mp4">
-  </video>
-  <div class="vb-inner">
-    <div class="wrap">
-      <div class="reveal">
-        <div class="vb-tag">The 14th of July · Champs-Élysées</div>
-        <h2 class="vb-title">A nation on <span class="gold-ital">parade</span>.</h2>
-        <p class="vb-sub">The Patrouille de France streaks blue-white-red across the sky above the Arc de Triomphe. We show you where to stand — away from the crush, with the best view in Paris.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- THE PROGRAM -->
 <section class="sec culture-dark" id="program">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow eyebrow-line on-dark reveal">The Winning Experience</p>
-      <h2 class="display-md reveal reveal-d1">Your three days in <span class="gold-ital on-dark">Paris</span>.</h2>
-      <p class="lede on-dark reveal reveal-d2">A Parisian Bastille Day sojourn — three days as a cultural initiate. This is the full program our winners will live, July 12–15, 2026.</p>
+      <p class="eyebrow eyebrow-line on-dark reveal">Your Itinerary</p>
+      <h2 class="display-md reveal reveal-d1">Four days, planned <span class="gold-ital on-dark">for you</span>.</h2>
+      <p class="lede on-dark reveal reveal-d2">This is the full program winners will live, July 12–15, 2026. Tap any day to see the complete plan — neighborhoods, museums, cruises and where to dine.</p>
     </div>
 
     <!-- DAY 0 -->
@@ -472,10 +453,13 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem
         </div>
         <div class="dp-body">
           <div class="d-kicker">Sunday, July 12 — Arrival, Terrasses &amp; the Soul of the Marais</div>
-          <h3>First Taste of the Marais</h3>
+          <h3>Day 1 · First Taste of the Marais</h3>
           <div class="d-sub">Settle into historical cobblestones and discover the city's revolutionary past.</div>
         </div>
       </div>
+      <details class="day-acc">
+        <summary><span class="da-label">See the full July&nbsp;12 itinerary</span><span class="da-toggle"><span class="lbl-open">Expand</span><span class="lbl-close">Collapse</span></span></summary>
+        <div class="da-inner">
       <div class="prog-grid">
         <div class="prog-card">
           <div class="pc-eye">Arrival &amp; Chic Flânerie</div>
@@ -502,6 +486,8 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem
           </div>
         </div>
       </div>
+        </div>
+      </details>
     </div>
 
     <!-- DAY 1 -->
@@ -514,10 +500,13 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem
         </div>
         <div class="dp-body">
           <div class="d-kicker">Monday, July 13 — Classic Symmetry, Seine Sunset &amp; Symphonic Fireworks</div>
-          <h3>Day 1 · The Golden Vigil</h3>
+          <h3>Day 2 · The Golden Vigil</h3>
           <div class="d-sub">An elegant transition from Renaissance cobblestones to water-side music and lights.</div>
         </div>
       </div>
+      <details class="day-acc">
+        <summary><span class="da-label">See the full July&nbsp;13 itinerary</span><span class="da-toggle"><span class="lbl-open">Expand</span><span class="lbl-close">Collapse</span></span></summary>
+        <div class="da-inner">
       <div class="prog-grid">
         <div class="prog-card">
           <div class="pc-eye">1 · Morning Splendours</div>
@@ -546,6 +535,8 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem
         </div>
       </div>
       <p class="day-alert">Note: the National Fireworks are exceptionally scheduled for Monday evening, July 13 in 2026. We dine early as the sun sets late in July.</p>
+        </div>
+      </details>
     </div>
 
     <!-- DAY 2 -->
@@ -558,10 +549,13 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem
         </div>
         <div class="dp-body">
           <div class="d-kicker">Tuesday, July 14 — Air Shows, Belle Époque Spire &amp; the Grand Opera</div>
-          <h3>Day 2 · Parisian Elegance</h3>
+          <h3>Day 3 · Parisian Elegance</h3>
           <div class="d-sub">A masterclass in navigating National Day celebrations like a true Parisian insider.</div>
         </div>
       </div>
+      <details class="day-acc">
+        <summary><span class="da-label">See the full July&nbsp;14 itinerary</span><span class="da-toggle"><span class="lbl-open">Expand</span><span class="lbl-close">Collapse</span></span></summary>
+        <div class="da-inner">
       <div class="prog-grid">
         <div class="prog-card">
           <div class="pc-eye">The Insider's Parade Approach</div>
@@ -588,6 +582,8 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem
           </div>
         </div>
       </div>
+        </div>
+      </details>
     </div>
 
     <!-- DAY 3 -->
@@ -600,10 +596,13 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem
         </div>
         <div class="dp-body">
           <div class="d-kicker">Wednesday, July 15 — Slow Montmartre, Impressionist Masterpieces &amp; Seine Guinguettes</div>
-          <h3>Day 3 · Art, Light &amp; Water</h3>
+          <h3>Day 4 · Art, Light &amp; Water</h3>
           <div class="d-sub">Entering the ultimate 'French Atelier' moments of emotional light and lingering conversations.</div>
         </div>
       </div>
+      <details class="day-acc">
+        <summary><span class="da-label">See the full July&nbsp;15 itinerary</span><span class="da-toggle"><span class="lbl-open">Expand</span><span class="lbl-close">Collapse</span></span></summary>
+        <div class="da-inner">
       <div class="prog-grid">
         <div class="prog-card">
           <div class="pc-eye">1 · Slow Montmartre</div>
@@ -632,39 +631,8 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem
         </div>
       </div>
       <p class="day-alert">Summer days linger in Paris. We end our day slow, on the edge of the water, where the sunset catches the ripples of history.</p>
-    </div>
-  </div>
-</section>
-
-<!-- VIDEO BAND: SEINE -->
-<section class="vband" aria-label="Golden-hour cruise along the Seine">
-  <video autoplay muted loop playsinline poster="assets/img-seine-cruise.png">
-    <source src="assets/vid-seine.mp4" type="video/mp4">
-  </video>
-  <div class="vb-inner">
-    <div class="wrap">
-      <div class="reveal">
-        <div class="vb-tag">The long Parisian dusk</div>
-        <h2 class="vb-title">Where the city <span class="gold-ital">slows down</span>.</h2>
-        <p class="vb-sub">Gold light on the water, the Orsay drifting past, a guinguette waiting on the bank. This is the France our winners come home changed by.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CULTURE PHOTO GRID -->
-<section class="sec sec-light" id="moments">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow eyebrow-line reveal" style="justify-content:center">The French Atelier Way</p>
-      <h2 class="display-md reveal reveal-d1">Culture speaks <span class="gold-ital">French</span>.</h2>
-      <p class="lede reveal reveal-d2">Not a checklist of monuments — the moments in between. Terrasses, opera staircases, Impressionist light and riverside evenings, the way we always teach it.</p>
-    </div>
-    <div class="photo-grid reveal">
-      <div class="pcardx"><img src="assets/img-place-vosges.png" alt="The symmetrical arcades and fountain of Place des Vosges"><div class="pcx-body"><span class="pcx-num">01</span><div class="pcx-title">Renaissance Symmetry</div><div class="pcx-desc">Place des Vosges, the oldest planned square in Paris.</div></div></div>
-      <div class="pcardx"><img src="assets/img-garnier.png" alt="The grand marble staircase and chandeliers of Palais Garnier"><div class="pcx-body"><span class="pcx-num">02</span><div class="pcx-title">Belle Époque Grandeur</div><div class="pcx-desc">The gilded staircases of the Palais Garnier.</div></div></div>
-      <div class="pcardx"><img src="assets/img-orsay.png" alt="The grand hall and gilded clock of the Musée d'Orsay"><div class="pcx-body"><span class="pcx-num">03</span><div class="pcx-title">Impressionist Light</div><div class="pcx-desc">Monet, Renoir and Van Gogh at the Musée d'Orsay.</div></div></div>
-      <div class="pcardx"><img src="assets/img-guinguette.png" alt="A Seine-side guinguette terrace strung with lights at dusk"><div class="pcx-body"><span class="pcx-num">04</span><div class="pcx-title">Riverside Evenings</div><div class="pcx-desc">A cold glass of rosé as the city exhales.</div></div></div>
+        </div>
+      </details>
     </div>
   </div>
 </section>
@@ -673,9 +641,9 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem
 <section class="sec sec-paper" id="flights">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow eyebrow-line reveal">The Flight Details</p>
-      <h2 class="display-md reveal reveal-d1">Everything about <span class="gold-ital">your ticket</span>.</h2>
-      <p class="lede reveal reveal-d2">Round-trip flights between the United States and Paris, scheduled around the Fête Nationale.</p>
+      <p class="eyebrow eyebrow-line reveal">Your Flight</p>
+      <h2 class="display-md reveal reveal-d1">When you fly, and from <span class="gold-ital">where</span>.</h2>
+      <p class="lede reveal reveal-d2">Round-trip flights between the United States and Paris, scheduled around Bastille Day. The key dates and details, in plain terms.</p>
     </div>
     <div class="flight-grid">
       <div class="fcard reveal">
@@ -706,8 +674,8 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem
   <div class="narrow">
     <div class="sec-head">
       <p class="eyebrow eyebrow-line on-dark reveal" style="justify-content:center">How Winners Are Chosen</p>
-      <h2 class="display-md reveal reveal-d1">The selection <span class="gold-ital on-dark">criteria</span>.</h2>
-      <p class="lede on-dark reveal reveal-d2">Winners are selected by a committee, examining the depth and authenticity of each participant's sharing.</p>
+      <h2 class="display-md reveal reveal-d1">How the three winners <span class="gold-ital on-dark">are picked</span>.</h2>
+      <p class="lede on-dark reveal reveal-d2">A committee reviews each qualifying entry. Here's exactly what we look at, and how you'll be notified if you win.</p>
     </div>
     <div class="judge-list reveal">
       <div class="ji"><span class="b"></span><p><b>Shared activity on social</b> — the breadth and consistency of your channel-link shares.</p></div>
