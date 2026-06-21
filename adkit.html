@@ -7,7 +7,7 @@
 <meta name="description" content="Download the complete Meta & Instagram ad kit for the French Atelier 'Win a Free Flight to Paris' Bastille Day 2026 campaign — Reels, feed banners, carousel and a website pop-up.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#000034; --navy-deep:#00001F; --navy-card:#0A0A28; --navy-line:#1B1B45;
@@ -21,7 +21,7 @@
   html{scroll-behavior:smooth}
   a svg{max-width:22px;max-height:22px}
   body{
-    font-family:var(--sans);color:var(--ivory);line-height:1.6;-webkit-font-smoothing:antialiased;
+    font-family:var(--sans);color:var(--ivory);line-height:1.65;font-size:18px;-webkit-font-smoothing:antialiased;
     background:
       radial-gradient(1100px 600px at 78% -8%,rgba(200,52,75,.14),transparent 60%),
       radial-gradient(1000px 600px at 10% 8%,rgba(30,58,138,.18),transparent 60%),
@@ -37,33 +37,32 @@
   .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
   .brand{font-family:var(--display);font-weight:600;font-size:20px;letter-spacing:.02em;color:#fff}
   .brand span{color:var(--gold-bright)}
-  .topbar nav{display:flex;gap:26px;font-size:13.5px;font-weight:500}
+  .topbar nav{display:flex;gap:26px;font-size:15px;font-weight:500}
   .topbar nav a{color:rgba(243,239,233,.72);text-decoration:none;transition:.2s}
   .topbar nav a:hover{color:var(--gold-bright)}
-  .topbar .dl{padding:9px 18px;border-radius:999px;font-weight:600;font-size:13px;color:var(--navy);
-    background:linear-gradient(160deg,var(--gold-bright),var(--gold-deep));text-decoration:none;
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.5)}
+  .topbar .dl{padding:10px 20px;border-radius:8px;font-weight:600;font-size:14.5px;color:#fff;
+    background:var(--gold-deep);text-decoration:none;border:1px solid var(--gold);transition:.2s}
+  .topbar .dl:hover{background:var(--gold)}
   @media(max-width:760px){.topbar nav{display:none}}
 
   /* ============ HERO ============ */
   .hero{padding:84px 0 56px;text-align:center;position:relative;overflow:hidden}
-  .kit-tag{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.28em;text-transform:uppercase;
-    color:var(--gold-soft);border:1px solid rgba(224,198,140,.4);border-radius:999px;padding:7px 18px;margin-bottom:26px;
-    background:rgba(224,198,140,.06)}
+  .kit-tag{display:inline-block;font-family:var(--serif);font-style:italic;font-size:19px;letter-spacing:0;
+    color:var(--gold-soft);padding:0;margin-bottom:22px}
   .hero h1{font-family:var(--display);font-weight:600;font-size:clamp(38px,6.6vw,72px);line-height:1.02;
     letter-spacing:-.015em;color:#fff}
   .hero h1 em{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--gold-bright)}
-  .hero .lede{max-width:620px;margin:22px auto 0;font-size:17px;color:rgba(243,239,233,.82)}
-  .hero .handle-pill{margin-top:30px;display:inline-flex;align-items:center;gap:10px;padding:11px 22px;border-radius:999px;
-    background:rgba(10,10,40,.6);border:1px solid var(--navy-line);font-size:14px}
+  .hero .lede{max-width:640px;margin:22px auto 0;font-size:19px;line-height:1.6;color:rgba(243,239,233,.85)}
+  .hero .handle-pill{margin-top:30px;display:inline-flex;align-items:center;gap:10px;padding:12px 24px;border-radius:999px;
+    background:rgba(10,10,40,.6);border:1px solid var(--navy-line);font-size:15.5px}
   .hero .handle-pill b{color:var(--gold-bright);font-weight:600}
   .hero .handle-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
 
   /* mechanic strip */
   .mechanic{margin:46px auto 0;max-width:880px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
   .mechanic .m{background:var(--navy-card);border:1px solid var(--navy-line);border-radius:16px;padding:20px 16px;text-align:left}
-  .mechanic .m .n{font-family:var(--mono);font-size:12px;color:var(--gold);letter-spacing:.1em}
-  .mechanic .m p{margin-top:8px;font-size:13.5px;line-height:1.45;color:rgba(243,239,233,.9)}
+  .mechanic .m .n{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--gold-bright);letter-spacing:0}
+  .mechanic .m p{margin-top:8px;font-size:15px;line-height:1.5;color:rgba(243,239,233,.92)}
   .mechanic .m b{color:var(--gold-bright)}
   @media(max-width:760px){.mechanic{grid-template-columns:repeat(2,1fr)}}
 
@@ -71,10 +70,10 @@
   section{padding:56px 0}
   .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:30px;border-bottom:1px solid var(--navy-line);
     padding-bottom:18px}
-  .sec-head .idx{font-family:var(--mono);font-size:13px;color:var(--gold);letter-spacing:.1em}
-  .sec-head h2{font-family:var(--display);font-weight:600;font-size:clamp(26px,3.6vw,38px);color:#fff;letter-spacing:-.01em}
-  .sec-head .fmt{margin-left:auto;font-family:var(--mono);font-size:12px;color:rgba(243,239,233,.6);letter-spacing:.06em;
-    border:1px solid var(--navy-line);border-radius:8px;padding:6px 12px}
+  .sec-head .idx{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--gold-bright);letter-spacing:0}
+  .sec-head h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,3.8vw,42px);color:#fff;letter-spacing:-.01em}
+  .sec-head .fmt{margin-left:auto;font-family:var(--serif);font-style:italic;font-size:16px;color:rgba(243,239,233,.7);letter-spacing:0;
+    border:1px solid var(--navy-line);border-radius:8px;padding:7px 14px}
   @media(max-width:620px){.sec-head{flex-wrap:wrap}.sec-head .fmt{margin-left:0;width:100%}}
 
   /* ============ ASSET GRID ============ */
@@ -93,25 +92,23 @@
   .media.r11{aspect-ratio:1/1}
   .media.r45{aspect-ratio:4/5}
   .media video,.media img{width:100%;height:100%;object-fit:cover;display:block}
-  .ratio-badge{position:absolute;top:12px;left:12px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;
-    color:var(--navy);background:var(--gold-bright);border-radius:7px;padding:4px 9px;font-weight:600;z-index:2}
-  .play-hint{position:absolute;bottom:12px;right:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;
-    color:var(--ivory);background:rgba(0,0,20,.7);border:1px solid var(--navy-line);border-radius:7px;padding:4px 9px;z-index:2}
-  .card .body{padding:16px 18px 20px}
-  .card .spec{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:11px}
-  .card .spec .tag{font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+  .ratio-badge{position:absolute;top:14px;left:14px;font-family:var(--serif);font-style:italic;font-size:15px;letter-spacing:0;
+    color:var(--gold-bright);text-shadow:0 1px 6px rgba(0,0,0,.6);z-index:3}
+
+  .card .body{padding:18px 20px 22px}
+  .card .spec{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:13px}
+  .card .spec .tag{font-family:var(--sans);font-size:12.5px;letter-spacing:0;font-weight:500;
     color:var(--gold-soft);background:rgba(224,198,140,.09);border:1px solid rgba(224,198,140,.28);
-    border-radius:6px;padding:3px 7px;line-height:1.3}
-  .card .spec .tag.use{color:rgba(243,239,233,.78);background:rgba(255,255,255,.05);border-color:var(--navy-line)}
-  .card .body h3{font-family:var(--display);font-weight:600;font-size:19px;color:#fff;line-height:1.2}
-  .card .body p{margin-top:6px;font-size:13.5px;color:rgba(243,239,233,.78);line-height:1.5}
-  .card .dlbtn{margin-top:15px;display:flex;align-items:center;justify-content:center;gap:9px;width:100%;
-    padding:11px;border-radius:11px;font-weight:600;font-size:13.5px;color:var(--navy);text-decoration:none;
-    background:linear-gradient(160deg,var(--gold-bright),var(--gold) 60%,var(--gold-deep));
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.5);transition:.25s var(--ease)}
-  .card .dlbtn:hover{filter:brightness(1.06);transform:translateY(-1px)}
-  .card .dlbtn svg{width:15px;height:15px;flex:none}
-  .dlbtn svg{width:15px;height:15px;flex:none}
+    border-radius:7px;padding:4px 10px;line-height:1.3}
+  .card .spec .tag.use{color:rgba(243,239,233,.82);background:rgba(255,255,255,.05);border-color:var(--navy-line)}
+  .card .body h3{font-family:var(--display);font-weight:600;font-size:22px;color:#fff;line-height:1.2}
+  .card .body p{margin-top:7px;font-size:15.5px;color:rgba(243,239,233,.82);line-height:1.55}
+  .card .dlbtn{margin-top:16px;display:flex;align-items:center;justify-content:center;gap:9px;width:100%;
+    padding:13px;border-radius:9px;font-weight:600;font-size:15px;color:#fff;text-decoration:none;
+    background:var(--gold-deep);border:1px solid var(--gold);transition:.25s var(--ease)}
+  .card .dlbtn:hover{background:var(--gold);transform:translateY(-1px)}
+  .card .dlbtn svg{width:16px;height:16px;flex:none}
+  .dlbtn svg{width:16px;height:16px;flex:none}
 
   /* carousel filmstrip */
   .strip{display:flex;gap:14px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory}
@@ -121,11 +118,11 @@
     border:1px solid var(--navy-line);position:relative;cursor:zoom-in;transition:transform .25s var(--ease),border-color .25s var(--ease)}
   .strip .slide:hover{transform:translateY(-4px);border-color:rgba(224,198,140,.5)}
   .strip .slide img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover}
-  .strip .slide .num{position:absolute;top:10px;left:10px;font-family:var(--mono);font-size:12px;color:var(--navy);
-    background:var(--gold-bright);border-radius:6px;padding:3px 8px;font-weight:600;z-index:2}
-  .strip .slide .zoom{position:absolute;bottom:10px;right:10px;display:flex;align-items:center;gap:5px;
-    font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;color:#fff;background:rgba(5,5,15,.62);
-    backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:5px 9px;z-index:2}
+  .strip .slide .num{position:absolute;top:12px;left:12px;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--gold-bright);
+    text-shadow:0 1px 6px rgba(0,0,0,.7);z-index:2}
+  .strip .slide .zoom{position:absolute;bottom:12px;right:12px;display:flex;align-items:center;gap:6px;
+    font-family:var(--sans);font-weight:500;font-size:13px;letter-spacing:0;color:#fff;background:rgba(5,5,15,.55);
+    border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:6px 11px;z-index:2}
   .strip .slide .zoom svg{width:12px;height:12px}
   @media(max-width:560px){.strip .slide{width:280px}}
   /* carousel lightbox */
@@ -141,17 +138,17 @@
     background:rgba(255,255,255,.1);color:#fff;font-size:24px;display:flex;align-items:center;justify-content:center}
   .lb .lb-nav:hover{background:rgba(224,198,140,.25)}
   .lb .lb-prev{left:24px}.lb .lb-next{right:24px}
-  .lb .lb-count{position:absolute;bottom:22px;left:0;right:0;text-align:center;font-family:var(--mono);font-size:12px;color:rgba(255,255,255,.65)}
+  .lb .lb-count{position:absolute;bottom:22px;left:0;right:0;text-align:center;font-family:var(--serif);font-style:italic;font-size:16px;color:rgba(255,255,255,.7)}
 
   /* popup feature row */
   .feature{display:grid;grid-template-columns:1.05fr 1fr;gap:36px;align-items:center;
     background:var(--navy-card);border:1px solid var(--navy-line);border-radius:22px;padding:30px;overflow:hidden}
   .feature .shot{border-radius:16px;overflow:hidden;border:1px solid var(--navy-line);box-shadow:0 18px 50px rgba(0,0,20,.5)}
   .feature .shot iframe{width:100%;height:520px;border:0;display:block;background:#05050f}
-  .feature h3{font-family:var(--display);font-weight:600;font-size:26px;color:#fff}
-  .feature p{margin-top:12px;font-size:14.5px;color:rgba(243,239,233,.8)}
-  .feature ul{margin-top:16px;list-style:none;display:grid;gap:9px}
-  .feature li{font-size:13.5px;padding-left:24px;position:relative;color:rgba(243,239,233,.86)}
+  .feature h3{font-family:var(--display);font-weight:600;font-size:28px;color:#fff}
+  .feature p{margin-top:12px;font-size:16px;line-height:1.55;color:rgba(243,239,233,.82)}
+  .feature ul{margin-top:16px;list-style:none;display:grid;gap:10px}
+  .feature li{font-size:15px;padding-left:24px;position:relative;color:rgba(243,239,233,.88)}
   .feature li::before{content:"";position:absolute;left:0;top:7px;width:9px;height:9px;border-radius:50%;
     background:linear-gradient(160deg,var(--gold-bright),var(--gold-deep))}
   @media(max-width:840px){.feature{grid-template-columns:1fr}.feature .shot iframe{height:430px}}
@@ -159,33 +156,32 @@
   /* caption box */
   .caption-box{margin-top:28px;background:var(--navy-deep);border:1px solid var(--navy-line);border-radius:16px;
     padding:22px 24px}
-  .caption-box .lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
-    display:flex;align-items:center;justify-content:space-between}
-  .caption-box .copybtn{cursor:pointer;font-family:var(--mono);font-size:11px;color:var(--ivory);background:rgba(224,198,140,.1);
-    border:1px solid rgba(224,198,140,.3);border-radius:7px;padding:4px 10px;transition:.2s}
+  .caption-box .lbl{font-family:var(--serif);font-style:italic;font-size:19px;letter-spacing:0;color:var(--gold-bright);
+    display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .caption-box .copybtn{cursor:pointer;font-family:var(--sans);font-weight:500;font-size:13px;color:var(--ivory);background:rgba(224,198,140,.1);
+    border:1px solid rgba(224,198,140,.3);border-radius:7px;padding:5px 12px;transition:.2s;flex:none}
   .caption-box .copybtn:hover{background:rgba(224,198,140,.2)}
-  .caption-box pre{margin-top:14px;font-family:var(--sans);font-size:13.5px;line-height:1.65;color:rgba(243,239,233,.92);
+  .caption-box pre{margin-top:14px;font-family:var(--sans);font-size:15px;line-height:1.7;color:rgba(243,239,233,.92);
     white-space:pre-wrap}
 
   /* download-all */
   .dlall{margin:14px 0 0;text-align:center}
-  .dlall a{display:inline-flex;align-items:center;gap:12px;padding:18px 40px;border-radius:999px;font-weight:600;
-    font-size:16px;color:var(--navy);text-decoration:none;
-    background:linear-gradient(160deg,var(--gold-bright) 0%,var(--gold) 52%,var(--gold-deep) 100%);
-    box-shadow:0 14px 38px rgba(168,141,82,.5),inset 0 1px 0 rgba(255,255,255,.55);transition:.28s var(--ease)}
-  .dlall a:hover{transform:translateY(-2px)}
+  .dlall a{display:inline-flex;align-items:center;gap:12px;padding:18px 42px;border-radius:10px;font-weight:600;
+    font-size:17px;color:#fff;text-decoration:none;
+    background:var(--gold-deep);border:1px solid var(--gold);transition:.28s var(--ease)}
+  .dlall a:hover{background:var(--gold);transform:translateY(-2px)}
   .dlall a svg{width:20px;height:20px;flex:none}
-  .dlall small{display:block;margin-top:14px;font-family:var(--mono);font-size:12px;color:rgba(243,239,233,.55)}
+  .dlall small{display:block;margin-top:16px;font-family:var(--serif);font-style:italic;font-size:16px;color:rgba(243,239,233,.65)}
 
   /* footer */
   footer{padding:56px 0 64px;border-top:1px solid var(--navy-line);margin-top:40px;text-align:center}
   footer .links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
-  footer .links a{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;
-    border:1px solid var(--navy-line);background:rgba(10,10,40,.5);font-size:13.5px;text-decoration:none;
+  footer .links a{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;
+    border:1px solid var(--navy-line);background:rgba(10,10,40,.5);font-size:15px;text-decoration:none;
     color:var(--ivory);transition:.25s}
   footer .links a:hover{border-color:var(--gold-bright);transform:translateY(-1px)}
   footer .links svg{width:16px;height:16px;fill:var(--gold-bright)}
-  footer .fine{font-size:12.5px;color:rgba(243,239,233,.5);max-width:560px;margin:0 auto}
+  footer .fine{font-size:14.5px;line-height:1.6;color:rgba(243,239,233,.6);max-width:600px;margin:0 auto}
   footer .fine a{color:var(--gold-soft)}
 
   /* Content is always visible by default; reveal is progressive enhancement only.
@@ -222,10 +218,10 @@
     <div class="handle-pill"><span class="dot"></span> Organic page: <b>@livefrenchatelier</b> · Instagram + Meta</div>
 
     <div class="mechanic">
-      <div class="m"><div class="n">STEP 01</div><p>Follow <b>@livefrenchatelier</b> on Instagram &amp; Meta</p></div>
-      <div class="m"><div class="n">STEP 02</div><p>Share our channel with <b>10+ friends</b></p></div>
-      <div class="m"><div class="n">STEP 03</div><p>Screenshot each share &mdash; you need <b>10+</b></p></div>
-      <div class="m"><div class="n">STEP 04</div><p>Upload them on the site &mdash; <b>top 3 sharers fly free</b></p></div>
+      <div class="m"><div class="n">First</div><p>Follow <b>@livefrenchatelier</b> on Instagram &amp; Meta</p></div>
+      <div class="m"><div class="n">Then</div><p>Share our channel with <b>10+ friends</b></p></div>
+      <div class="m"><div class="n">Next</div><p>Screenshot each share &mdash; you need <b>10+</b></p></div>
+      <div class="m"><div class="n">Finally</div><p>Upload them on the site &mdash; <b>top 3 sharers fly free</b></p></div>
     </div>
   </div>
 </section>
@@ -241,8 +237,8 @@
     <div class="grid cols-3">
       <div class="card reveal">
         <div class="media r916">
-          <span class="ratio-badge">9:16</span><span class="play-hint">TAP TO PLAY</span>
-          <video src="assets/reel-1-win-flight.mp4?v=5" poster="assets/reel-1-poster.jpg?v=4" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()" onclick="this.paused?this.play():this.pause()"></video>
+          <span class="ratio-badge">9:16</span>
+          <video src="assets/reel-1-win-flight.mp4?v=9" poster="assets/reel-1-poster.jpg?v=9" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()" onclick="this.paused?this.play():this.pause()"></video>
         </div>
         <div class="body">
           <div class="spec"><span class="tag">Reel / Story</span><span class="tag">9:16</span><span class="tag">1080×1920</span><span class="tag">15s · MP4</span><span class="tag use">IG Reels + FB Stories</span></div>
@@ -253,8 +249,8 @@
       </div>
       <div class="card reveal">
         <div class="media r916">
-          <span class="ratio-badge">9:16</span><span class="play-hint">TAP TO PLAY</span>
-          <video src="assets/reel-2-three-winners.mp4?v=5" poster="assets/reel-2-poster.jpg?v=4" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()" onclick="this.paused?this.play():this.pause()"></video>
+          <span class="ratio-badge">9:16</span>
+          <video src="assets/reel-2-three-winners.mp4?v=9" poster="assets/reel-2-poster.jpg?v=9" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()" onclick="this.paused?this.play():this.pause()"></video>
         </div>
         <div class="body">
           <div class="spec"><span class="tag">Reel / Story</span><span class="tag">9:16</span><span class="tag">1080×1920</span><span class="tag">15s · MP4</span><span class="tag use">IG Reels + FB Stories</span></div>
@@ -265,8 +261,8 @@
       </div>
       <div class="card reveal">
         <div class="media r916">
-          <span class="ratio-badge">9:16</span><span class="play-hint">TAP TO PLAY</span>
-          <video src="assets/reel-3-2days-left.mp4?v=5" poster="assets/reel-3-poster.jpg?v=4" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()" onclick="this.paused?this.play():this.pause()"></video>
+          <span class="ratio-badge">9:16</span>
+          <video src="assets/reel-3-2days-left.mp4?v=9" poster="assets/reel-3-poster.jpg?v=9" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()" onclick="this.paused?this.play():this.pause()"></video>
         </div>
         <div class="body">
           <div class="spec"><span class="tag">Reel / Story</span><span class="tag">9:16</span><span class="tag">1080×1920</span><span class="tag">15s · MP4</span><span class="tag use">IG Reels + FB Stories</span></div>
@@ -290,8 +286,8 @@
     <div class="grid cols-2">
       <div class="card reveal">
         <div class="media r11">
-          <span class="ratio-badge">1:1</span><span class="play-hint">TAP TO PLAY</span>
-          <video src="assets/banner-square-1x1.mp4?v=5" poster="assets/banner-1x1-poster.jpg?v=4" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()" onclick="this.paused?this.play():this.pause()"></video>
+          <span class="ratio-badge">1:1</span>
+          <video src="assets/banner-square-1x1.mp4?v=9" poster="assets/banner-1x1-poster.jpg?v=9" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()" onclick="this.paused?this.play():this.pause()"></video>
         </div>
         <div class="body">
           <div class="spec"><span class="tag">Feed Banner</span><span class="tag">1:1</span><span class="tag">1080×1080</span><span class="tag">MP4</span><span class="tag use">IG + FB Feed &amp; Explore</span></div>
@@ -302,8 +298,8 @@
       </div>
       <div class="card reveal">
         <div class="media r45">
-          <span class="ratio-badge">4:5</span><span class="play-hint">TAP TO PLAY</span>
-          <video src="assets/banner-feed-4x5.mp4?v=5" poster="assets/banner-4x5-poster.jpg?v=4" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()" onclick="this.paused?this.play():this.pause()"></video>
+          <span class="ratio-badge">4:5</span>
+          <video src="assets/banner-feed-4x5.mp4?v=9" poster="assets/banner-4x5-poster.jpg?v=9" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()" onclick="this.paused?this.play():this.pause()"></video>
         </div>
         <div class="body">
           <div class="spec"><span class="tag">Feed Banner</span><span class="tag">4:5</span><span class="tag">1080×1350</span><span class="tag">MP4</span><span class="tag use">IG + FB Feed</span></div>
@@ -324,14 +320,14 @@
       <h2>Carousel</h2>
       <span class="fmt">4:5 · 1080×1350 · 6 slides · JPG</span>
     </div>
-    <p class="reveal" style="font-size:13.5px;color:rgba(243,239,233,.6);margin:-10px 0 18px;font-family:var(--mono);letter-spacing:.03em">Tap any slide to view it full-size &amp; readable.</p>
+    <p class="reveal" style="font-size:16px;color:rgba(243,239,233,.7);margin:-10px 0 18px;font-family:var(--serif);font-style:italic">Tap any slide to view it full-size and readable.</p>
     <div class="strip reveal">
-      <div class="slide" onclick="openLB(0)"><span class="num">1</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-1.jpg?v=5" alt="Carousel slide 1 — Win a free flight"></div>
-      <div class="slide" onclick="openLB(1)"><span class="num">2</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-2.jpg?v=5" alt="Carousel slide 2 — Arrival in the Marais"></div>
-      <div class="slide" onclick="openLB(2)"><span class="num">3</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-3.jpg?v=5" alt="Carousel slide 3 — Seine sunset and fireworks"></div>
-      <div class="slide" onclick="openLB(3)"><span class="num">4</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-4.jpg?v=5" alt="Carousel slide 4 — Bastille Day air shows"></div>
-      <div class="slide" onclick="openLB(4)"><span class="num">5</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-5.jpg?v=5" alt="Carousel slide 5 — Montmartre and the Impressionists"></div>
-      <div class="slide" onclick="openLB(5)"><span class="num">6</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-6.jpg?v=5" alt="Carousel slide 6 — How to enter"></div>
+      <div class="slide" onclick="openLB(0)"><span class="num">1</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-1.jpg?v=9" alt="Carousel slide 1 — Win a free flight"></div>
+      <div class="slide" onclick="openLB(1)"><span class="num">2</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-2.jpg?v=9" alt="Carousel slide 2 — Arrival in the Marais"></div>
+      <div class="slide" onclick="openLB(2)"><span class="num">3</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-3.jpg?v=9" alt="Carousel slide 3 — Seine sunset and fireworks"></div>
+      <div class="slide" onclick="openLB(3)"><span class="num">4</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-4.jpg?v=9" alt="Carousel slide 4 — Bastille Day air shows"></div>
+      <div class="slide" onclick="openLB(4)"><span class="num">5</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-5.jpg?v=9" alt="Carousel slide 5 — Montmartre and the Impressionists"></div>
+      <div class="slide" onclick="openLB(5)"><span class="num">6</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-6.jpg?v=9" alt="Carousel slide 6 — How to enter"></div>
     </div>
     <div style="margin-top:20px">
       <a class="dlbtn" style="max-width:280px" href="assets/french_atelier_adkit.zip?v=4" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>Download all 6 slides</a>
@@ -356,7 +352,7 @@
           <li>Image background (fireworks over the Eiffel Tower)</li>
           <li>@livefrenchatelier links to Instagram &amp; Meta</li>
           <li>Clear “share with 10+ friends to win a free flight” steps</li>
-          <li>Gold 3D-glass CTA · fully mobile responsive</li>
+          <li>Elegant gold call-to-action · fully mobile responsive</li>
         </ul>
         <a class="dlbtn" style="max-width:260px;margin-top:22px" href="popup.html?v=5" download="website-popup.html?v=5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>Download HTML</a>
       </div>
