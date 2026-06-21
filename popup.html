@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>French Atelier — Win a Free Flight Pop-up</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     FRENCH ATELIER — "Win a Free Flight" WEBSITE POP-UP
+     Self-contained. Drop the <style> + <div class="fa-popup-overlay">
+     block into any page, or load this file directly to preview.
+     Image background · @livefrenchatelier links · share-to-win CTA.
+     ============================================================ */
+  :root{
+    --navy:#000034; --navy-deep:#00001F; --gold:#C8A96B; --gold-soft:#E0C68C;
+    --gold-deep:#A98D52; --gold-bright:#F0D89A; --ivory:#F3EFE9; --paper:#FAF7F1;
+    --bleu:#1E3A8A; --rouge:#C8344B;
+    --display:'Playfair Display',Georgia,serif; --serif:'Cormorant Garamond',Georgia,serif;
+    --sans:'Inter',system-ui,sans-serif; --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#11131a;min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:var(--sans)}
+
+  /* OVERLAY */
+  .fa-popup-overlay{
+    position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;
+    padding:24px;background:rgba(5,5,18,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    animation:fa-fade .5s var(--ease) both;
+  }
+  @keyframes fa-fade{from{opacity:0}to{opacity:1}}
+
+  /* CARD */
+  .fa-popup{
+    position:relative;width:min(680px,100%);border-radius:26px;overflow:hidden;
+    box-shadow:0 40px 120px rgba(0,0,20,.6),0 0 0 1px rgba(224,198,140,.28),inset 0 0 0 1px rgba(255,255,255,.05);
+    color:var(--ivory);isolation:isolate;
+    animation:fa-rise .6s var(--ease) both;
+  }
+  @keyframes fa-rise{from{opacity:0;transform:translateY(26px) scale(.97)}to{opacity:1;transform:none}}
+
+  /* IMAGE BACKGROUND */
+  .fa-popup__bg{position:absolute;inset:0;z-index:-2;background:url('assets/loc-fireworks.jpg?v=3') center/cover no-repeat;transform:scale(1.04)}
+  .fa-popup__scrim{position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(180deg,rgba(0,0,26,.62) 0%,rgba(0,0,26,.30) 34%,rgba(0,0,26,.55) 62%,rgba(0,0,22,.93) 100%);}
+
+  /* CLOSE */
+  .fa-close{position:absolute;top:16px;right:16px;width:42px;height:42px;border-radius:50%;
+    border:1px solid rgba(255,255,255,.28);background:rgba(10,10,26,.45);color:var(--ivory);
+    font-size:20px;line-height:1;cursor:pointer;display:grid;place-items:center;
+    backdrop-filter:blur(6px);transition:.25s var(--ease);z-index:5}
+  .fa-close:hover{background:rgba(200,52,75,.85);border-color:transparent;transform:rotate(90deg)}
+
+  /* CONTENT */
+  .fa-popup__inner{position:relative;padding:46px 44px 40px;text-align:center}
+  .fa-handle{font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--gold-bright);opacity:.95}
+  .fa-eyebrow{margin-top:22px;font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:.34em;
+    text-transform:uppercase;color:var(--gold-soft)}
+  .fa-title{margin-top:12px;font-family:var(--display);font-weight:600;font-size:clamp(34px,6.4vw,52px);
+    line-height:1.04;letter-spacing:-.01em;color:#fff;text-shadow:0 2px 30px rgba(0,0,30,.5)}
+  .fa-sub{margin-top:8px;font-family:var(--serif);font-style:italic;font-size:clamp(20px,3.4vw,27px);
+    color:var(--gold-bright)}
+  .fa-lead{margin:18px auto 0;max-width:430px;font-size:15.5px;line-height:1.6;color:rgba(243,239,233,.94)}
+  .fa-lead b{color:#fff;font-weight:600}
+
+  /* STEPS */
+  .fa-steps{margin:24px auto 0;max-width:430px;text-align:left;display:grid;gap:11px}
+  .fa-step{display:flex;align-items:flex-start;gap:12px;font-size:14.5px;line-height:1.45;color:var(--ivory)}
+  .fa-step .n{flex:none;width:25px;height:25px;border-radius:50%;display:grid;place-items:center;
+    font-family:var(--sans);font-size:12.5px;font-weight:700;color:var(--navy);
+    background:linear-gradient(160deg,var(--gold-bright),var(--gold-deep));box-shadow:0 2px 8px rgba(0,0,20,.35)}
+  .fa-step b{color:var(--gold-bright);font-weight:600}
+
+  /* CTA */
+  .fa-cta{display:inline-flex;align-items:center;gap:10px;margin-top:28px;padding:16px 38px;border-radius:999px;
+    font-family:var(--sans);font-weight:600;font-size:15px;letter-spacing:.04em;color:var(--navy);text-decoration:none;
+    background:linear-gradient(160deg,var(--gold-bright) 0%,var(--gold) 52%,var(--gold-deep) 100%);
+    box-shadow:0 10px 30px rgba(168,141,82,.45),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 6px rgba(120,95,40,.4);
+    transition:.28s var(--ease)}
+  .fa-cta:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(168,141,82,.6),inset 0 1px 0 rgba(255,255,255,.6)}
+  .fa-cta svg{width:17px;height:17px}
+
+  /* SOCIAL ROW */
+  .fa-social{margin-top:20px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+  .fa-social a{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;
+    border:1px solid rgba(224,198,140,.4);background:rgba(10,10,26,.4);color:var(--ivory);
+    font-size:13px;font-weight:500;text-decoration:none;backdrop-filter:blur(6px);transition:.25s var(--ease)}
+  .fa-social a:hover{border-color:var(--gold-bright);background:rgba(224,198,140,.16);transform:translateY(-1px)}
+  .fa-social svg{width:16px;height:16px;fill:var(--gold-bright)}
+
+  .fa-fine{margin-top:18px;font-size:11.5px;letter-spacing:.04em;color:rgba(243,239,233,.6)}
+
+  @media(max-width:560px){
+    .fa-popup__inner{padding:40px 26px 34px}
+    .fa-close{top:12px;right:12px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ====== POP-UP MARKUP (copy this block) ====== -->
+<div class="fa-popup-overlay" id="faPopup" role="dialog" aria-modal="true" aria-labelledby="faTitle">
+  <div class="fa-popup">
+    <div class="fa-popup__bg" aria-hidden="true"></div>
+    <div class="fa-popup__scrim" aria-hidden="true"></div>
+    <button class="fa-close" aria-label="Close" onclick="document.getElementById('faPopup').style.display='none'">&times;</button>
+
+    <div class="fa-popup__inner">
+      <div class="fa-handle">@livefrenchatelier &nbsp;·&nbsp; Instagram &amp; Meta</div>
+      <div class="fa-eyebrow">French Atelier Presents</div>
+      <h2 class="fa-title" id="faTitle">Win a Free Flight to Paris</h2>
+      <div class="fa-sub">for the Bastille Day Celebrations, 2026</div>
+      <p class="fa-lead">Three winners fly <b>round-trip from the USA</b> to join our four-day Parisian Bastille Day sojourn, July 12–15. Here is how to enter:</p>
+
+      <div class="fa-steps">
+        <div class="fa-step"><span class="n">1</span><span>Follow <b>@livefrenchatelier</b> on Instagram &amp; Meta.</span></div>
+        <div class="fa-step"><span class="n">2</span><span>Share our channel with <b>10+ friends</b>.</span></div>
+        <div class="fa-step"><span class="n">3</span><span>Screenshot your shares as proof.</span></div>
+        <div class="fa-step"><span class="n">4</span><span>Submit the entry form — the top 3 sharers win.</span></div>
+      </div>
+
+      <a class="fa-cta" href="index.html#enter">
+        Enter Now — Win Your Flight
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+
+      <div class="fa-social">
+        <a href="https://instagram.com/livefrenchatelier" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.86s0 3.6-.07 4.86c-.05 1.17-.25 1.8-.41 2.23a3.7 3.7 0 0 1-.9 1.38c-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.9.07s-3.6 0-4.86-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.6 2.2 15.22 2.2 12s0-3.6.07-4.86c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.4 2.21 8.8 2.2 12 2.2zm0 1.8c-3.15 0-3.52.01-4.76.07-.9.04-1.39.2-1.71.32-.43.17-.74.37-1.06.69-.32.32-.52.63-.69 1.06-.13.32-.28.81-.32 1.71C3.4 8.49 3.39 8.86 3.39 12s.01 3.52.07 4.76c.04.9.2 1.39.32 1.71.17.43.37.74.69 1.06.32.32.63.52 1.06.69.32.13.81.28 1.71.32 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c.9-.04 1.39-.2 1.71-.32.43-.17.74-.37 1.06-.69.32-.32.52-.63.69-1.06.13-.32.28-.81.32-1.71.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.04-.9-.2-1.39-.32-1.71a2.85 2.85 0 0 0-.69-1.06 2.85 2.85 0 0 0-1.06-.69c-.32-.13-.81-.28-1.71-.32C15.52 4.01 15.15 4 12 4zm0 3.06A4.94 4.94 0 1 0 12 16.94 4.94 4.94 0 0 0 12 7.06zm0 8.15A3.21 3.21 0 1 1 12 8.79a3.21 3.21 0 0 1 0 6.42zm6.29-8.35a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0z"/></svg>
+          Instagram
+        </a>
+        <a href="https://facebook.com/livefrenchatelier" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.9 3.78-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.9h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg>
+          Facebook
+        </a>
+      </div>
+
+      <p class="fa-fine">Share with 10+ friends to win a free flight to the Paris Bastille Day celebrations. See full terms.</p>
+    </div>
+  </div>
+</div>
+<!-- ====== /POP-UP MARKUP ====== -->
+
+</body>
+</html>
