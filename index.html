@@ -109,17 +109,17 @@ section{position:relative;scroll-margin-top:84px}
 .sec-head .lede-lg{font-size:clamp(1.35rem,2vw,1.75rem);line-height:1.55;font-weight:300;color:var(--on-light-soft)}
 .sec-head .lede-lg.on-dark{color:var(--on-dark-soft)}
 
-/* ===== HOW IT WORKS — dramatic dark fold, premium cards ===== */
-.hiw-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:1rem}
-.hiw-card{position:relative;background:linear-gradient(168deg,rgba(40,46,78,.9),rgba(10,13,33,.96));border:1px solid var(--gold-line-soft);border-radius:20px;padding:2.6rem 1.9rem 2.2rem;overflow:hidden;box-shadow:0 30px 60px -40px rgba(0,0,0,.85),inset 0 1px 0 rgba(255,255,255,.06);transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease)}
-.hiw-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-deep),var(--gold-bright),var(--gold-deep));opacity:.85}
-.hiw-card:hover{transform:translateY(-6px);border-color:var(--gold-line);box-shadow:0 44px 80px -42px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.08)}
-.hiw-num{display:inline-flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:16px;background:linear-gradient(150deg,var(--gold-bright),var(--gold-deep));color:var(--navy-deep);font-family:var(--display);font-weight:800;font-size:1.8rem;margin-bottom:1.4rem;box-shadow:0 14px 30px -12px rgba(170,140,85,.8)}
-.hiw-card h3{font-family:var(--display);font-size:1.55rem;color:var(--on-dark);margin-bottom:.6rem;font-weight:600;line-height:1.15}
-.hiw-card p{font-size:1.05rem;color:var(--on-dark-soft);line-height:1.62}
-.hiw-card .hl{color:var(--gold-soft);font-weight:600}
-.hiw-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1.6rem;margin-top:3.4rem;text-align:center}
-.hiw-foot .hiw-note{font-family:var(--serif);font-style:italic;font-size:clamp(1.25rem,1.8vw,1.6rem);color:var(--gold-soft)}
+/* ===== HOW IT WORKS — light cream fold, refined editorial cards ===== */
+.hiw-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem;margin-top:3.2rem}
+.hiw-card{position:relative;background:linear-gradient(180deg,#fffdf9,var(--paper));border:1px solid rgba(200,169,107,.34);border-radius:6px;padding:2.9rem 2rem 2.4rem;transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s var(--ease);box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 18px 40px -34px rgba(25,29,48,.5)}
+.hiw-card:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 30px 56px -34px rgba(25,29,48,.55)}
+.hiw-num{font-family:var(--display);font-size:3.4rem;font-weight:700;line-height:1;color:var(--gold-deep);display:block;margin-bottom:.4rem;letter-spacing:-.01em}
+.hiw-num-line{width:34px;height:2px;background:var(--gold);margin-bottom:1.5rem;opacity:.85}
+.hiw-card h3{font-family:var(--display);font-size:1.5rem;color:var(--navy);margin-bottom:.65rem;font-weight:600;line-height:1.18}
+.hiw-card p{font-size:1.04rem;color:#4a4f63;line-height:1.62}
+.hiw-card .hl{color:var(--gold-deep);font-weight:700}
+.hiw-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1.8rem;margin-top:3.6rem;text-align:center}
+.hiw-foot .hiw-note{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,1.8vw,1.65rem);color:var(--gold-deep)}
 
 /* ===== WHAT IT IS — TIER 3: compact inline strip ===== */
 .what-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem;margin-top:2rem}
@@ -354,32 +354,36 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
   </div>
 </section>
 
-<!-- ===== HOW IT WORKS — dramatic dark fold, immediately after hero ===== -->
-<section class="sec sec-dark" id="how">
+<!-- ===== HOW IT WORKS — light cream fold, refined editorial cards ===== -->
+<section class="sec sec-cream" id="how">
   <div class="wrap">
     <div class="sec-head center reveal">
-      <span class="eyebrow on-dark eyebrow-line center">How It Works</span>
+      <span class="eyebrow eyebrow-line center">How It Works</span>
       <h2 style="font-size:clamp(2.4rem,4.4vw,3.6rem)">Win it in four simple steps.</h2>
-      <p class="lede-lg on-dark">About two minutes, no purchase, no emails. Follow us, share French Atelier with 10+ friends, upload the proof &mdash; the three biggest sharers fly to Paris.</p>
+      <p class="lede-lg">About two minutes, no purchase, no emails. Follow us, share French Atelier with 10+ friends, upload the proof &mdash; the three biggest sharers fly to Paris.</p>
     </div>
     <div class="hiw-steps">
       <div class="hiw-card reveal">
         <span class="hiw-num">1</span>
+        <div class="hiw-num-line"></div>
         <h3>Follow us</h3>
         <p>Follow <span class="hl">@livefrenchatelier</span> on both Instagram and Meta. This is required to qualify.</p>
       </div>
       <div class="hiw-card reveal">
         <span class="hiw-num">2</span>
+        <div class="hiw-num-line"></div>
         <h3>Share with 10+ friends</h3>
         <p>Share our channel with <span class="hl">10 or more friends</span> &mdash; by DM, story, or post. More shares = higher chance to win.</p>
       </div>
       <div class="hiw-card reveal">
         <span class="hiw-num">3</span>
+        <div class="hiw-num-line"></div>
         <h3>Screenshot each share</h3>
         <p>Snap a screenshot every time you share &mdash; you&rsquo;ll need <span class="hl">at least 10</span> to qualify.</p>
       </div>
       <div class="hiw-card reveal">
         <span class="hiw-num">4</span>
+        <div class="hiw-num-line"></div>
         <h3>Upload &amp; you&rsquo;re in</h3>
         <p>Drop your screenshots in the entry tool, add your details, submit. <span class="hl">No emails needed.</span></p>
       </div>
