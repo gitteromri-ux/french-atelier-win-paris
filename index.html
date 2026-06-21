@@ -190,6 +190,11 @@ section{position:relative}
 .thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .thumb .rm{position:absolute;top:5px;right:5px;width:22px;height:22px;border-radius:50%;border:0;background:rgba(0,0,20,.78);color:#fff;font-size:14px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
 .thumb .rm:hover{background:var(--rouge)}
+.thumb.bad{border-color:var(--rouge)}
+.thumb.bad img{opacity:.5;filter:grayscale(.4)}
+.thumb .badge{position:absolute;left:0;right:0;bottom:0;padding:4px 6px;font-size:9.5px;font-weight:700;letter-spacing:.02em;text-align:center;color:#fff;background:var(--rouge);text-transform:uppercase}
+.thumb.checking::after{content:"";position:absolute;top:50%;left:50%;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;border:2px solid rgba(255,255,255,.25);border-top-color:#fff;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
 .up-hint{display:flex;align-items:center;gap:.5rem;font-size:.82rem;line-height:1.5}
 .up-hint.ok{color:var(--gold-bright)}
 .up-hint.warn{color:var(--on-dark-soft)}

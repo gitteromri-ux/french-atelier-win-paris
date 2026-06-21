@@ -112,11 +112,31 @@
   .strip{display:flex;gap:14px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory}
   .strip::-webkit-scrollbar{height:8px}
   .strip::-webkit-scrollbar-thumb{background:var(--navy-line);border-radius:8px}
-  .strip .slide{flex:none;width:200px;scroll-snap-align:start;border-radius:14px;overflow:hidden;
-    border:1px solid var(--navy-line);position:relative}
+  .strip .slide{flex:none;width:340px;max-width:80vw;scroll-snap-align:start;border-radius:16px;overflow:hidden;
+    border:1px solid var(--navy-line);position:relative;cursor:zoom-in;transition:transform .25s var(--ease),border-color .25s var(--ease)}
+  .strip .slide:hover{transform:translateY(-4px);border-color:rgba(224,198,140,.5)}
   .strip .slide img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover}
-  .strip .slide .num{position:absolute;top:8px;left:8px;font-family:var(--mono);font-size:11px;color:var(--navy);
-    background:var(--gold-bright);border-radius:6px;padding:3px 7px;font-weight:600}
+  .strip .slide .num{position:absolute;top:10px;left:10px;font-family:var(--mono);font-size:12px;color:var(--navy);
+    background:var(--gold-bright);border-radius:6px;padding:3px 8px;font-weight:600;z-index:2}
+  .strip .slide .zoom{position:absolute;bottom:10px;right:10px;display:flex;align-items:center;gap:5px;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;color:#fff;background:rgba(5,5,15,.62);
+    backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:5px 9px;z-index:2}
+  .strip .slide .zoom svg{width:12px;height:12px}
+  @media(max-width:560px){.strip .slide{width:280px}}
+  /* carousel lightbox */
+  .lb{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;
+    background:rgba(2,2,12,.92);backdrop-filter:blur(8px);padding:24px}
+  .lb.open{display:flex}
+  .lb img{max-width:min(92vw,560px);max-height:90vh;width:auto;height:auto;border-radius:14px;
+    box-shadow:0 30px 80px -20px rgba(0,0,0,.8);border:1px solid rgba(224,198,140,.3)}
+  .lb .lb-close{position:absolute;top:20px;right:24px;width:42px;height:42px;border-radius:50%;border:0;cursor:pointer;
+    background:rgba(255,255,255,.1);color:#fff;font-size:22px;line-height:1;display:flex;align-items:center;justify-content:center}
+  .lb .lb-close:hover{background:var(--rouge)}
+  .lb .lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:0;cursor:pointer;
+    background:rgba(255,255,255,.1);color:#fff;font-size:24px;display:flex;align-items:center;justify-content:center}
+  .lb .lb-nav:hover{background:rgba(224,198,140,.25)}
+  .lb .lb-prev{left:24px}.lb .lb-next{right:24px}
+  .lb .lb-count{position:absolute;bottom:22px;left:0;right:0;text-align:center;font-family:var(--mono);font-size:12px;color:rgba(255,255,255,.65)}
 
   /* popup feature row */
   .feature{display:grid;grid-template-columns:1.05fr 1fr;gap:36px;align-items:center;
@@ -294,13 +314,14 @@
       <h2>Carousel</h2>
       <span class="fmt">4:5 · 1080×1350 · 6 slides · JPG</span>
     </div>
+    <p class="reveal" style="font-size:13.5px;color:rgba(243,239,233,.6);margin:-10px 0 18px;font-family:var(--mono);letter-spacing:.03em">Tap any slide to view it full-size &amp; readable.</p>
     <div class="strip reveal">
-      <div class="slide"><span class="num">1</span><img src="assets/carousel-1.jpg?v=4" alt="Carousel slide 1 — Win a free flight"></div>
-      <div class="slide"><span class="num">2</span><img src="assets/carousel-2.jpg?v=4" alt="Carousel slide 2 — Arrival in the Marais"></div>
-      <div class="slide"><span class="num">3</span><img src="assets/carousel-3.jpg?v=4" alt="Carousel slide 3 — Seine sunset and fireworks"></div>
-      <div class="slide"><span class="num">4</span><img src="assets/carousel-4.jpg?v=4" alt="Carousel slide 4 — Bastille Day air shows"></div>
-      <div class="slide"><span class="num">5</span><img src="assets/carousel-5.jpg?v=4" alt="Carousel slide 5 — Montmartre and the Impressionists"></div>
-      <div class="slide"><span class="num">6</span><img src="assets/carousel-6.jpg?v=4" alt="Carousel slide 6 — How to enter"></div>
+      <div class="slide" onclick="openLB(0)"><span class="num">1</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-1.jpg?v=5" alt="Carousel slide 1 — Win a free flight"></div>
+      <div class="slide" onclick="openLB(1)"><span class="num">2</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-2.jpg?v=5" alt="Carousel slide 2 — Arrival in the Marais"></div>
+      <div class="slide" onclick="openLB(2)"><span class="num">3</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-3.jpg?v=5" alt="Carousel slide 3 — Seine sunset and fireworks"></div>
+      <div class="slide" onclick="openLB(3)"><span class="num">4</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-4.jpg?v=5" alt="Carousel slide 4 — Bastille Day air shows"></div>
+      <div class="slide" onclick="openLB(4)"><span class="num">5</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-5.jpg?v=5" alt="Carousel slide 5 — Montmartre and the Impressionists"></div>
+      <div class="slide" onclick="openLB(5)"><span class="num">6</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-6.jpg?v=5" alt="Carousel slide 6 — How to enter"></div>
     </div>
     <div style="margin-top:20px">
       <a class="dlbtn" style="max-width:280px" href="assets/french_atelier_adkit.zip?v=4" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>Download all 6 slides</a>
@@ -425,6 +446,15 @@ Tag every frame on-screen: @livefrenchatelier</pre>
   </div>
 </footer>
 
+<!-- carousel lightbox -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Carousel slide preview">
+  <button class="lb-close" aria-label="Close" onclick="closeLB()">&times;</button>
+  <button class="lb-nav lb-prev" aria-label="Previous slide" onclick="event.stopPropagation();stepLB(-1)">&#8249;</button>
+  <img id="lbImg" src="" alt="Carousel slide full size">
+  <button class="lb-nav lb-next" aria-label="Next slide" onclick="event.stopPropagation();stepLB(1)">&#8250;</button>
+  <div class="lb-count" id="lbCount"></div>
+</div>
+
 <script>
   // reveal on scroll (progressive enhancement). Flag JS so hidden state only
   // applies when this script runs. Reveal anything already in view immediately,
@@ -444,6 +474,16 @@ Tag every frame on-screen: @livefrenchatelier</pre>
     const t=document.getElementById(id).innerText;
     navigator.clipboard.writeText(t).then(()=>{btn.textContent='Copied ✓';setTimeout(()=>btn.textContent='Copy',1800)});
   }
+  // carousel lightbox
+  var lbSrcs=[...document.querySelectorAll('#carousel .strip .slide img')].map(function(i){return i.getAttribute('src')});
+  var lbIdx=0;
+  var lbEl=document.getElementById('lb'), lbImg=document.getElementById('lbImg'), lbCount=document.getElementById('lbCount');
+  function paintLB(){ lbImg.src=lbSrcs[lbIdx]; lbCount.textContent=(lbIdx+1)+' / '+lbSrcs.length; }
+  function openLB(i){ lbIdx=i; paintLB(); lbEl.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeLB(){ lbEl.classList.remove('open'); document.body.style.overflow=''; }
+  function stepLB(d){ lbIdx=(lbIdx+d+lbSrcs.length)%lbSrcs.length; paintLB(); }
+  lbEl.addEventListener('click',function(e){ if(e.target===lbEl) closeLB(); });
+  document.addEventListener('keydown',function(e){ if(!lbEl.classList.contains('open'))return; if(e.key==='Escape')closeLB(); if(e.key==='ArrowRight')stepLB(1); if(e.key==='ArrowLeft')stepLB(-1); });
 </script>
 </body>
 </html>
