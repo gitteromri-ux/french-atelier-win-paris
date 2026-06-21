@@ -169,6 +169,66 @@ section{position:relative}
 .form-row input::placeholder{color:var(--on-dark-faint)}
 .entry .note{font-size:.8rem;color:var(--on-dark-faint);margin-top:.6rem;line-height:1.5}
 
+/* ===== BULK UPLOAD TOOL ===== */
+.uploader{display:flex;flex-direction:column;gap:1.1rem}
+.up-progress{display:flex;align-items:center;gap:.9rem;font-family:var(--sans);font-size:.86rem;color:var(--on-dark-soft)}
+.up-bar{flex:1;height:8px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}
+.up-bar i{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--gold-deep),var(--gold-bright));transition:width .5s var(--ease)}
+.up-count{font-family:var(--display);font-weight:700;color:var(--gold-bright);font-size:1rem;white-space:nowrap}
+.dropzone{position:relative;border:2px dashed rgba(224,198,140,.4);border-radius:18px;background:linear-gradient(165deg,rgba(255,255,255,.06),rgba(255,255,255,.02));padding:2.4rem 1.4rem;text-align:center;cursor:pointer;transition:border-color .3s,background .3s,transform .2s}
+.dropzone:hover{border-color:var(--gold-soft);background:rgba(255,255,255,.08)}
+.dropzone.drag{border-color:var(--gold-bright);background:rgba(224,198,140,.12);transform:scale(1.01)}
+.dropzone .dz-ico{width:46px;height:46px;margin:0 auto .8rem;color:var(--gold-bright)}
+.dropzone .dz-ico svg{width:100%;height:100%}
+.dropzone h4{font-family:var(--display);font-size:1.2rem;color:var(--on-dark);font-weight:600;margin-bottom:.35rem}
+.dropzone p{font-size:.88rem;color:var(--on-dark-soft);line-height:1.5}
+.dropzone .dz-browse{color:var(--gold-soft);text-decoration:underline;font-weight:600}
+.dropzone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:.7rem}
+.thumb{position:relative;aspect-ratio:1;border-radius:12px;overflow:hidden;border:1px solid var(--dark-line);background:#05050f;animation:thumbin .4s var(--ease)}
+@keyframes thumbin{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb .rm{position:absolute;top:5px;right:5px;width:22px;height:22px;border-radius:50%;border:0;background:rgba(0,0,20,.78);color:#fff;font-size:14px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.thumb .rm:hover{background:var(--rouge)}
+.up-hint{display:flex;align-items:center;gap:.5rem;font-size:.82rem;line-height:1.5}
+.up-hint.ok{color:var(--gold-bright)}
+.up-hint.warn{color:var(--on-dark-soft)}
+.up-hint .dotn{flex:none;width:18px;height:18px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700}
+.up-hint.ok .dotn{background:var(--gold-bright);color:var(--navy-deep)}
+.up-hint.warn .dotn{background:rgba(255,255,255,.12);color:var(--on-dark-soft)}
+.entry button:disabled{opacity:.45;cursor:not-allowed;filter:grayscale(.3)}
+.up-success{text-align:center;padding:1rem 0}
+.up-success .chk{width:64px;height:64px;border-radius:50%;margin:0 auto 1.2rem;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,var(--gold-bright),var(--gold-deep));color:var(--navy-deep);font-size:2rem;box-shadow:0 12px 30px -10px rgba(170,140,85,.7)}
+.up-success h3{font-family:var(--display);font-size:1.7rem;color:var(--on-dark);margin-bottom:.6rem}
+.up-success p{color:var(--on-dark-soft);font-size:.96rem;line-height:1.6;max-width:420px;margin:0 auto}
+
+/* ===== LEGAL T&C POPUP ===== */
+.tc-overlay{position:fixed;inset:0;z-index:2000;display:none;align-items:center;justify-content:center;padding:1.4rem;background:rgba(0,0,16,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.tc-overlay.show{display:flex;animation:tcfade .4s var(--ease)}
+@keyframes tcfade{from{opacity:0}to{opacity:1}}
+.tc-card{width:100%;max-width:560px;background:linear-gradient(165deg,var(--navy-soft),var(--navy-deep));border:1px solid var(--dark-line);border-radius:22px;padding:2.6rem 2.4rem;box-shadow:0 50px 100px -40px rgba(0,0,0,.9);animation:tcrise .5s var(--ease)}
+@keyframes tcrise{from{opacity:0;transform:translateY(26px) scale(.98)}to{opacity:1;transform:none}}
+.tc-card .tc-eyebrow{font-family:var(--sans);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-soft);font-weight:600;display:block;margin-bottom:.8rem}
+.tc-card h3{font-family:var(--display);font-size:1.7rem;color:var(--on-dark);font-weight:700;line-height:1.15;margin-bottom:1rem}
+.tc-body{max-height:34vh;overflow-y:auto;font-size:.9rem;line-height:1.62;color:var(--on-dark-soft);padding-right:.6rem;margin-bottom:1.3rem}
+.tc-body::-webkit-scrollbar{width:7px}.tc-body::-webkit-scrollbar-thumb{background:var(--dark-line);border-radius:8px}
+.tc-body p{margin-bottom:.7rem}
+.tc-body strong{color:var(--on-dark)}
+.tc-body a{color:var(--gold-soft);text-decoration:underline}
+.tc-check{display:flex;align-items:flex-start;gap:.7rem;cursor:pointer;padding:.9rem 1rem;border:1px solid var(--dark-line);border-radius:12px;background:rgba(255,255,255,.04);transition:border-color .25s,background .25s;margin-bottom:1.2rem}
+.tc-check:hover{border-color:rgba(224,198,140,.4)}
+.tc-check input{position:absolute;opacity:0;width:0;height:0}
+.tc-box{flex:none;width:20px;height:20px;border-radius:6px;border:2px solid var(--gold-soft);background:transparent;display:flex;align-items:center;justify-content:center;margin-top:.05rem;transition:background .2s,border-color .2s}
+.tc-box svg{width:13px;height:13px;stroke:var(--navy-deep);stroke-width:3.4;fill:none;opacity:0;transition:opacity .2s}
+.tc-check input:checked ~ .tc-box{background:linear-gradient(150deg,var(--gold-bright),var(--gold-deep));border-color:var(--gold-bright)}
+.tc-check input:checked ~ .tc-box svg{opacity:1}
+.tc-check input:focus-visible ~ .tc-box{box-shadow:0 0 0 3px rgba(224,198,140,.4)}
+.tc-check span{font-size:.9rem;line-height:1.5;color:var(--on-dark)}
+.tc-check span a{color:var(--gold-soft);text-decoration:underline}
+.tc-card .tc-cta{width:100%}
+.tc-card .tc-cta:disabled{opacity:.4;cursor:not-allowed;filter:grayscale(.4)}
+
+
 /* ===== FAQ ===== */
 .faq-item{border-top:1px solid var(--light-line);padding:1.5rem 0;cursor:pointer}
 .faq-q{display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:var(--display);font-size:1.2rem;font-weight:600;color:var(--on-light)}
@@ -223,6 +283,29 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
 </style>
 </head>
 <body>
+
+<!-- ===== LEGAL T&C POPUP (blocks until accepted) ===== -->
+<div class="tc-overlay" id="tcOverlay" role="dialog" aria-modal="true" aria-labelledby="tcTitle">
+  <div class="tc-card">
+    <span class="tc-eyebrow">Before you continue</span>
+    <h3 id="tcTitle">Contest Terms &amp; Conditions</h3>
+    <div class="tc-body">
+      <p>Welcome to the French Atelier <strong>&ldquo;Win a Free Flight to Paris&rdquo;</strong> giveaway for Bastille Day 2026. Please review and accept the key terms before entering.</p>
+      <p><strong>Eligibility.</strong> Open to participants aged 18+ residing in the United States. You must follow <strong>@livefrenchatelier</strong> on Instagram and Meta and share our channel with at least 10 friends to qualify.</p>
+      <p><strong>How winners are chosen.</strong> The three participants who share our channel with the most friends (minimum 10, verified by the screenshots you upload) are selected as winners by the French Atelier committee. Winners are contacted by phone, text, and Instagram DM and must respond within 7 days or an alternate is selected.</p>
+      <p><strong>The prize.</strong> Each of the three winners receives one round-trip economy flight from the USA to Paris, flying in July 10, 2026 and returning July 16, 2026, plus the guided 3-day French Atelier program (July 13&ndash;15, 2026). Flight-date changes are valid within July only and carry an additional $80 per ticket. The prize covers flights and the guided program only; meals, transfers, and personal expenses are not included unless stated.</p>
+      <p><strong>Your uploads &amp; privacy.</strong> The screenshots and contact details you submit are used solely to verify entries and contact winners. We do not sell your data. See the full <a href="terms.html" target="_blank" rel="noopener">contest rules &amp; privacy terms</a>.</p>
+      <p><strong>Not affiliated with Instagram or Meta.</strong> This promotion is in no way sponsored, endorsed, administered by, or associated with Instagram or Meta.</p>
+    </div>
+    <label class="tc-check" for="tcAccept">
+      <input type="checkbox" id="tcAccept">
+      <span class="tc-box"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
+      <span>I have read and accept the contest <a href="terms.html" target="_blank" rel="noopener">Terms &amp; Conditions</a> and Privacy Terms.</span>
+    </label>
+    <button type="button" class="btn btn-gold btn-lg tc-cta" id="tcAcceptBtn" disabled>Accept &amp; Enter the Site</button>
+  </div>
+</div>
+
 
 <header id="hdr">
   <div class="wrap nav">
@@ -403,12 +486,12 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
       <div class="step reveal">
         <span class="sn">3</span>
         <h3>Screenshot your shares</h3>
-        <p>Take a screenshot showing you shared with <span class="hl">at least 10 people</span>. You&rsquo;ll attach it as proof in the entry form.</p>
+        <p>Snap a screenshot each time you share &mdash; you&rsquo;ll need <span class="hl">at least 10</span> to qualify.</p>
       </div>
       <div class="step reveal">
         <span class="sn">4</span>
-        <h3>Submit the form</h3>
-        <p>Fill in the short form below with your name, contact, and Instagram handle. That&rsquo;s it &mdash; <span class="hl">you&rsquo;re entered</span>.</p>
+        <h3>Upload &amp; you&rsquo;re in</h3>
+        <p>Drop all your screenshots into the upload tool below, add your details, and submit. <span class="hl">No emails needed</span> &mdash; you&rsquo;re entered instantly.</p>
       </div>
     </div>
     <div style="text-align:center;margin-top:2.8rem" class="reveal">
@@ -453,16 +536,36 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
       <div class="grid">
         <div>
           <span class="eyebrow on-dark eyebrow-line" style="margin-bottom:1rem;display:inline-block">Your Entry</span>
-          <h2 style="color:var(--on-dark);font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1rem">Enter to win your flight.</h2>
-          <p class="lede on-dark">Once you&rsquo;ve followed us and shared with 10+ friends, fill in your details. The three top sharers win. We&rsquo;ll contact winners by phone, text, and email.</p>
-          <p class="note">By entering you confirm you have followed @livefrenchatelier and shared our channel with 10 or more friends. Winners are selected by the French Atelier committee. See full <a href="terms.html" style="color:var(--gold-soft);text-decoration:underline">contest rules</a>.</p>
+          <h2 style="color:var(--on-dark);font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1rem">Upload your shares. You&rsquo;re in.</h2>
+          <p class="lede on-dark">No emails, no back-and-forth. Just drop in the screenshots of you sharing French Atelier with your friends &mdash; <strong>10 or more</strong> &mdash; add your details, and submit. The three biggest sharers fly to Paris.</p>
+          <p class="note">By entering you confirm you have followed @livefrenchatelier and shared our channel with 10 or more friends. Winners are selected by the French Atelier committee and contacted by phone, text, and Instagram DM. See full <a href="terms.html" style="color:var(--gold-soft);text-decoration:underline">contest rules</a>.</p>
         </div>
-        <form onsubmit="return false">
-          <div class="form-row"><label>Full Name</label><input type="text" placeholder="Your full name" required></div>
-          <div class="form-row"><label>Email</label><input type="email" placeholder="you@email.com" required></div>
-          <div class="form-row"><label>Phone</label><input type="tel" placeholder="+1 (___) ___-____" required></div>
-          <div class="form-row"><label>Instagram Handle</label><input type="text" placeholder="@yourhandle" required></div>
-          <button type="submit" class="btn btn-gold btn-lg" style="width:100%;margin-top:.6rem">Submit My Entry</button>
+        <form id="entryForm" onsubmit="return submitEntry(event)">
+          <div id="formFields">
+            <div class="uploader">
+              <div class="up-progress">
+                <div class="up-bar"><i id="upBar"></i></div>
+                <span class="up-count"><span id="upNum">0</span>/10 shares</span>
+              </div>
+              <label class="dropzone" id="dropzone">
+                <span class="dz-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m0 0L7 9m5-5l5 5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg></span>
+                <h4>Drop your share screenshots here</h4>
+                <p>Drag &amp; drop, or <span class="dz-browse">browse your photos</span>. Add all 10+ at once &mdash; JPG or PNG.</p>
+                <input type="file" id="fileInput" accept="image/*" multiple>
+              </label>
+              <div class="thumbs" id="thumbs"></div>
+              <div class="up-hint warn" id="upHint"><span class="dotn">!</span><span>Add at least 10 screenshots to qualify.</span></div>
+            </div>
+            <div class="form-row" style="margin-top:1.4rem"><label>Full Name</label><input type="text" id="fName" placeholder="Your full name" required></div>
+            <div class="form-row"><label>Phone</label><input type="tel" id="fPhone" placeholder="+1 (___) ___-____" required></div>
+            <div class="form-row"><label>Instagram Handle</label><input type="text" id="fHandle" placeholder="@yourhandle" required></div>
+            <button type="submit" id="entryBtn" class="btn btn-gold btn-lg" style="width:100%;margin-top:.6rem" disabled>Add 10 shares to submit</button>
+          </div>
+          <div class="up-success" id="entrySuccess" style="display:none">
+            <div class="chk">&#10003;</div>
+            <h3>You&rsquo;re entered.</h3>
+            <p>Your shares are in. The three biggest sharers win a round-trip flight to Paris &mdash; we&rsquo;ll reach the winners by phone, text, and Instagram DM. Bonne chance!</p>
+          </div>
         </form>
       </div>
     </div>
@@ -483,11 +586,11 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
       </div>
       <div class="faq-item">
         <div class="faq-q">What exactly do I have to do to enter?<span class="ic">+</span></div>
-        <div class="faq-a">Three things: (1) follow @livefrenchatelier on Instagram and Meta, (2) share our channel with at least 10 friends, and (3) submit the short entry form with a screenshot of your shares.</div>
+        <div class="faq-a">Three things: (1) follow @livefrenchatelier on Instagram and Meta, (2) share our channel with at least 10 friends, and (3) upload your share screenshots in the entry tool below &mdash; no emails needed.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">When do I travel?<span class="ic">+</span></div>
-        <div class="faq-a">You fly into Paris on July 10, 2026 &mdash; two days before the tour starts &mdash; and fly home on July 16, 2026, the day after the celebrations end. The guided program runs July 12&ndash;15.</div>
+        <div class="faq-a">You fly into Paris on July 10, 2026 &mdash; three days before the guided program begins &mdash; and fly home on July 16, 2026, the day after the celebrations end. The guided 3-day program runs July 13&ndash;15.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">How are the winners chosen?<span class="ic">+</span></div>
@@ -548,6 +651,98 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
   });
   // Safety net: nothing stays hidden no matter what.
   setTimeout(function(){reveals.forEach(show)},1200);
+
+  /* ===== LEGAL T&C POPUP — blocks until accepted ===== */
+  (function(){
+    var ov=document.getElementById('tcOverlay');
+    if(!ov) return;
+    var box=document.getElementById('tcAccept');
+    var btn=document.getElementById('tcAcceptBtn');
+    var KEY='fa_tc_accepted_v1';
+    function lock(){document.body.style.overflow='hidden';}
+    function unlock(){document.body.style.overflow='';}
+    if(localStorage.getItem(KEY)!=='1'){
+      ov.classList.add('show');lock();
+    }
+    box.addEventListener('change',function(){btn.disabled=!box.checked;});
+    btn.addEventListener('click',function(){
+      if(!box.checked) return;
+      try{localStorage.setItem(KEY,'1');}catch(e){}
+      ov.classList.remove('show');unlock();
+    });
+  })();
+
+  /* ===== BULK SHARE-PROOF UPLOADER ===== */
+  (function(){
+    var input=document.getElementById('fileInput');
+    if(!input) return;
+    var dz=document.getElementById('dropzone');
+    var thumbs=document.getElementById('thumbs');
+    var hint=document.getElementById('upHint');
+    var bar=document.getElementById('upBar');
+    var num=document.getElementById('upNum');
+    var btn=document.getElementById('entryBtn');
+    var MIN=10, files=[];
+
+    function render(){
+      thumbs.innerHTML='';
+      files.forEach(function(f,i){
+        var t=document.createElement('div');t.className='thumb';
+        var img=document.createElement('img');img.src=f.url;img.alt='Share screenshot '+(i+1);
+        var rm=document.createElement('button');rm.type='button';rm.className='rm';rm.setAttribute('aria-label','Remove');rm.textContent='\u00d7';
+        rm.addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();URL.revokeObjectURL(f.url);files.splice(i,1);render();});
+        t.appendChild(img);t.appendChild(rm);thumbs.appendChild(t);
+      });
+      var n=files.length;
+      num.textContent=n;
+      bar.style.width=Math.min(100,(n/MIN)*100)+'%';
+      var ok=n>=MIN;
+      hint.className='up-hint '+(ok?'ok':'warn');
+      hint.querySelector('.dotn').textContent=ok?'\u2713':'!';
+      hint.querySelector('span:last-child').textContent=ok
+        ?('Great \u2014 '+n+' shares attached. You qualify!')
+        :('Add at least '+MIN+' screenshots to qualify ('+(MIN-n)+' to go).');
+      updateBtn();
+    }
+    function formReady(){
+      var nm=document.getElementById('fName').value.trim();
+      var ph=document.getElementById('fPhone').value.trim();
+      var hd=document.getElementById('fHandle').value.trim();
+      return files.length>=MIN && nm && ph && hd;
+    }
+    function updateBtn(){
+      var ready=formReady();
+      btn.disabled=!ready;
+      btn.textContent = files.length<MIN
+        ? ('Add '+Math.max(0,MIN-files.length)+' more share'+((MIN-files.length)===1?'':'s')+' to submit')
+        : (ready?'Submit My Entry':'Fill in your details to submit');
+    }
+    function add(list){
+      [].slice.call(list).forEach(function(f){
+        if(f.type.indexOf('image')!==0) return;
+        files.push({file:f,url:URL.createObjectURL(f)});
+      });
+      render();
+    }
+    input.addEventListener('change',function(){add(input.files);input.value='';});
+    ['dragenter','dragover'].forEach(function(e){dz.addEventListener(e,function(ev){ev.preventDefault();dz.classList.add('drag');});});
+    ['dragleave','drop'].forEach(function(e){dz.addEventListener(e,function(ev){ev.preventDefault();dz.classList.remove('drag');});});
+    dz.addEventListener('drop',function(ev){if(ev.dataTransfer&&ev.dataTransfer.files)add(ev.dataTransfer.files);});
+    ['fName','fPhone','fHandle'].forEach(function(id){document.getElementById(id).addEventListener('input',updateBtn);});
+    updateBtn();
+  })();
+
+  window.submitEntry=function(ev){
+    ev.preventDefault();
+    var f=document.getElementById('formFields');
+    var s=document.getElementById('entrySuccess');
+    /* Demo submit: in production, POST the files + fields to your form endpoint here. */
+    f.style.display='none';
+    s.style.display='block';
+    s.scrollIntoView({behavior:'smooth',block:'center'});
+    return false;
+  };
+
 })();
 </script>
 </body>
