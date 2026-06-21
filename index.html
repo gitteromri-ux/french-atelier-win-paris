@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>document.documentElement.className+=' js';</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Win a Free Flight to Paris · Bastille Day with French Atelier</title>
@@ -67,15 +68,15 @@ img{max-width:100%;display:block}
 .leaf .dot{color:var(--gold);font-size:.8rem}
 
 /* ===== HEADER ===== */
-header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .45s var(--ease),padding .45s var(--ease),box-shadow .45s var(--ease);padding:1.5rem 0}
-header.scrolled{background:rgba(0,0,26,.92);backdrop-filter:blur(12px);padding:.85rem 0;box-shadow:0 1px 0 var(--dark-line-soft)}
+header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .4s var(--ease),padding .4s var(--ease),box-shadow .4s var(--ease);padding:1.15rem 0;background:linear-gradient(180deg,rgba(0,0,20,.62) 0%,rgba(0,0,20,.28) 60%,rgba(0,0,20,0) 100%)}
+header.scrolled{background:rgba(7,10,32,.95);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:.7rem 0;box-shadow:0 1px 0 var(--dark-line-soft),0 10px 30px -18px rgba(0,0,0,.8)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
-.nav-logo-img{height:46px;width:auto}
+.nav-logo-img{height:44px;width:auto}
 header.scrolled .nav-logo-img{height:38px}
 .nav-menu{display:flex;align-items:center;gap:2rem;flex:1;justify-content:center}
-.nav-link{font-family:var(--sans);font-size:.82rem;font-weight:500;letter-spacing:.04em;color:var(--on-dark);opacity:.85;transition:opacity .3s,color .3s}
+.nav-link{font-family:var(--sans);font-size:.82rem;font-weight:500;letter-spacing:.04em;color:#F3EEE3;opacity:.92;transition:opacity .3s,color .3s}
 .nav-link:hover{opacity:1;color:var(--gold-soft)}
-.nav-cta{font-size:.72rem;padding:.85rem 1.7rem}
+.nav-cta{font-size:.72rem;padding:.8rem 1.7rem;letter-spacing:.14em}
 
 /* ===== HERO ===== */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
@@ -102,6 +103,9 @@ header.scrolled .nav-logo-img{height:38px}
 @media(max-width:900px){.sec{padding:var(--sp-6) 0}}
 .sec-light{background:var(--ivory)}
 .sec-paper{background:var(--paper)}
+.sec-cream{background:linear-gradient(180deg,#FBEFF2 0%,#FAF7F1 60%,#F3EFE9 100%)}
+.sec-warm{background:linear-gradient(180deg,#FAF7F1 0%,#F6ECE6 100%)}
+.sec-tint-divider{border-top:1px solid var(--light-line)}
 .sec-head{text-align:center;max-width:760px;margin:0 auto 3.5rem}
 .sec-head .eyebrow-line{margin-bottom:1.2rem;justify-content:center}
 .sec-head h2{margin-bottom:1rem}
@@ -177,14 +181,18 @@ header.scrolled .nav-logo-img{height:38px}
 .day-acc .da-inner{padding:0 1.4rem 1.6rem}
 .day-acc .prog-grid{margin-top:0}
 
-/* FLIGHT */
+/* FLIGHT — colored, non-monotone cards */
 .flight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
-.fcard{background:var(--white);border:1px solid var(--light-line);border-radius:10px;padding:2rem;transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.fcard{position:relative;background:var(--white);border:1px solid var(--light-line);border-radius:12px;padding:2.2rem 2rem;transition:transform .45s var(--ease),box-shadow .45s var(--ease);overflow:hidden}
+.fcard::before{content:"";position:absolute;top:0;left:0;right:0;height:4px}
 .fcard:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(11,19,64,.12)}
-.fcard .ic{font-size:1.7rem;margin-bottom:.9rem}
-.fcard h4{font-family:var(--serif);font-size:1.3rem;color:var(--navy);margin-bottom:.5rem;font-weight:600}
+.fcard .ic{width:52px;height:52px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.1rem}
+.fcard h4{font-family:var(--serif);font-size:1.35rem;color:var(--navy);margin-bottom:.5rem;font-weight:600}
 .fcard p{font-size:.94rem;color:var(--on-light-soft);font-weight:300}
 .fcard a{color:var(--gold-deep);font-weight:500;border-bottom:1px solid var(--gold-line)}
+.fcard.f1::before{background:linear-gradient(90deg,#3FA8F0,#5EC8FF)} .fcard.f1 .ic{background:rgba(63,168,240,.14);color:#1F86D6}
+.fcard.f2::before{background:linear-gradient(90deg,var(--pink-deep),var(--pink-mid))} .fcard.f2 .ic{background:var(--pink-soft);color:var(--pink-deep)}
+.fcard.f3::before{background:linear-gradient(90deg,var(--terra-deep),var(--terra))} .fcard.f3 .ic{background:rgba(199,111,80,.14);color:var(--terra-deep)}
 .airports-band{margin-top:2.5rem;text-align:center;background:var(--white);border:1px solid var(--light-line);border-radius:10px;padding:2rem}
 .airports-band a{color:var(--gold-deep);font-weight:600;border-bottom:1px solid var(--gold-line)}
 
@@ -208,6 +216,51 @@ header.scrolled .nav-logo-img{height:38px}
 .faq details[open] summary::after{transform:rotate(45deg)}
 .faq details p{margin-top:.9rem;color:var(--on-light-soft);font-size:1rem;font-weight:300}
 
+/* JUDGING — light variant, colored criteria cards */
+.judge-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.3rem;margin-top:.5rem}
+.jcard{position:relative;background:var(--white);border:1px solid var(--light-line);border-radius:12px;padding:1.7rem 1.8rem 1.7rem 2rem;overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.jcard:hover{transform:translateY(-4px);box-shadow:0 22px 46px rgba(11,19,64,.10)}
+.jcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px}
+.jcard .jn{font-family:var(--serif);font-size:1.4rem;font-weight:600;line-height:1;margin-bottom:.55rem}
+.jcard h4{font-family:var(--serif);font-size:1.25rem;color:var(--navy);font-weight:600;margin-bottom:.35rem}
+.jcard p{font-size:.95rem;color:var(--on-light-soft);font-weight:300;line-height:1.55}
+.jcard.j1::before{background:linear-gradient(180deg,#3FA8F0,#5EC8FF)} .jcard.j1 .jn{color:#1F86D6}
+.jcard.j2::before{background:linear-gradient(180deg,var(--pink-deep),var(--pink-mid))} .jcard.j2 .jn{color:var(--pink-deep)}
+.jcard.j3::before{background:linear-gradient(180deg,var(--terra-deep),var(--terra))} .jcard.j3 .jn{color:var(--terra-deep)}
+.jcard.j4::before{background:linear-gradient(180deg,var(--gold-deep),var(--gold-soft))} .jcard.j4 .jn{color:var(--gold-deep)}
+.notify-light{margin-top:1.8rem;display:flex;gap:1.2rem;align-items:flex-start;background:linear-gradient(135deg,#00001F,#0B1340);border:1px solid var(--gold-line-soft);border-radius:12px;padding:1.8rem 2rem;color:var(--on-dark)}
+.notify-light .ni{width:46px;height:46px;flex-shrink:0;border-radius:11px;background:rgba(200,169,107,.16);display:flex;align-items:center;justify-content:center;color:var(--gold-soft);font-size:1.3rem}
+.notify-light h4{font-family:var(--serif);color:var(--gold-soft);font-size:1.25rem;margin-bottom:.4rem;font-weight:600}
+.notify-light p{color:var(--on-dark-soft);font-size:.97rem;font-weight:300}
+.notify-light b{color:#F4EEE2;font-weight:600}
+
+/* ENTRY SUBMISSION — real, clear requirements card */
+.entry-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:2.4rem;align-items:stretch;margin-top:1rem}
+.entry-card{background:var(--white);border:1px solid var(--light-line);border-radius:16px;padding:2.6rem;box-shadow:0 30px 70px -40px rgba(11,19,64,.4)}
+.entry-card .ec-eye{font-family:var(--sans);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-bottom:.7rem}
+.entry-card h3{font-family:var(--serif);font-size:clamp(1.6rem,2.6vw,2.1rem);color:var(--navy);font-weight:600;margin-bottom:1.4rem}
+.req-list{list-style:none;margin-bottom:1.9rem}
+.req-list li{display:flex;gap:1rem;padding:1rem 0;border-top:1px solid var(--light-line)}
+.req-list li:first-child{border-top:none}
+.req-list .rq-n{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--gold-soft),var(--gold-deep));color:var(--navy-deep);font-family:var(--sans);font-weight:700;font-size:.82rem;display:flex;align-items:center;justify-content:center}
+.req-list .rq-t{font-family:var(--sans)}
+.req-list .rq-t b{display:block;font-family:var(--serif);font-size:1.18rem;color:var(--navy);font-weight:600;margin-bottom:.15rem}
+.req-list .rq-t span{font-size:.93rem;color:var(--on-light-soft);font-weight:300;line-height:1.55}
+.req-list .rq-t span .hl{color:var(--gold-deep);font-weight:500}
+.entry-card .ec-cta{display:block}
+.entry-card .ec-note{margin-top:.9rem;font-size:.82rem;color:var(--on-light-faint);font-weight:300;text-align:center}
+.entry-side{background:linear-gradient(160deg,#0A1030,#0B1340 55%,#080C26);border-radius:16px;overflow:hidden;position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:420px;padding:2.4rem;color:var(--on-dark)}
+.entry-side .es-img{position:absolute;inset:0;z-index:0}
+.entry-side .es-img img{width:100%;height:100%;object-fit:cover;opacity:.5}
+.entry-side::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,12,38,.35) 0%,rgba(8,12,38,.85) 100%)}
+.entry-side .es-body{position:relative;z-index:2}
+.entry-side .es-stat{display:flex;gap:2.2rem;margin-bottom:1.4rem}
+.entry-side .es-stat .k{font-family:var(--serif);font-size:2.2rem;color:var(--gold-soft);font-weight:600;line-height:1}
+.entry-side .es-stat .v{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-dark-soft);margin-top:.4rem;display:block}
+.entry-side h4{font-family:var(--serif);font-size:1.6rem;color:#fff;font-weight:600;line-height:1.2;margin-bottom:.7rem}
+.entry-side p{color:var(--on-dark-soft);font-size:.96rem;font-weight:300;line-height:1.6}
+@media(max-width:900px){.entry-wrap{grid-template-columns:1fr}.judge-grid{grid-template-columns:1fr}.entry-side{min-height:300px}}
+
 /* FINAL */
 .final{text-align:center;padding:var(--sp-7) 0}
 .final-quote{font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,3vw,2.4rem);color:#F4EEE2;max-width:24ch;margin:0 auto 1rem;line-height:1.3;font-weight:500}
@@ -223,15 +276,20 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem
 .foot-fine{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--dark-line-soft);font-size:.78rem;color:var(--on-dark-faint);line-height:1.7;font-weight:300}
 .foot-fine a{color:var(--gold-soft)}
 
-@media (max-width:980px){.nav-menu{display:none}}
+@media (max-width:980px){.nav-menu{display:none}.nav{justify-content:space-between}.nav-cta{font-size:.64rem;padding:.7rem 1.1rem;white-space:nowrap}.nav-logo-img{height:38px}}
+@media (max-width:560px){.nav-cta{display:none}.urgency{font-size:.62rem;letter-spacing:.08em;padding:.55rem .8rem}}
+.urgency .u-short{display:none}
+@media (max-width:720px){.urgency .u-full{display:none}.urgency .u-short{display:inline}header:not(.scrolled){padding-top:2.4rem}}
 @media (max-width:900px){
   .prize-grid,.steps,.prog-grid,.flight-grid,.judge-list{grid-template-columns:1fr}
   .hero-content{padding-top:6rem}
   .hero-meta{gap:1.6rem}
 }
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-.reveal.in{opacity:1;transform:none}
+/* reveal animation — only active when JS is present; never leaves content invisible */
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .reveal.in{opacity:1;transform:none}
 .reveal-d1{transition-delay:.08s}.reveal-d2{transition-delay:.16s}.reveal-d3{transition-delay:.24s}
+@media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}}
 
 /* ===== FULL-BLEED PHOTO CARDS (live-site "Culture speaks French" grid) ===== */
 .photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
@@ -297,7 +355,7 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem
 </head>
 <body>
 
-<div class="urgency">Entries open tonight · Winners announced after Bastille Day · Three round-trip flights to Paris</div>
+<div class="urgency"><span class="u-full">Entries open tonight · Winners announced after Bastille Day · Three round-trip flights to Paris</span><span class="u-short">Entries open tonight · 3 flights to Paris</span></div>
 
 <header id="header">
   <div class="wrap nav">
@@ -646,18 +704,18 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem
       <p class="lede reveal reveal-d2">Round-trip flights between the United States and Paris, scheduled around Bastille Day. The key dates and details, in plain terms.</p>
     </div>
     <div class="flight-grid">
-      <div class="fcard reveal">
-        <div class="ic">✈️</div>
+      <div class="fcard f1 reveal">
+        <div class="ic">✈</div>
         <h4>Departure from the USA</h4>
         <p>Outbound from a major US airport — valid for <b>July 10, 11 or 12</b> (US departure). <a href="terms.html#airports">See eligible US airports →</a></p>
       </div>
-      <div class="fcard reveal reveal-d1">
-        <div class="ic">🗼</div>
+      <div class="fcard f2 reveal reveal-d1">
+        <div class="ic">⌖</div>
         <h4>Return from Paris</h4>
         <p>Return flights are valid through <b>July 13, 14 or 15</b>, so you'll be in Paris across the heart of the celebrations.</p>
       </div>
-      <div class="fcard reveal reveal-d2">
-        <div class="ic">📅</div>
+      <div class="fcard f3 reveal reveal-d2">
+        <div class="ic">↻</div>
         <h4>Booking Changes</h4>
         <p>Any booking changes are valid for the <b>month of July only</b>, at an additional <b>$80 per ticket</b>.</p>
       </div>
@@ -670,31 +728,34 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem
 </section>
 
 <!-- JUDGING -->
-<section class="sec culture-dark" id="judging">
+<section class="sec sec-light" id="judging">
   <div class="narrow">
     <div class="sec-head">
-      <p class="eyebrow eyebrow-line on-dark reveal" style="justify-content:center">How Winners Are Chosen</p>
-      <h2 class="display-md reveal reveal-d1">How the three winners <span class="gold-ital on-dark">are picked</span>.</h2>
-      <p class="lede on-dark reveal reveal-d2">A committee reviews each qualifying entry. Here's exactly what we look at, and how you'll be notified if you win.</p>
+      <p class="eyebrow eyebrow-line reveal" style="justify-content:center">How Winners Are Chosen</p>
+      <h2 class="display-md reveal reveal-d1">How the three winners <span class="gold-ital">are picked</span>.</h2>
+      <p class="lede reveal reveal-d2">A committee reviews each qualifying entry. Here's exactly what we look at — and how you'll be notified if you win.</p>
     </div>
-    <div class="judge-list reveal">
-      <div class="ji"><span class="b"></span><p><b>Shared activity on social</b> — the breadth and consistency of your channel-link shares.</p></div>
-      <div class="ji"><span class="b"></span><p><b>New channel followers</b> — followers we can attribute to the shares you made.</p></div>
-      <div class="ji"><span class="b"></span><p><b>Engagement level</b> — the quality and authenticity of the reach you generate.</p></div>
-      <div class="ji"><span class="b"></span><p><b>Minimum 10 shares</b> — a screenshot proving at least 10 channel-link messages sent is required to qualify.</p></div>
+    <div class="judge-grid">
+      <div class="jcard j1 reveal"><div class="jn">01</div><h4>Shared Activity</h4><p>The breadth and consistency of your channel-link shares across your network.</p></div>
+      <div class="jcard j2 reveal reveal-d1"><div class="jn">02</div><h4>New Followers</h4><p>New channel followers we can attribute directly to the shares you made.</p></div>
+      <div class="jcard j3 reveal reveal-d2"><div class="jn">03</div><h4>Engagement</h4><p>The quality and authenticity of the reach and engagement you generate.</p></div>
+      <div class="jcard j4 reveal reveal-d2"><div class="jn">04</div><h4>10-Share Minimum</h4><p>A screenshot proving at least 10 channel-link messages sent is required to qualify.</p></div>
     </div>
-    <div class="notify-band reveal reveal-d1">
-      <h4>Winner Notification</h4>
-      <p>Winners will be contacted by <b>phone call, text message and email</b>. Winners who are contacted and fail to respond within <b>7 days</b> forfeit their prize, and the ticket is transferred to an alternative winner.</p>
+    <div class="notify-light reveal reveal-d1">
+      <div class="ni">☎</div>
+      <div>
+        <h4>How winners are notified</h4>
+        <p>Winners are contacted by <b>phone call, text message and email</b>. A contacted winner who fails to respond within <b>7 days</b> forfeits the prize, and the ticket transfers to an alternative winner.</p>
+      </div>
     </div>
-    <div style="text-align:center;margin-top:2.2rem">
-      <a href="terms.html" class="btn btn-ghost">Read the Full Terms &amp; Conditions</a>
+    <div style="text-align:center;margin-top:2.4rem">
+      <a href="terms.html" class="btn btn-ghost on-light">Read the Full Terms &amp; Conditions</a>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="sec sec-light" id="faq">
+<section class="sec sec-paper" id="faq">
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow eyebrow-line reveal" style="justify-content:center">Your Questions, Answered</p>
@@ -711,15 +772,46 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem
   </div>
 </section>
 
-<!-- ENTRY FORM CTA + FINAL -->
-<section class="sec culture-dark" id="form">
+<!-- ENTRY FORM (real submission requirements) -->
+<section class="sec sec-cream" id="form">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow eyebrow-line reveal" style="justify-content:center">Submit Your Entry</p>
+      <h2 class="display-md reveal reveal-d1">Ready to win your flight to <span class="gold-ital">Paris</span>?</h2>
+      <p class="lede reveal reveal-d2">Here is exactly what you need to submit a valid entry. Complete every step — the more, and more engaged, your shares, the closer you are to Bastille Day in Paris.</p>
+    </div>
+    <div class="entry-wrap reveal">
+      <div class="entry-card">
+        <div class="ec-eye">Your entry checklist</div>
+        <h3>What you'll need to submit</h3>
+        <ul class="req-list">
+          <li><span class="rq-n">1</span><span class="rq-t"><b>Follow French Atelier</b><span>Be following us on <span class="hl">Instagram and Meta</span> so we can confirm your entry and reach you.</span></span></li>
+          <li><span class="rq-n">2</span><span class="rq-t"><b>Make at least 10 shares</b><span>Send our channel link to your network — a <span class="hl">minimum of 10 shares</span> is required to qualify.</span></span></li>
+          <li><span class="rq-n">3</span><span class="rq-t"><b>Attach your screenshot</b><span>A clear <span class="hl">print-screen showing 10+ shares</span> (the channel-link messages you sent) as proof of entry.</span></span></li>
+          <li><span class="rq-n">4</span><span class="rq-t"><b>Your contact details</b><span>Full name, <span class="hl">phone, email and Instagram handle</span> — winners are contacted by phone, text and email.</span></span></li>
+        </ul>
+        <a href="#" id="entryFormBtn" class="btn btn-gold ec-cta">Open the Entry Form</a>
+        <p class="ec-note">Replace this button link with your live entry-form URL before launch.</p>
+      </div>
+      <div class="entry-side">
+        <div class="es-img"><img src="assets/img-fireworks-eiffel.png" alt="Bastille Day fireworks over the Eiffel Tower"></div>
+        <div class="es-body">
+          <div class="es-stat">
+            <div><span class="k">3</span><span class="v">Winners</span></div>
+            <div><span class="k">10+</span><span class="v">Shares to qualify</span></div>
+          </div>
+          <h4>Three flights. One unforgettable Bastille Day.</h4>
+          <p>Complete your entry, and you could be watching the fireworks light up the Eiffel Tower this July.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL QUOTE -->
+<section class="sec culture-dark" id="closing">
   <div class="narrow" style="text-align:center">
-    <p class="eyebrow eyebrow-line on-dark reveal" style="justify-content:center">Submit Your Entry</p>
-    <h2 class="display-md reveal reveal-d1" style="margin:1rem 0">Ready to win your flight to <span class="gold-ital on-dark">Paris</span>?</h2>
-    <p class="lede on-dark reveal reveal-d2" style="margin:0 auto 2rem;max-width:54ch">Upload your screenshot of 10+ shares and fill the short form. The more — and more engaged — your shares, the closer you are to Bastille Day in Paris.</p>
-    <div class="reveal reveal-d2"><a href="#" id="entryFormBtn" class="btn btn-gold">Open the Entry Form</a></div>
-    <p style="margin-top:1.1rem;font-size:.8rem;color:var(--on-dark-faint);font-weight:300">Replace this button link with your live entry-form URL before launch.</p>
-    <div class="leaf" style="margin-top:3rem"><span class="line"></span><span class="dot">❧</span><span class="line"></span></div>
+    <div class="leaf"><span class="line"></span><span class="dot">❧</span><span class="line"></span></div>
     <p class="final-quote reveal">"It is about entering the most beautiful moments of <span class="gold-ital">French life</span>."</p>
   </div>
 </section>
@@ -744,9 +836,13 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem
 <script>
 const header=document.getElementById('header');
 window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>40)});
-const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08,rootMargin:'0px 0px -5% 0px'});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-window.addEventListener('load',()=>{setTimeout(()=>{document.querySelectorAll('.reveal:not(.in)').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<window.innerHeight*1.2)el.classList.add('in')})},400)});
+const reveals=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.06,rootMargin:'0px 0px -4% 0px'});
+reveals.forEach(el=>io.observe(el));
+// reveal anything already in view on first paint
+requestAnimationFrame(()=>reveals.forEach(el=>{const r=el.getBoundingClientRect();if(r.top<window.innerHeight*1.05)el.classList.add('in')}));
+// hard safety net: never leave content invisible
+setTimeout(()=>document.querySelectorAll('.reveal:not(.in)').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<window.innerHeight*1.3)el.classList.add('in')}),900);
 </script>
 </body>
 </html>
