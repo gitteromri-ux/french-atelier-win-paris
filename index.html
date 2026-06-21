@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Win a Free Flight to Paris · Bastille Day with French Atelier</title>
+<meta name="description" content="French Atelier is sending three of our community to Paris for Bastille Day 2026. Share our channel, qualify, and live the Fête Nationale like a true Parisian insider. Round-trip flights from the USA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#000034; --navy-deep:#00001F; --navy-soft:#1C2238; --navy-mid:#00003E; --navy-line:#000049;
+  --ink:#000034; --ink-soft:#3A3F5C;
+  --gold:#C8A96B; --gold-soft:#D8BC85; --gold-deep:#A98D52;
+  --gold-line:rgba(200,169,107,.45); --gold-line-soft:rgba(200,169,107,.22);
+  --ivory:#F3EFE9; --paper:#FAF7F1; --cream:#E9E1D2; --cream-deep:#D8CAB5;
+  --pink:#F3D3D9; --pink-soft:#FBEFF2; --pink-mid:#E498A6; --pink-deep:#C77E94;
+  --terra:#C76F50; --terra-soft:#E2B5A5; --terra-deep:#A95436;
+  --white:#FFFFFF;
+  --on-dark:#F3EEE3; --on-dark-soft:rgba(243,238,227,.66); --on-dark-faint:rgba(243,238,227,.40);
+  --dark-line:rgba(243,238,227,.18); --dark-line-soft:rgba(243,238,227,.10);
+  --on-light:#1A1E33; --on-light-soft:rgba(26,30,51,.66); --on-light-faint:rgba(26,30,51,.42);
+  --light-line:rgba(26,30,51,.14);
+  --serif:'Cormorant Garamond', Georgia, serif;
+  --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --sp-5:3rem; --sp-6:4rem; --sp-7:6rem; --sp-8:8rem;
+  --maxw:1240px; --maxw-narrow:880px; --radius:3px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--paper);color:var(--on-light);line-height:1.7;font-weight:400;font-size:17px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 2rem}
+.narrow{max-width:var(--maxw-narrow);margin:0 auto;padding:0 2rem}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.05;letter-spacing:-.01em;color:var(--on-light)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* type helpers — matched to live site */
+.display-md{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4.4rem);line-height:1.03;font-weight:600}
+.display-lg{font-family:var(--serif);font-size:clamp(3.1rem,7vw,5.8rem);line-height:1.0;font-weight:600;letter-spacing:-.012em}
+.gold-ital{font-style:italic;color:var(--gold-deep);font-weight:500}
+.gold-ital.on-dark{color:var(--gold-soft)}
+.lede{font-family:var(--sans);font-size:clamp(1.1rem,1.5vw,1.35rem);line-height:1.6;color:var(--on-light-soft);font-weight:300}
+.lede.on-dark{color:var(--on-dark-soft)}
+.eyebrow{font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep)}
+.eyebrow.on-dark{color:var(--gold-soft)}
+.eyebrow-line{display:inline-flex;align-items:center;gap:.9rem}
+.eyebrow-line::before{content:"";width:34px;height:1px;background:var(--gold-line);display:inline-block}
+.eyebrow-line.center::after{content:"";width:34px;height:1px;background:var(--gold-line);display:inline-block}
+
+/* buttons — matched to live site (blue glow primary + gold 3d) */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:1.05rem 2.2rem;border-radius:6px;transition:all .4s var(--ease);cursor:pointer;border:1px solid transparent}
+.btn-advisor{background:linear-gradient(135deg,#5EC8FF 0%,#3FA8F0 50%,#1F86D6 100%);color:#fff;box-shadow:0 10px 30px -8px rgba(63,168,240,.55),inset 0 1px 0 rgba(255,255,255,.4)}
+.btn-advisor:hover{transform:translateY(-2px);box-shadow:0 16px 40px -8px rgba(63,168,240,.7),inset 0 1px 0 rgba(255,255,255,.4)}
+.btn-gold{background:linear-gradient(135deg,var(--gold-soft),var(--gold) 55%,var(--gold-deep));color:var(--navy-deep);box-shadow:0 8px 22px -10px rgba(170,140,85,.7),inset 0 1px 0 rgba(255,255,255,.45);font-weight:700}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 34px -10px rgba(170,140,85,.85),inset 0 1px 0 rgba(255,255,255,.45)}
+.btn-ghost{border:1px solid var(--gold-line);color:var(--gold-soft);background:transparent}
+.btn-ghost:hover{border-color:var(--gold-soft);background:rgba(200,169,107,.08)}
+.btn-ghost.on-light{color:var(--gold-deep)}
+.btn-ghost.on-light:hover{background:rgba(200,169,107,.07)}
+
+/* dividers */
+.leaf{display:flex;align-items:center;justify-content:center;gap:.6rem;margin:1.4rem auto}
+.leaf .line{height:1px;width:90px;background:linear-gradient(90deg,transparent,var(--gold-line),transparent)}
+.leaf .dot{color:var(--gold);font-size:.8rem}
+
+/* ===== HEADER ===== */
+header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .45s var(--ease),padding .45s var(--ease),box-shadow .45s var(--ease);padding:1.5rem 0}
+header.scrolled{background:rgba(0,0,26,.92);backdrop-filter:blur(12px);padding:.85rem 0;box-shadow:0 1px 0 var(--dark-line-soft)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.nav-logo-img{height:46px;width:auto}
+header.scrolled .nav-logo-img{height:38px}
+.nav-menu{display:flex;align-items:center;gap:2rem;flex:1;justify-content:center}
+.nav-link{font-family:var(--sans);font-size:.82rem;font-weight:500;letter-spacing:.04em;color:var(--on-dark);opacity:.85;transition:opacity .3s,color .3s}
+.nav-link:hover{opacity:1;color:var(--gold-soft)}
+.nav-cta{font-size:.72rem;padding:.85rem 1.7rem}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg video,.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,26,.93) 0%,rgba(0,0,26,.78) 34%,rgba(0,0,26,.32) 70%,rgba(0,0,26,.5) 100%)}
+.hero-bg::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,26,.5) 0%,transparent 22%,transparent 70%,rgba(0,0,26,.6) 100%)}
+.hero-content{position:relative;z-index:2;max-width:780px;padding:7rem 0 4rem}
+.hero-tag{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,2.3vw,1.9rem);color:var(--gold-soft);margin-bottom:1rem}
+.hero h1{font-family:var(--serif);font-size:clamp(2.7rem,6vw,5.4rem);line-height:1.02;color:var(--on-dark);font-weight:500;letter-spacing:-.012em;margin-bottom:1.5rem;max-width:18ch}
+.hero h1 .gold-ital{color:var(--gold-soft)}
+.hero-sub{font-size:clamp(1.05rem,1.4vw,1.25rem);color:var(--on-dark-soft);max-width:52ch;margin-bottom:2.2rem;font-weight:300;line-height:1.6}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
+.hero-meta{display:flex;flex-wrap:wrap;gap:2.2rem;margin-top:3rem;padding-top:1.8rem;border-top:1px solid var(--dark-line)}
+.hero-meta .item{display:flex;flex-direction:column}
+.hero-meta .k{font-family:var(--serif);font-size:1.8rem;color:var(--gold-soft);line-height:1;font-weight:600}
+.hero-meta .v{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--on-dark-soft);margin-top:.45rem}
+
+/* urgency strip */
+.urgency{background:linear-gradient(135deg,var(--gold-soft),var(--gold) 55%,var(--gold-deep));color:var(--navy-deep);text-align:center;font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:.7rem 1rem}
+
+/* ===== SECTIONS ===== */
+.sec{padding:var(--sp-8) 0}
+@media(max-width:900px){.sec{padding:var(--sp-6) 0}}
+.sec-light{background:var(--ivory)}
+.sec-paper{background:var(--paper)}
+.sec-head{text-align:center;max-width:760px;margin:0 auto 3.5rem}
+.sec-head .eyebrow-line{margin-bottom:1.2rem;justify-content:center}
+.sec-head h2{margin-bottom:1rem}
+.sec-head .lede{margin:0 auto;max-width:60ch}
+
+/* culture-dark — exact gradient treatment from live site */
+.culture-dark{position:relative;color:#F4EEE2;border-top:1px solid rgba(200,165,96,.14);border-bottom:1px solid rgba(200,165,96,.14);overflow:hidden;
+  background:
+    radial-gradient(130% 90% at 18% 0%, rgba(196,122,78,.16) 0%, transparent 46%),
+    radial-gradient(120% 90% at 88% 14%, rgba(228,166,184,.14) 0%, transparent 44%),
+    radial-gradient(140% 120% at 50% 120%, rgba(200,165,96,.10) 0%, transparent 55%),
+    linear-gradient(180deg,#0A1030 0%,#0B1340 48%,#080C26 100%);}
+.culture-dark h2,.culture-dark h3,.culture-dark h4{color:#F4EEE2}
+
+/* PRIZE */
+.prize-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3.5rem;align-items:center}
+.prize-card{background:rgba(255,255,255,.03);border:1px solid rgba(200,165,96,.22);border-radius:10px;padding:2.6rem;position:relative;overflow:hidden}
+.prize-num{font-family:var(--serif);font-size:clamp(3.4rem,7vw,5.2rem);color:var(--gold-soft);line-height:1;font-weight:600;font-variant-numeric:tabular-nums}
+.prize-card h3{font-family:var(--serif);font-size:clamp(1.6rem,2.4vw,2.1rem);color:#F4EEE2;margin:.2rem 0 .9rem;font-weight:600}
+.prize-card .pc-lede{color:var(--on-dark-soft);font-weight:300}
+.prize-list{list-style:none;margin-top:1.4rem}
+.prize-list li{display:flex;gap:.85rem;padding:.75rem 0;border-top:1px solid rgba(255,255,255,.08);color:var(--on-dark-soft);font-size:.98rem;font-weight:300}
+.prize-list li:first-child{border-top:none}
+.prize-list .tick{color:var(--gold-soft);flex-shrink:0}
+.prize-media{border-radius:10px;overflow:hidden;box-shadow:0 30px 70px -30px rgba(0,0,0,.7)}
+.prize-media img{width:100%;height:100%;object-fit:cover;min-height:460px}
+
+/* STEP CARDS — airy white, serif number, pastel chip (matched to live journey cards) */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.step{background:var(--white);border:1px solid var(--light-line);border-radius:10px;padding:2rem 1.7rem;transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.step:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(11,19,64,.12)}
+.step-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.4rem}
+.step .n{font-family:var(--serif);font-size:2.4rem;font-weight:600;line-height:1;color:var(--navy)}
+.step.s2 .n{color:var(--pink-deep)} .step.s3 .n{color:var(--terra-deep)} .step.s4 .n{color:var(--gold-deep)}
+.step .chip{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.step.s1 .chip{background:rgba(63,168,240,.12)} .step.s2 .chip{background:var(--pink-soft)} .step.s3 .chip{background:rgba(199,111,80,.12)} .step.s4 .chip{background:rgba(200,169,107,.14)}
+.step .kick{font-family:var(--sans);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--on-light-faint);font-weight:600;margin-bottom:.5rem}
+.step h4{font-family:var(--serif);font-size:1.4rem;color:var(--navy);margin-bottom:.55rem;font-weight:600}
+.step p{font-size:.93rem;color:var(--on-light-soft);line-height:1.6;font-weight:300}
+.step .hl{color:var(--gold-deep);font-weight:500}
+.step .tag{display:inline-block;margin-top:1.1rem;font-family:var(--sans);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-light-soft);background:var(--paper);border:1px solid var(--light-line);border-radius:999px;padding:.4rem .9rem}
+
+/* PROGRAM (within culture-dark) */
+.day-block{margin-bottom:3.2rem}
+.day-head{text-align:center;margin-bottom:1.8rem}
+.day-head .d-kicker{font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--gold-soft)}
+.day-head h3{font-family:var(--serif);font-size:clamp(1.8rem,3.2vw,2.7rem);color:#F4EEE2;margin-top:.3rem;font-weight:600}
+.day-head .d-sub{color:var(--on-dark-soft);font-size:1.02rem;margin-top:.5rem;font-weight:300;max-width:60ch;margin-left:auto;margin-right:auto}
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.prog-card{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:1.9rem}
+.prog-card.feature{background:linear-gradient(160deg,rgba(200,169,107,.13),rgba(200,169,107,.03));border-color:rgba(200,165,96,.3)}
+.prog-card .pc-eye{font-family:var(--sans);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);font-weight:600;margin-bottom:1.1rem}
+.prog-card ul{list-style:none}
+.prog-card li{padding:.6rem 0;color:var(--on-dark-soft);font-size:.92rem;line-height:1.55;border-top:1px solid rgba(255,255,255,.08);font-weight:300}
+.prog-card li:first-child{border-top:none}
+.prog-card li b{color:#F4EEE2;font-weight:600}
+.dine-band{margin-top:1.3rem;border:1px solid rgba(200,165,96,.22);border-radius:10px;padding:1.3rem 1.6rem;text-align:center;background:rgba(0,0,0,.18)}
+.dine-band .dl{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);font-weight:600}
+.dine-band .dv{font-family:var(--serif);font-style:italic;color:var(--on-dark-soft);margin-top:.45rem;font-size:1.08rem}
+.day-alert{font-style:italic;color:var(--on-dark-faint);font-size:.88rem;margin-top:1rem;text-align:center}
+
+/* FLIGHT */
+.flight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.fcard{background:var(--white);border:1px solid var(--light-line);border-radius:10px;padding:2rem;transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.fcard:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(11,19,64,.12)}
+.fcard .ic{font-size:1.7rem;margin-bottom:.9rem}
+.fcard h4{font-family:var(--serif);font-size:1.3rem;color:var(--navy);margin-bottom:.5rem;font-weight:600}
+.fcard p{font-size:.94rem;color:var(--on-light-soft);font-weight:300}
+.fcard a{color:var(--gold-deep);font-weight:500;border-bottom:1px solid var(--gold-line)}
+.airports-band{margin-top:2.5rem;text-align:center;background:var(--white);border:1px solid var(--light-line);border-radius:10px;padding:2rem}
+.airports-band a{color:var(--gold-deep);font-weight:600;border-bottom:1px solid var(--gold-line)}
+
+/* JUDGING */
+.judge-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem 2.6rem;margin-top:1rem}
+.judge-list .ji{display:flex;gap:1rem;align-items:flex-start}
+.judge-list .ji .b{width:8px;height:8px;border-radius:50%;background:var(--gold-soft);margin-top:.65rem;flex-shrink:0}
+.judge-list .ji p{color:var(--on-dark-soft);font-size:.97rem;font-weight:300}
+.judge-list .ji b{color:#F4EEE2;font-weight:600}
+.notify-band{margin-top:2.6rem;background:rgba(255,255,255,.04);border:1px solid rgba(200,165,96,.22);border-radius:10px;padding:1.9rem 2rem}
+.notify-band h4{font-family:var(--serif);color:var(--gold-soft);font-size:1.3rem;margin-bottom:.6rem;font-weight:600}
+.notify-band p{color:var(--on-dark-soft);font-size:.98rem;font-weight:300}
+.notify-band b{color:#F4EEE2}
+
+/* FAQ */
+.faq{max-width:840px;margin:0 auto}
+.faq details{border-bottom:1px solid var(--light-line);padding:1.4rem 0}
+.faq summary{font-family:var(--serif);font-size:1.35rem;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-weight:600}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--gold-deep);font-size:1.7rem;transition:transform .3s;font-family:var(--sans);font-weight:300}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin-top:.9rem;color:var(--on-light-soft);font-size:1rem;font-weight:300}
+
+/* FINAL */
+.final{text-align:center;padding:var(--sp-7) 0}
+.final-quote{font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,3vw,2.4rem);color:#F4EEE2;max-width:24ch;margin:0 auto 1rem;line-height:1.3;font-weight:500}
+.final-quote .gold-ital{color:var(--gold-soft)}
+
+/* FOOTER */
+footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem;border-top:1px solid var(--dark-line-soft)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;align-items:center}
+.foot .nav-logo-img{height:40px}
+.foot-links{display:flex;gap:1.6rem;font-size:.82rem;letter-spacing:.04em}
+.foot-links a{opacity:.8}
+.foot-links a:hover{color:var(--gold-soft);opacity:1}
+.foot-fine{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--dark-line-soft);font-size:.78rem;color:var(--on-dark-faint);line-height:1.7;font-weight:300}
+.foot-fine a{color:var(--gold-soft)}
+
+@media (max-width:980px){.nav-menu{display:none}}
+@media (max-width:900px){
+  .prize-grid,.steps,.prog-grid,.flight-grid,.judge-list{grid-template-columns:1fr}
+  .hero-content{padding-top:6rem}
+  .hero-meta{gap:1.6rem}
+}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal-d1{transition-delay:.08s}.reveal-d2{transition-delay:.16s}.reveal-d3{transition-delay:.24s}
+
+/* ===== FULL-BLEED PHOTO CARDS (live-site "Culture speaks French" grid) ===== */
+.photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.photo-grid.three{grid-template-columns:repeat(3,1fr)}
+.pcardx{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:3/4;box-shadow:0 24px 60px -34px rgba(0,0,8,.7);transition:transform .55s var(--ease),box-shadow .55s var(--ease)}
+.pcardx:hover{transform:translateY(-7px);box-shadow:0 38px 80px -34px rgba(0,0,8,.8)}
+.pcardx img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
+.pcardx:hover img{transform:scale(1.06)}
+.pcardx::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,20,.04) 0%,rgba(0,0,20,.12) 42%,rgba(0,0,20,.62) 78%,rgba(0,0,20,.86) 100%)}
+.pcardx .pcx-body{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:1.6rem 1.5rem}
+.pcardx .pcx-num{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--gold-soft);letter-spacing:.04em;display:block;margin-bottom:.35rem}
+.pcardx .pcx-title{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:#fff;line-height:1.1}
+.pcardx .pcx-desc{font-family:var(--sans);font-size:.84rem;font-weight:300;color:rgba(255,255,255,.82);margin-top:.5rem;line-height:1.5}
+.pcardx.wide{aspect-ratio:16/10}
+
+/* ===== GALLERY (Bastille Day feature) ===== */
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:200px;gap:1.1rem}
+.gtile{position:relative;border-radius:12px;overflow:hidden;box-shadow:0 22px 56px -34px rgba(0,0,8,.7)}
+.gtile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
+.gtile:hover img{transform:scale(1.05)}
+.gtile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,20,.72) 100%)}
+.gtile .gcap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:1.3rem 1.4rem}
+.gtile .gcap .ge{font-family:var(--sans);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-soft);font-weight:600}
+.gtile .gcap .gt{font-family:var(--serif);font-size:1.3rem;color:#fff;font-weight:600;margin-top:.25rem;line-height:1.12}
+.g-a{grid-column:span 7;grid-row:span 2}
+.g-b{grid-column:span 5;grid-row:span 1}
+.g-c{grid-column:span 5;grid-row:span 1}
+.g-d{grid-column:span 4;grid-row:span 1}
+.g-e{grid-column:span 4;grid-row:span 1}
+.g-f{grid-column:span 4;grid-row:span 1}
+
+/* ===== VIDEO BAND (cinematic autoplay loop, like live-site pillars) ===== */
+.vband{position:relative;min-height:78vh;display:flex;align-items:flex-end;overflow:hidden}
+.vband video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.vband::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,20,.42) 0%,transparent 30%,transparent 52%,rgba(0,0,20,.78) 100%)}
+.vband .vb-inner{position:relative;z-index:2;width:100%;padding:0 0 var(--sp-6)}
+.vband .vb-tag{font-family:var(--sans);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-soft);font-weight:600;margin-bottom:1rem}
+.vband .vb-title{font-family:var(--serif);font-size:clamp(2.2rem,4.6vw,4rem);font-weight:600;color:#fff;line-height:1.05;max-width:16ch}
+.vband .vb-title .gold-ital{color:var(--gold-soft)}
+.vband .vb-sub{font-family:var(--sans);font-size:clamp(1rem,1.4vw,1.18rem);font-weight:300;color:rgba(255,255,255,.86);max-width:48ch;margin-top:1.1rem;line-height:1.6}
+
+/* program day: image-backed header strip */
+.day-photo{position:relative;border-radius:14px;overflow:hidden;margin-bottom:1.7rem;min-height:300px;display:flex;align-items:flex-end}
+.day-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.day-photo::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,12,38,.30) 0%,rgba(8,12,38,.20) 42%,rgba(8,12,38,.82) 100%),linear-gradient(90deg,rgba(8,12,38,.55) 0%,transparent 55%)}
+.day-photo .dp-body{position:relative;z-index:2;padding:2.2rem 2.4rem}
+.day-photo .d-kicker{font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--gold-soft)}
+.day-photo h3{font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,2.9rem);color:#fff;margin-top:.3rem;font-weight:600}
+.day-photo .d-sub{color:rgba(255,255,255,.85);font-size:1.02rem;margin-top:.55rem;font-weight:300;max-width:62ch}
+.dp-mini{position:absolute;top:1.4rem;right:1.4rem;z-index:2;display:flex;gap:.7rem}
+.dp-mini .dpm{width:74px;height:74px;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.4);box-shadow:0 12px 30px -12px rgba(0,0,0,.6)}
+.dp-mini .dpm img{width:100%;height:100%;object-fit:cover}
+
+@media(max-width:900px){
+  .photo-grid,.photo-grid.three{grid-template-columns:repeat(2,1fr)}
+  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}
+  .g-a,.g-b,.g-c,.g-d,.g-e,.g-f{grid-column:span 1;grid-row:span 1}
+  .g-a{grid-column:span 2;grid-row:span 2}
+  .dp-mini{display:none}
+}
+@media(max-width:560px){.photo-grid,.photo-grid.three{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="urgency">Entries open tonight · Winners announced after Bastille Day · Three round-trip flights to Paris</div>
+
+<header id="header">
+  <div class="wrap nav">
+    <a class="nav-logo" href="https://gitteromri-ux.github.io/french-atelier/">
+      <img class="nav-logo-img" src="assets/logo-white.png" alt="The French Atelier by Acadomia">
+    </a>
+    <nav class="nav-menu" aria-label="Primary">
+      <a class="nav-link" href="https://gitteromri-ux.github.io/french-atelier/">Home</a>
+      <a class="nav-link" href="#prize">The Prize</a>
+      <a class="nav-link" href="#bastille">Bastille Day</a>
+      <a class="nav-link" href="#program">The Program</a>
+      <a class="nav-link" href="#enter">How to Enter</a>
+      <a class="nav-link" href="terms.html">Terms</a>
+    </nav>
+    <a href="#enter" class="btn btn-gold nav-cta">Enter to Win</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <video autoplay muted loop playsinline poster="assets/img-fireworks-eiffel.png">
+      <source src="assets/vid-fireworks.mp4" type="video/mp4">
+      <source src="assets/paris-cityscape.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="wrap">
+    <div class="hero-content">
+      <div class="hero-tag reveal">A French Atelier Community Celebration</div>
+      <h1 class="reveal reveal-d1">Win a Free Flight to <span class="gold-ital">Paris</span> for Bastille Day</h1>
+      <p class="hero-sub reveal reveal-d2">Three of our most devoted followers and brand ambassadors will fly to Paris this July — and live the Fête Nationale like a true Parisian, with our curated three-day program of insider tips and hidden gems.</p>
+      <div class="hero-ctas reveal reveal-d2">
+        <a href="#enter" class="btn btn-advisor">Enter to Win</a>
+        <a href="#program" class="btn btn-ghost">See the Paris Program</a>
+      </div>
+      <div class="hero-meta reveal reveal-d2">
+        <div class="item"><span class="k">3</span><span class="v">Winners</span></div>
+        <div class="item"><span class="k">Jul 14</span><span class="v">Bastille Day 2026</span></div>
+        <div class="item"><span class="k">USA → Paris</span><span class="v">Round-trip flights</span></div>
+        <div class="item"><span class="k">3 Days</span><span class="v">Insider program</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU WIN -->
+<section class="sec culture-dark" id="prize">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow eyebrow-line on-dark reveal">The Grand Prize</p>
+      <h2 class="display-md reveal reveal-d1">What three winners <span class="gold-ital on-dark">will receive</span>.</h2>
+      <p class="lede on-dark reveal reveal-d2">This is not a trip. It is an invitation into the most beautiful moments of French life — the way French Atelier always teaches it.</p>
+    </div>
+    <div class="prize-grid">
+      <div class="prize-card reveal">
+        <div class="prize-num">×3</div>
+        <h3>Round-Trip Flights, USA → Paris</h3>
+        <p class="pc-lede">The top three participants each win a round-trip flight from the United States to Paris, timed perfectly for the Fête Nationale.</p>
+        <ul class="prize-list">
+          <li><span class="tick">✦</span><span>Round-trip flights from a major US airport to Paris</span></li>
+          <li><span class="tick">✦</span><span>Arrive in time for the July 14th celebrations and the legendary Eiffel Tower fireworks</span></li>
+          <li><span class="tick">✦</span><span>Our complete three-day French Atelier insider program — terrasses, hidden gems &amp; the soul of the Marais</span></li>
+          <li><span class="tick">✦</span><span>Curated dining recommendations &amp; neighborhood gems for every evening</span></li>
+          <li><span class="tick">✦</span><span>Experience Paris not as a tourist, but as a cultural initiate</span></li>
+        </ul>
+      </div>
+      <div class="prize-media reveal reveal-d1">
+        <img src="assets/img-fireworks-eiffel.png" alt="Bastille Day fireworks illuminating the Eiffel Tower above crowds with glowing lanterns">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BASTILLE DAY GALLERY -->
+<section class="sec sec-paper" id="bastille">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow eyebrow-line reveal" style="justify-content:center">Bastille Day in Paris</p>
+      <h2 class="display-md reveal reveal-d1">The <span class="gold-ital">Fête Nationale</span>, lived from the inside.</h2>
+      <p class="lede reveal reveal-d2">Fireworks over the Eiffel Tower, the Patrouille de France above the Champs-Élysées, golden terrasses and the long Parisian dusk. This is the July you'll wake up to.</p>
+    </div>
+    <div class="gallery reveal">
+      <div class="gtile g-a"><img src="assets/img-fireworks-eiffel.png" alt="Fireworks bursting over the Eiffel Tower as crowds hold glowing lanterns"><div class="gcap"><div class="ge">July 13 · 23:00</div><div class="gt">Fireworks over the Eiffel Tower</div></div></div>
+      <div class="gtile g-b"><img src="assets/img-parade-champs.png" alt="Patrouille de France jets trailing blue-white-red smoke over the Arc de Triomphe"><div class="gcap"><div class="ge">July 14 · Morning</div><div class="gt">The Champs-Élysées flyover</div></div></div>
+      <div class="gtile g-c"><img src="assets/img-champ-de-mars.png" alt="Sparkling Eiffel Tower at twilight seen across the Champ-de-Mars"><div class="gcap"><div class="ge">Champ-de-Mars</div><div class="gt">When the tower sparkles</div></div></div>
+      <div class="gtile g-d"><img src="assets/img-marais-terrace.png" alt="Café terrace with wine and cheese in golden light"><div class="gcap"><div class="ge">The Marais</div><div class="gt">Terrasse hours</div></div></div>
+      <div class="gtile g-e"><img src="assets/img-seine-cruise.png" alt="Boat gliding along the Seine past the Musée d'Orsay at sunset"><div class="gcap"><div class="ge">The Seine</div><div class="gt">Golden-hour cruise</div></div></div>
+      <div class="gtile g-f"><img src="assets/img-guinguette.png" alt="Riverside guinguette terrace with string lights and rosé at dusk"><div class="gcap"><div class="ge">Riverbanks</div><div class="gt">Guinguette evenings</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO BAND: FIREWORKS -->
+<section class="vband" aria-label="Bastille Day fireworks over the Eiffel Tower">
+  <video autoplay muted loop playsinline poster="assets/img-fireworks-eiffel.png">
+    <source src="assets/vid-fireworks.mp4" type="video/mp4">
+  </video>
+  <div class="vb-inner">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="vb-tag">The 14th of July · Champ-de-Mars</div>
+        <h2 class="vb-title">The sky over Paris, <span class="gold-ital">set alight</span>.</h2>
+        <p class="vb-sub">At 23:00 the national fireworks ignite above the Eiffel Tower while the Concert de Paris plays below. Our winners watch it the Parisian way — picnic blanket, champagne, the whole city looking up together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO PARTICIPATE -->
+<section class="sec sec-light" id="enter">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow eyebrow-line reveal">How to Participate</p>
+      <h2 class="display-md reveal reveal-d1">Four steps to <span class="gold-ital">Paris</span>.</h2>
+      <p class="lede reveal reveal-d2">Share the French Atelier story far and wide. The three participants who share us most — and bring the most engaged new community in — fly to Paris.</p>
+    </div>
+    <div class="steps">
+      <div class="step s1 reveal">
+        <div class="step-top"><span class="n">01</span><span class="chip">↗</span></div>
+        <div class="kick">Step One</div>
+        <h4>Follow Us</h4>
+        <p>Follow <span class="hl">French Atelier</span> on Instagram and Meta so you never miss an announcement.</p>
+        <span class="tag">Instagram · Meta</span>
+      </div>
+      <div class="step s2 reveal reveal-d1">
+        <div class="step-top"><span class="n">02</span><span class="chip">✦</span></div>
+        <div class="kick">Step Two</div>
+        <h4>Share the Channel</h4>
+        <p>Share our channel link with your network. You must make <span class="hl">at least 10 shares</span> (channel-link messages sent) to qualify.</p>
+        <span class="tag">Min. 10 shares</span>
+      </div>
+      <div class="step s3 reveal reveal-d2">
+        <div class="step-top"><span class="n">03</span><span class="chip">▣</span></div>
+        <div class="kick">Step Three</div>
+        <h4>Screenshot Your Shares</h4>
+        <p>Capture a print-screen showing <span class="hl">at least 10 shares</span> — the channel-link messages you sent — as proof of entry.</p>
+        <span class="tag">Print-screen proof</span>
+      </div>
+      <div class="step s4 reveal reveal-d2">
+        <div class="step-top"><span class="n">04</span><span class="chip">✎</span></div>
+        <div class="kick">Step Four</div>
+        <h4>Fill the Short Form</h4>
+        <p>Submit the short entry form with your screenshot. The <span class="hl">top 3 sharers win</span> the flight.</p>
+        <span class="tag">Top 3 win</span>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3rem">
+      <a href="#form" class="btn btn-gold">Submit My Entry</a>
+      <p style="margin-top:1rem;font-size:.85rem;color:var(--on-light-faint);font-weight:300">A minimum of 10 shares is required to qualify for the win.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO BAND: PARADE -->
+<section class="vband" aria-label="Patrouille de France flyover on the Champs-Élysées">
+  <video autoplay muted loop playsinline poster="assets/img-parade-champs.png">
+    <source src="assets/vid-parade.mp4" type="video/mp4">
+  </video>
+  <div class="vb-inner">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="vb-tag">The 14th of July · Champs-Élysées</div>
+        <h2 class="vb-title">A nation on <span class="gold-ital">parade</span>.</h2>
+        <p class="vb-sub">The Patrouille de France streaks blue-white-red across the sky above the Arc de Triomphe. We show you where to stand — away from the crush, with the best view in Paris.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE PROGRAM -->
+<section class="sec culture-dark" id="program">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow eyebrow-line on-dark reveal">The Winning Experience</p>
+      <h2 class="display-md reveal reveal-d1">Your three days in <span class="gold-ital on-dark">Paris</span>.</h2>
+      <p class="lede on-dark reveal reveal-d2">A Parisian Bastille Day sojourn — three days as a cultural initiate. This is the full program our winners will live, July 12–15, 2026.</p>
+    </div>
+
+    <!-- DAY 0 -->
+    <div class="day-block reveal">
+      <div class="day-photo">
+        <img src="assets/img-marais-terrace.png" alt="Sunlit café terrace in the Marais with wine, bread and cheese on a cobblestone street">
+        <div class="dp-mini">
+          <div class="dpm"><img src="assets/img-place-vosges.png" alt="Place des Vosges arcades"></div>
+          <div class="dpm"><img src="assets/img-orsay.png" alt="Musée Carnavalet interior"></div>
+        </div>
+        <div class="dp-body">
+          <div class="d-kicker">Sunday, July 12 — Arrival, Terrasses &amp; the Soul of the Marais</div>
+          <h3>First Taste of the Marais</h3>
+          <div class="d-sub">Settle into historical cobblestones and discover the city's revolutionary past.</div>
+        </div>
+      </div>
+      <div class="prog-grid">
+        <div class="prog-card">
+          <div class="pc-eye">Arrival &amp; Chic Flânerie</div>
+          <ul>
+            <li><b>Boutique Check-In</b> — a Marais boutique hotel: Hôtel du Petit Moulin, Maison Proust, or Hôtel Caron de Beaumarchais.</li>
+            <li><b>First Café en Terrasse</b> — linger at a street-corner café and watch neighborhood life unfold.</li>
+            <li><b>Walking the Cobblestones</b> — a slow, immersive walk through narrow historic lanes.</li>
+          </ul>
+        </div>
+        <div class="prog-card">
+          <div class="pc-eye">Museum of Paris History</div>
+          <ul>
+            <li><b>Musée Carnavalet</b> — a legendary hôtel particulier dedicated to the city's history.</li>
+            <li><b>Deciphering the Revolution</b> — the deep history of Bastille Day and how Paris became modern.</li>
+            <li><b>Organic Walk Integration</b> — historical context woven into an outdoor walking narrative.</li>
+          </ul>
+        </div>
+        <div class="prog-card feature">
+          <div class="pc-eye">Curated Marais Dining</div>
+          <ul><li>Linger over an authentic, simple French meal. Recommended neighborhood gems for Sunday evening.</li></ul>
+          <div class="dine-band">
+            <div class="dl">Recommended Gems</div>
+            <div class="dv">Les Philosophes · Le Bon Georges · Au Bourguignon du Marais · Le Colimaçon · Le Loir dans la Théière</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 1 -->
+    <div class="day-block reveal">
+      <div class="day-photo">
+        <img src="assets/img-seine-cruise.png" alt="Sightseeing boat gliding along the Seine past the Musée d'Orsay at golden-hour sunset">
+        <div class="dp-mini">
+          <div class="dpm"><img src="assets/img-place-vosges.png" alt="Place des Vosges square"></div>
+          <div class="dpm"><img src="assets/img-champ-de-mars.png" alt="Sparkling Eiffel Tower at twilight"></div>
+        </div>
+        <div class="dp-body">
+          <div class="d-kicker">Monday, July 13 — Classic Symmetry, Seine Sunset &amp; Symphonic Fireworks</div>
+          <h3>Day 1 · The Golden Vigil</h3>
+          <div class="d-sub">An elegant transition from Renaissance cobblestones to water-side music and lights.</div>
+        </div>
+      </div>
+      <div class="prog-grid">
+        <div class="prog-card">
+          <div class="pc-eye">1 · Morning Splendours</div>
+          <ul>
+            <li><b>Place des Vosges</b> — the perfect symmetry of Paris's oldest square.</li>
+            <li><b>Hôtel de Sully</b> — through the secret Renaissance gardens.</li>
+            <li><b>Île de la Cité</b> — the banks to Notre-Dame &amp; Square Jean XXIII.</li>
+            <li><b>Terrasse Lunch</b> — Robert et Louise, GrandCœur, Café Charlot, or Au Bourguignon.</li>
+          </ul>
+        </div>
+        <div class="prog-card">
+          <div class="pc-eye">2 · Golden Sunset Cruise</div>
+          <ul>
+            <li><b>Late-Afternoon Cruise</b> — board a classic boat at 17:30–18:00 as the July light softens.</li>
+            <li><b>River Architecture</b> — the Louvre, Orsay &amp; Grand Palais in gold rays.</li>
+            <li><b>Early Alma Dining</b> — Monsieur Bleu, Francette, or Café de l'Alma.</li>
+          </ul>
+        </div>
+        <div class="prog-card feature">
+          <div class="pc-eye">3 · Fireworks &amp; Music</div>
+          <ul>
+            <li><b>Concert de Paris</b> — the magnificent outdoor orchestra at Champ-de-Mars.</li>
+            <li><b>National Fireworks</b> — at 23:00, the fireworks set the Eiffel Tower ablaze.</li>
+            <li><b>Festive Picnics</b> — classical notes, champagne &amp; local families under the stars.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="day-alert">Note: the National Fireworks are exceptionally scheduled for Monday evening, July 13 in 2026. We dine early as the sun sets late in July.</p>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="day-block reveal">
+      <div class="day-photo">
+        <img src="assets/img-parade-champs.png" alt="Patrouille de France jets trailing blue-white-red smoke over the Arc de Triomphe on the Champs-Élysées">
+        <div class="dp-mini">
+          <div class="dpm"><img src="assets/img-garnier.png" alt="Palais Garnier grand staircase"></div>
+          <div class="dpm"><img src="assets/img-orsay.png" alt="Musée d'Orsay grand hall"></div>
+        </div>
+        <div class="dp-body">
+          <div class="d-kicker">Tuesday, July 14 — Air Shows, Belle Époque Spire &amp; the Grand Opera</div>
+          <h3>Day 2 · Parisian Elegance</h3>
+          <div class="d-sub">A masterclass in navigating National Day celebrations like a true Parisian insider.</div>
+        </div>
+      </div>
+      <div class="prog-grid">
+        <div class="prog-card">
+          <div class="pc-eye">The Insider's Parade Approach</div>
+          <ul>
+            <li><b>Sentinels of the Sky</b> — skip the dense Champs-Élysées crowds; arrive early (8:30) near Concorde or the Tuileries.</li>
+            <li><b>Jardin des Tuileries</b> — peaceful green alleys to watch the military air-show flyover.</li>
+            <li><b>Palais-Royal</b> — the Buren columns &amp; Comédie-Française; lunch at Le Grand Colbert or Bistrot Vivienne.</li>
+          </ul>
+        </div>
+        <div class="prog-card">
+          <div class="pc-eye">Belle Époque &amp; Rooftops</div>
+          <ul>
+            <li><b>Opéra Garnier</b> — the sweeping marble staircases &amp; golden details of Palais Garnier.</li>
+            <li><b>Boulevard Haussmann</b> — the rooftop terraces of Galeries Lafayette / Printemps for panoramic views.</li>
+            <li><b>Opening Caution</b> — grands-boulevards shops are often open even on National Day; check times close to the date.</li>
+          </ul>
+        </div>
+        <div class="prog-card feature">
+          <div class="pc-eye">High Art &amp; Opera Dining</div>
+          <ul><li>Savor an evening of high culture — spectacle choices &amp; legendary brasseries for Tuesday evening.</li></ul>
+          <div class="dine-band">
+            <div class="dl">Recommended Gems</div>
+            <div class="dv">Palais Garnier Ballet · Comédie-Française · Coco Palais Garnier · Café de la Paix · Bouillon Chartier</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div class="day-block reveal">
+      <div class="day-photo">
+        <img src="assets/img-montmartre.png" alt="The dome of Sacré-Cœur rising above a quiet cobblestone Montmartre lane in golden light">
+        <div class="dp-mini">
+          <div class="dpm"><img src="assets/img-orsay.png" alt="Musée d'Orsay Impressionist hall"></div>
+          <div class="dpm"><img src="assets/img-guinguette.png" alt="Seine-side guinguette terrace"></div>
+        </div>
+        <div class="dp-body">
+          <div class="d-kicker">Wednesday, July 15 — Slow Montmartre, Impressionist Masterpieces &amp; Seine Guinguettes</div>
+          <h3>Day 3 · Art, Light &amp; Water</h3>
+          <div class="d-sub">Entering the ultimate 'French Atelier' moments of emotional light and lingering conversations.</div>
+        </div>
+      </div>
+      <div class="prog-grid">
+        <div class="prog-card">
+          <div class="pc-eye">1 · Slow Montmartre</div>
+          <ul>
+            <li><b>Poetic Wandering</b> — the quiet charm of cobblestone streets, starting at Métro Abbesses.</li>
+            <li><b>Moulin &amp; Sacré-Cœur</b> — the iconic Moulin de la Galette and views from Sacré-Cœur.</li>
+            <li><b>Lamarck-Caulaincourt</b> — the tranquil northern stairways, far from tourist buses.</li>
+            <li><b>Artistic Lunch</b> — Le Moulin de la Galette, Marcel, or Hardware Société.</li>
+          </ul>
+        </div>
+        <div class="prog-card">
+          <div class="pc-eye">2 · Light at Orsay</div>
+          <ul>
+            <li><b>Impressionist Masters</b> — Monet, Renoir, Manet, Degas &amp; Van Gogh at Musée d'Orsay.</li>
+            <li><b>A Cultural Revolution</b> — Impressionism as an emotional revolution of light &amp; everyday modern life.</li>
+            <li><b>Artistic Conversation</b> — the bold paintstrokes &amp; soft sunset tones of the 19th-century avant-garde.</li>
+          </ul>
+        </div>
+        <div class="prog-card feature">
+          <div class="pc-eye">3 · Seine-Side Linger</div>
+          <ul>
+            <li><b>Riverside Flânerie</b> — the historic stone banks of the Seine, ripples catching gold light.</li>
+            <li><b>Guinguette Evenings</b> — conclude at an authentic riverside guinguette / terrace.</li>
+            <li><b>Lingering Light</b> — a cold glass of French wine as the city slows. Linger, converse, breathe the warm air.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="day-alert">Summer days linger in Paris. We end our day slow, on the edge of the water, where the sunset catches the ripples of history.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO BAND: SEINE -->
+<section class="vband" aria-label="Golden-hour cruise along the Seine">
+  <video autoplay muted loop playsinline poster="assets/img-seine-cruise.png">
+    <source src="assets/vid-seine.mp4" type="video/mp4">
+  </video>
+  <div class="vb-inner">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="vb-tag">The long Parisian dusk</div>
+        <h2 class="vb-title">Where the city <span class="gold-ital">slows down</span>.</h2>
+        <p class="vb-sub">Gold light on the water, the Orsay drifting past, a guinguette waiting on the bank. This is the France our winners come home changed by.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CULTURE PHOTO GRID -->
+<section class="sec sec-light" id="moments">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow eyebrow-line reveal" style="justify-content:center">The French Atelier Way</p>
+      <h2 class="display-md reveal reveal-d1">Culture speaks <span class="gold-ital">French</span>.</h2>
+      <p class="lede reveal reveal-d2">Not a checklist of monuments — the moments in between. Terrasses, opera staircases, Impressionist light and riverside evenings, the way we always teach it.</p>
+    </div>
+    <div class="photo-grid reveal">
+      <div class="pcardx"><img src="assets/img-place-vosges.png" alt="The symmetrical arcades and fountain of Place des Vosges"><div class="pcx-body"><span class="pcx-num">01</span><div class="pcx-title">Renaissance Symmetry</div><div class="pcx-desc">Place des Vosges, the oldest planned square in Paris.</div></div></div>
+      <div class="pcardx"><img src="assets/img-garnier.png" alt="The grand marble staircase and chandeliers of Palais Garnier"><div class="pcx-body"><span class="pcx-num">02</span><div class="pcx-title">Belle Époque Grandeur</div><div class="pcx-desc">The gilded staircases of the Palais Garnier.</div></div></div>
+      <div class="pcardx"><img src="assets/img-orsay.png" alt="The grand hall and gilded clock of the Musée d'Orsay"><div class="pcx-body"><span class="pcx-num">03</span><div class="pcx-title">Impressionist Light</div><div class="pcx-desc">Monet, Renoir and Van Gogh at the Musée d'Orsay.</div></div></div>
+      <div class="pcardx"><img src="assets/img-guinguette.png" alt="A Seine-side guinguette terrace strung with lights at dusk"><div class="pcx-body"><span class="pcx-num">04</span><div class="pcx-title">Riverside Evenings</div><div class="pcx-desc">A cold glass of rosé as the city exhales.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FLIGHT DETAILS -->
+<section class="sec sec-paper" id="flights">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow eyebrow-line reveal">The Flight Details</p>
+      <h2 class="display-md reveal reveal-d1">Everything about <span class="gold-ital">your ticket</span>.</h2>
+      <p class="lede reveal reveal-d2">Round-trip flights between the United States and Paris, scheduled around the Fête Nationale.</p>
+    </div>
+    <div class="flight-grid">
+      <div class="fcard reveal">
+        <div class="ic">✈️</div>
+        <h4>Departure from the USA</h4>
+        <p>Outbound from a major US airport — valid for <b>July 10, 11 or 12</b> (US departure). <a href="terms.html#airports">See eligible US airports →</a></p>
+      </div>
+      <div class="fcard reveal reveal-d1">
+        <div class="ic">🗼</div>
+        <h4>Return from Paris</h4>
+        <p>Return flights are valid through <b>July 13, 14 or 15</b>, so you'll be in Paris across the heart of the celebrations.</p>
+      </div>
+      <div class="fcard reveal reveal-d2">
+        <div class="ic">📅</div>
+        <h4>Booking Changes</h4>
+        <p>Any booking changes are valid for the <b>month of July only</b>, at an additional <b>$80 per ticket</b>.</p>
+      </div>
+    </div>
+    <div class="airports-band reveal">
+      <p class="eyebrow eyebrow-line center" style="justify-content:center">Eligible US Airports</p>
+      <p style="margin-top:.9rem;color:var(--on-light-soft);font-weight:300">Flights depart from major US international airports. <a href="terms.html#airports">Click here for the full list of eligible US airports →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- JUDGING -->
+<section class="sec culture-dark" id="judging">
+  <div class="narrow">
+    <div class="sec-head">
+      <p class="eyebrow eyebrow-line on-dark reveal" style="justify-content:center">How Winners Are Chosen</p>
+      <h2 class="display-md reveal reveal-d1">The selection <span class="gold-ital on-dark">criteria</span>.</h2>
+      <p class="lede on-dark reveal reveal-d2">Winners are selected by a committee, examining the depth and authenticity of each participant's sharing.</p>
+    </div>
+    <div class="judge-list reveal">
+      <div class="ji"><span class="b"></span><p><b>Shared activity on social</b> — the breadth and consistency of your channel-link shares.</p></div>
+      <div class="ji"><span class="b"></span><p><b>New channel followers</b> — followers we can attribute to the shares you made.</p></div>
+      <div class="ji"><span class="b"></span><p><b>Engagement level</b> — the quality and authenticity of the reach you generate.</p></div>
+      <div class="ji"><span class="b"></span><p><b>Minimum 10 shares</b> — a screenshot proving at least 10 channel-link messages sent is required to qualify.</p></div>
+    </div>
+    <div class="notify-band reveal reveal-d1">
+      <h4>Winner Notification</h4>
+      <p>Winners will be contacted by <b>phone call, text message and email</b>. Winners who are contacted and fail to respond within <b>7 days</b> forfeit their prize, and the ticket is transferred to an alternative winner.</p>
+    </div>
+    <div style="text-align:center;margin-top:2.2rem">
+      <a href="terms.html" class="btn btn-ghost">Read the Full Terms &amp; Conditions</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec sec-light" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow eyebrow-line reveal" style="justify-content:center">Your Questions, Answered</p>
+      <h2 class="display-md reveal reveal-d1">Contest <span class="gold-ital">FAQ</span>.</h2>
+    </div>
+    <div class="faq reveal">
+      <details open><summary>How do I qualify to win?</summary><p>Follow French Atelier on Instagram/Meta, share our channel link with your network (a minimum of 10 shares — channel-link messages sent), capture a screenshot showing those 10+ shares, and submit the short entry form. The three participants who share the most — and bring in the most engaged new community — win.</p></details>
+      <details><summary>What exactly do I need to screenshot?</summary><p>A print-screen showing at least 10 shares — the channel-link messages you actually sent to friends, family and your network. This is your proof of entry, and a minimum of 10 is required to qualify for the win.</p></details>
+      <details><summary>How are the three winners selected?</summary><p>A committee reviews shared activity on social, new channel followers linked to your shares, and overall engagement level. The top three sharers, meeting the 10-share minimum, are selected.</p></details>
+      <details><summary>What does the prize include?</summary><p>A round-trip flight from a major US airport to Paris, timed for Bastille Day, plus access to our complete three-day French Atelier insider program of terrasses, hidden gems, museums, cruises and curated dining.</p></details>
+      <details><summary>When can I fly?</summary><p>Outbound flights from the USA are valid for July 10, 11 or 12; return flights through July 13, 14 or 15. Any booking changes are valid for the month of July only, at an additional $80 per ticket.</p></details>
+      <details><summary>How and when will I be notified if I win?</summary><p>Winners are contacted by phone call, text message and email. If a contacted winner does not respond within 7 days, the prize is forfeited and transferred to an alternative winner.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ENTRY FORM CTA + FINAL -->
+<section class="sec culture-dark" id="form">
+  <div class="narrow" style="text-align:center">
+    <p class="eyebrow eyebrow-line on-dark reveal" style="justify-content:center">Submit Your Entry</p>
+    <h2 class="display-md reveal reveal-d1" style="margin:1rem 0">Ready to win your flight to <span class="gold-ital on-dark">Paris</span>?</h2>
+    <p class="lede on-dark reveal reveal-d2" style="margin:0 auto 2rem;max-width:54ch">Upload your screenshot of 10+ shares and fill the short form. The more — and more engaged — your shares, the closer you are to Bastille Day in Paris.</p>
+    <div class="reveal reveal-d2"><a href="#" id="entryFormBtn" class="btn btn-gold">Open the Entry Form</a></div>
+    <p style="margin-top:1.1rem;font-size:.8rem;color:var(--on-dark-faint);font-weight:300">Replace this button link with your live entry-form URL before launch.</p>
+    <div class="leaf" style="margin-top:3rem"><span class="line"></span><span class="dot">❧</span><span class="line"></span></div>
+    <p class="final-quote reveal">"It is about entering the most beautiful moments of <span class="gold-ital">French life</span>."</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <img class="nav-logo-img" src="assets/logo-white.png" alt="The French Atelier by Acadomia">
+      <div class="foot-links">
+        <a href="https://gitteromri-ux.github.io/french-atelier/">Home</a>
+        <a href="#program">The Program</a>
+        <a href="#enter">How to Enter</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+    </div>
+    <div class="foot-fine">
+      Win a Free Flight to Paris — a French Atelier community celebration for Bastille Day 2026. No purchase necessary. Open to eligible participants who complete all entry requirements, including a minimum of 10 shares. Round-trip flights from a major US airport. Winners selected by committee and notified by phone, text and email; non-response within 7 days forfeits the prize. Full details on our <a href="terms.html">Terms &amp; Conditions</a> page. French Atelier by Acadomia.
+    </div>
+  </div>
+</footer>
+
+<script>
+const header=document.getElementById('header');
+window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>40)});
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08,rootMargin:'0px 0px -5% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+window.addEventListener('load',()=>{setTimeout(()=>{document.querySelectorAll('.reveal:not(.in)').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<window.innerHeight*1.2)el.classList.add('in')})},400)});
+</script>
+</body>
+</html>
