@@ -95,6 +95,73 @@
   .ratio-badge{position:absolute;top:14px;left:14px;font-family:var(--serif);font-style:italic;font-size:15px;letter-spacing:0;
     color:var(--gold-bright);text-shadow:0 1px 6px rgba(0,0,0,.6);z-index:3}
 
+  /* ============ PHONE / DEVICE MOCKUPS (CEO-deck style) ============
+     Readable HTML text lives OUTSIDE the bezel. The video sits inside and
+     fills the screen — its baked-in text is never overlaid by HTML. */
+  .mock{display:grid;gap:30px;align-items:center}
+  .mock.split{grid-template-columns:1fr minmax(280px,340px)}
+  .mock.split.flip{grid-template-columns:minmax(280px,340px) 1fr}
+  .mock.split.flip .mock-copy{order:2}
+  .mock.split.flip .mock-stage{order:1}
+  .mock-stage{display:flex;justify-content:center}
+  .mock-copy .eyebrow{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--gold-bright);
+    letter-spacing:0;margin-bottom:14px;display:flex;align-items:center;gap:12px}
+  .mock-copy .eyebrow .num{font-family:var(--serif);font-style:italic;font-size:34px;color:var(--gold-soft);
+    line-height:1;opacity:.9}
+  .mock-copy h3{font-family:var(--display);font-weight:600;font-size:clamp(26px,3.2vw,38px);color:#fff;
+    line-height:1.08;letter-spacing:-.01em}
+  .mock-copy h3 em{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--gold-bright)}
+  .mock-copy .rule{width:64px;height:2px;background:var(--gold);margin:18px 0}
+  .mock-copy p{font-size:17px;line-height:1.6;color:rgba(243,239,233,.86);max-width:46ch}
+  .mock-copy .spec{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0 0}
+  .mock-copy .spec .tag{font-family:var(--sans);font-size:12.5px;letter-spacing:0;font-weight:500;
+    color:var(--gold-soft);background:rgba(224,198,140,.09);border:1px solid rgba(224,198,140,.28);
+    border-radius:7px;padding:5px 11px;line-height:1.3}
+  .mock-copy .spec .tag.use{color:rgba(243,239,233,.82);background:rgba(255,255,255,.05);border-color:var(--navy-line)}
+  .mock-copy .dlbtn{margin-top:20px;display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    padding:13px 26px;border-radius:9px;font-weight:600;font-size:15px;color:#fff;text-decoration:none;
+    background:var(--gold-deep);border:1px solid var(--gold);transition:.25s var(--ease)}
+  .mock-copy .dlbtn:hover{background:var(--gold);transform:translateY(-1px)}
+
+  /* the phone bezel itself */
+  .phone{position:relative;width:100%;max-width:340px;aspect-ratio:9/16;border-radius:42px;
+    background:linear-gradient(160deg,#10193A,#070B22);padding:12px;box-sizing:border-box;overflow:hidden;
+    box-shadow:0 30px 80px rgba(0,0,20,.55),0 8px 20px rgba(0,0,20,.4),inset 0 0 0 1px rgba(224,198,140,.18)}
+  .phone .notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:118px;height:26px;
+    background:#05050f;border-radius:0 0 16px 16px;z-index:5}
+  .phone video,.phone img{position:absolute;inset:12px;width:calc(100% - 24px);height:calc(100% - 24px);
+    object-fit:cover;border-radius:30px;display:block;background:#05050f}
+  .phone .ratio-badge{top:22px;left:22px}
+
+  /* feed-post device chrome for square / portrait banners */
+  .feedcard{width:100%;max-width:420px;border-radius:18px;overflow:hidden;background:var(--navy-deep);
+    border:1px solid var(--navy-line);box-shadow:0 24px 60px rgba(0,0,20,.5),inset 0 0 0 1px rgba(224,198,140,.1)}
+  .feedcard .fc-top{display:flex;align-items:center;gap:10px;padding:12px 14px}
+  .feedcard .fc-top .av{width:34px;height:34px;border-radius:50%;flex:none;
+    background:linear-gradient(150deg,var(--gold-bright),var(--gold-deep));display:flex;align-items:center;
+    justify-content:center;font-family:var(--display);font-weight:600;font-size:15px;color:#0A0A28}
+  .feedcard .fc-top .h{font-family:var(--sans);font-weight:600;font-size:14.5px;color:#fff;line-height:1.1}
+  .feedcard .fc-top .h small{display:block;font-weight:400;font-size:12px;color:rgba(243,239,233,.6)}
+  .feedcard .fc-top .more{margin-left:auto;color:rgba(243,239,233,.5);font-size:20px;line-height:1}
+  .feedcard .fc-media{position:relative;background:#05050f;overflow:hidden}
+  .feedcard .fc-media.r11{aspect-ratio:1/1}
+  .feedcard .fc-media.r45{aspect-ratio:4/5}
+  .feedcard .fc-media video{width:100%;height:100%;object-fit:cover;display:block}
+  .feedcard .fc-actions{display:flex;align-items:center;gap:16px;padding:11px 14px 4px}
+  .feedcard .fc-actions svg{width:23px;height:23px;stroke:#F3EFE9;fill:none;stroke-width:1.8}
+  .feedcard .fc-actions .save{margin-left:auto}
+  .feedcard .fc-cap{padding:2px 14px 14px;font-size:14px;line-height:1.5;color:rgba(243,239,233,.9)}
+  .feedcard .fc-cap b{color:#fff;font-weight:600}
+
+  @media(max-width:820px){
+    .mock.split,.mock.split.flip{grid-template-columns:1fr;gap:26px}
+    .mock.split.flip .mock-copy{order:1}.mock.split.flip .mock-stage{order:2}
+    .mock-copy{text-align:center;display:flex;flex-direction:column;align-items:center}
+    .mock-copy .eyebrow{justify-content:center}
+    .mock-copy .rule{margin-left:auto;margin-right:auto}
+    .phone{max-width:280px}
+  }
+
   .card .body{padding:18px 20px 22px}
   .card .spec{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:13px}
   .card .spec .tag{font-family:var(--sans);font-size:12.5px;letter-spacing:0;font-weight:500;
@@ -115,9 +182,13 @@
   .strip::-webkit-scrollbar{height:8px}
   .strip::-webkit-scrollbar-thumb{background:var(--navy-line);border-radius:8px}
   .strip .slide{flex:none;width:340px;max-width:80vw;scroll-snap-align:start;border-radius:16px;overflow:hidden;
-    border:1px solid var(--navy-line);position:relative;cursor:zoom-in;transition:transform .25s var(--ease),border-color .25s var(--ease)}
+    border:1px solid var(--navy-line);position:relative;background:var(--navy-deep);transition:transform .25s var(--ease),border-color .25s var(--ease)}
   .strip .slide:hover{transform:translateY(-4px);border-color:rgba(224,198,140,.5)}
+  .strip .slide .shot{position:relative;display:block;cursor:zoom-in}
   .strip .slide img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover}
+  .strip .slide .cap{padding:13px 15px 15px}
+  .strip .slide .cap .ct{font-family:var(--display);font-weight:600;font-size:16px;color:#fff;line-height:1.25}
+  .strip .slide .cap .cd{margin-top:4px;font-family:var(--serif);font-style:italic;font-size:14.5px;color:var(--gold-soft);line-height:1.35}
   .strip .slide .num{position:absolute;top:12px;left:12px;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--gold-bright);
     text-shadow:0 1px 6px rgba(0,0,0,.7);z-index:2}
   .strip .slide .zoom{position:absolute;bottom:12px;right:12px;display:flex;align-items:center;gap:6px;
@@ -234,40 +305,49 @@
       <h2>Stories &amp; Reels</h2>
       <span class="fmt">9:16 · 1080×1920 · 15s · MP4</span>
     </div>
-    <div class="grid cols-3">
-      <div class="card reveal">
-        <div class="media r916">
-          <span class="ratio-badge">9:16</span>
+    <div style="display:grid;gap:64px">
+      <div class="mock split reveal">
+        <div class="mock-stage">
+          <div class="phone"><span class="notch"></span><span class="ratio-badge">9:16</span>
           <video src="assets/reel-1-win-flight.mp4?v=9" poster="assets/reel-1-poster.jpg?v=9" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()" onclick="this.paused?this.play():this.pause()"></video>
         </div>
-        <div class="body">
-          <div class="spec"><span class="tag">Reel / Story</span><span class="tag">9:16</span><span class="tag">1080×1920</span><span class="tag">15s · MP4</span><span class="tag use">IG Reels + FB Stories</span></div>
-          <h3>Win a Free Flight to Paris</h3>
-          <p>The main hook. Win a free flight to Paris for Bastille Day. Ends on “Enter now — link in bio.”</p>
+        </div>
+        <div class="mock-copy">
+          <div class="eyebrow"><span class="num">01</span> Reel · The hook</div>
+          <h3>Win a Free Flight <em>to Paris</em></h3>
+          <div class="rule"></div>
+          <p>The main hook of the campaign — a free flight to Paris for Bastille Day, closing on a clear “Enter now, link in bio.” Built to stop the scroll in the first two seconds.</p>
+          <div class="spec"><span class="tag">Reel / Story</span><span class="tag">9:16 · 1080×1920</span><span class="tag">15s · MP4</span><span class="tag use">IG Reels + FB Stories</span></div>
           <a class="dlbtn" href="assets/reel-1-win-flight.mp4?v=5" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>Download MP4</a>
         </div>
       </div>
-      <div class="card reveal">
-        <div class="media r916">
-          <span class="ratio-badge">9:16</span>
+      <div class="mock split flip reveal">
+        <div class="mock-stage">
+          <div class="phone"><span class="notch"></span><span class="ratio-badge">9:16</span>
           <video src="assets/reel-2-three-winners.mp4?v=9" poster="assets/reel-2-poster.jpg?v=9" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()" onclick="this.paused?this.play():this.pause()"></video>
         </div>
-        <div class="body">
-          <div class="spec"><span class="tag">Reel / Story</span><span class="tag">9:16</span><span class="tag">1080×1920</span><span class="tag">15s · MP4</span><span class="tag use">IG Reels + FB Stories</span></div>
-          <h3>3 Winners Fly Free</h3>
-          <p>Shows the prize: 3 free flights to Paris for Bastille Day. Share with 10 friends to win.</p>
+        </div>
+        <div class="mock-copy">
+          <div class="eyebrow"><span class="num">02</span> Reel · The prize</div>
+          <h3>3 Winners <em>Fly Free</em></h3>
+          <div class="rule"></div>
+          <p>Reveals the prize — three free flights to Paris for Bastille Day. The share-with-friends mechanic turns each viewer into a new entry and widens reach organically.</p>
+          <div class="spec"><span class="tag">Reel / Story</span><span class="tag">9:16 · 1080×1920</span><span class="tag">15s · MP4</span><span class="tag use">IG Reels + FB Stories</span></div>
           <a class="dlbtn" href="assets/reel-2-three-winners.mp4?v=5" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>Download MP4</a>
         </div>
       </div>
-      <div class="card reveal">
-        <div class="media r916">
-          <span class="ratio-badge">9:16</span>
+      <div class="mock split reveal">
+        <div class="mock-stage">
+          <div class="phone"><span class="notch"></span><span class="ratio-badge">9:16</span>
           <video src="assets/reel-3-2days-left.mp4?v=9" poster="assets/reel-3-poster.jpg?v=9" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()" onclick="this.paused?this.play():this.pause()"></video>
         </div>
-        <div class="body">
-          <div class="spec"><span class="tag">Reel / Story</span><span class="tag">9:16</span><span class="tag">1080×1920</span><span class="tag">15s · MP4</span><span class="tag use">IG Reels + FB Stories</span></div>
-          <h3>Last Chance to Win <span style="color:var(--rouge)">●</span></h3>
-          <p>Urgency version. Last days to win a free flight to Paris — drives entries before it closes.</p>
+        </div>
+        <div class="mock-copy">
+          <div class="eyebrow"><span class="num">03</span> Reel · Last call <span style="color:var(--rouge)">●</span></div>
+          <h3>Last Chance <em>to Win</em></h3>
+          <div class="rule"></div>
+          <p>The urgency cut — the final push before entries close. Countdown energy drives a last spike of sign-ups from anyone who hesitated earlier in the campaign.</p>
+          <div class="spec"><span class="tag">Reel / Story</span><span class="tag">9:16 · 1080×1920</span><span class="tag">15s · MP4</span><span class="tag use">IG Reels + FB Stories</span></div>
           <a class="dlbtn" href="assets/reel-3-2days-left.mp4?v=5" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>Download MP4</a>
         </div>
       </div>
@@ -283,28 +363,40 @@
       <h2>Feed Banners</h2>
       <span class="fmt">1:1 · 1080×1080 &nbsp;|&nbsp; 4:5 · 1080×1350 · MP4</span>
     </div>
-    <div class="grid cols-2">
-      <div class="card reveal">
-        <div class="media r11">
-          <span class="ratio-badge">1:1</span>
-          <video src="assets/banner-square-1x1.mp4?v=9" poster="assets/banner-1x1-poster.jpg?v=9" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()" onclick="this.paused?this.play():this.pause()"></video>
+    <div style="display:grid;gap:64px">
+      <div class="mock split reveal">
+        <div class="mock-stage">
+          <div class="feedcard">
+            <div class="fc-top"><span class="av">F</span><span class="h">livefrenchatelier<small>Sponsored</small></span><span class="more">⋯</span></div>
+            <div class="fc-media r11"><span class="ratio-badge">1:1</span><video src="assets/banner-square-1x1.mp4?v=9" poster="assets/banner-1x1-poster.jpg?v=9" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()" onclick="this.paused?this.play():this.pause()"></video></div>
+            <div class="fc-actions"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-1L3 20l1.1-4A8.4 8.4 0 1 1 21 11.5z"/></svg><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg><svg class="save" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></div>
+            <div class="fc-cap"><b>livefrenchatelier</b> Win a free flight to Paris for Bastille Day — link in bio to enter.</div>
+          </div>
         </div>
-        <div class="body">
-          <div class="spec"><span class="tag">Feed Banner</span><span class="tag">1:1</span><span class="tag">1080×1080</span><span class="tag">MP4</span><span class="tag use">IG + FB Feed &amp; Explore</span></div>
-          <h3>Square Feed Video</h3>
-          <p>Win a free flight to Paris for Bastille Day. Square format for the main Feed.</p>
+        <div class="mock-copy">
+          <div class="eyebrow"><span class="num">01</span> Feed · Square</div>
+          <h3>Square Feed <em>Video</em></h3>
+          <div class="rule"></div>
+          <p>The 1:1 cut for the main Feed and Explore. Compact and balanced, it reads cleanly at small sizes and holds up whether it autoplays muted or stops on a poster frame.</p>
+          <div class="spec"><span class="tag">Feed Banner</span><span class="tag">1:1 · 1080×1080</span><span class="tag">MP4</span><span class="tag use">IG + FB Feed &amp; Explore</span></div>
           <a class="dlbtn" href="assets/banner-square-1x1.mp4?v=5" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>Download MP4</a>
         </div>
       </div>
-      <div class="card reveal">
-        <div class="media r45">
-          <span class="ratio-badge">4:5</span>
-          <video src="assets/banner-feed-4x5.mp4?v=9" poster="assets/banner-4x5-poster.jpg?v=9" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()" onclick="this.paused?this.play():this.pause()"></video>
+      <div class="mock split flip reveal">
+        <div class="mock-stage">
+          <div class="feedcard">
+            <div class="fc-top"><span class="av">F</span><span class="h">livefrenchatelier<small>Sponsored</small></span><span class="more">⋯</span></div>
+            <div class="fc-media r45"><span class="ratio-badge">4:5</span><video src="assets/banner-feed-4x5.mp4?v=9" poster="assets/banner-4x5-poster.jpg?v=9" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()" onclick="this.paused?this.play():this.pause()"></video></div>
+            <div class="fc-actions"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-1L3 20l1.1-4A8.4 8.4 0 1 1 21 11.5z"/></svg><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg><svg class="save" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></div>
+            <div class="fc-cap"><b>livefrenchatelier</b> Win a free flight to Paris for Bastille Day — link in bio to enter.</div>
+          </div>
         </div>
-        <div class="body">
-          <div class="spec"><span class="tag">Feed Banner</span><span class="tag">4:5</span><span class="tag">1080×1350</span><span class="tag">MP4</span><span class="tag use">IG + FB Feed</span></div>
-          <h3>Portrait Feed Video</h3>
-          <p>Win a free flight to Paris for Bastille Day. Tall 4:5 format fills more of the Feed.</p>
+        <div class="mock-copy">
+          <div class="eyebrow"><span class="num">02</span> Feed · Portrait</div>
+          <h3>Portrait Feed <em>Video</em></h3>
+          <div class="rule"></div>
+          <p>The tall 4:5 cut claims more vertical real estate in the Feed, pushing competing posts off-screen. The recommended default for paid Feed placements on both platforms.</p>
+          <div class="spec"><span class="tag">Feed Banner</span><span class="tag">4:5 · 1080×1350</span><span class="tag">MP4</span><span class="tag use">IG + FB Feed</span></div>
           <a class="dlbtn" href="assets/banner-feed-4x5.mp4?v=5" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>Download MP4</a>
         </div>
       </div>
@@ -322,12 +414,12 @@
     </div>
     <p class="reveal" style="font-size:16px;color:rgba(243,239,233,.7);margin:-10px 0 18px;font-family:var(--serif);font-style:italic">Tap any slide to view it full-size and readable.</p>
     <div class="strip reveal">
-      <div class="slide" onclick="openLB(0)"><span class="num">1</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-1.jpg?v=9" alt="Carousel slide 1 — Win a free flight"></div>
-      <div class="slide" onclick="openLB(1)"><span class="num">2</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-2.jpg?v=9" alt="Carousel slide 2 — Arrival in the Marais"></div>
-      <div class="slide" onclick="openLB(2)"><span class="num">3</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-3.jpg?v=9" alt="Carousel slide 3 — Seine sunset and fireworks"></div>
-      <div class="slide" onclick="openLB(3)"><span class="num">4</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-4.jpg?v=9" alt="Carousel slide 4 — Bastille Day air shows"></div>
-      <div class="slide" onclick="openLB(4)"><span class="num">5</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-5.jpg?v=9" alt="Carousel slide 5 — Montmartre and the Impressionists"></div>
-      <div class="slide" onclick="openLB(5)"><span class="num">6</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-6.jpg?v=9" alt="Carousel slide 6 — How to enter"></div>
+      <div class="slide"><div class="shot" onclick="openLB(0)"><span class="num">1</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-1.jpg?v=9" alt="Carousel slide 1 — Win a free flight"></div><div class="cap"><div class="ct">Win a Free Flight</div><div class="cd">The opening hook — a free flight to Paris for Bastille Day.</div></div></div>
+      <div class="slide"><div class="shot" onclick="openLB(1)"><span class="num">2</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-2.jpg?v=9" alt="Carousel slide 2 — Arrival in the Marais"></div><div class="cap"><div class="ct">Arrival in the Marais</div><div class="cd">Touchdown in the heart of historic Paris, ready to explore.</div></div></div>
+      <div class="slide"><div class="shot" onclick="openLB(2)"><span class="num">3</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-3.jpg?v=9" alt="Carousel slide 3 — Seine sunset and fireworks"></div><div class="cap"><div class="ct">Seine Sunset & Fireworks</div><div class="cd">Golden hour on the river, building to the Bastille Day show.</div></div></div>
+      <div class="slide"><div class="shot" onclick="openLB(3)"><span class="num">4</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-4.jpg?v=9" alt="Carousel slide 4 — Bastille Day air shows"></div><div class="cap"><div class="ct">Bastille Day Air Shows</div><div class="cd">The national celebration overhead — the trip's centrepiece.</div></div></div>
+      <div class="slide"><div class="shot" onclick="openLB(4)"><span class="num">5</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-5.jpg?v=9" alt="Carousel slide 5 — Montmartre and the Impressionists"></div><div class="cap"><div class="ct">Montmartre & the Impressionists</div><div class="cd">Art, cafés and the village that shaped modern painting.</div></div></div>
+      <div class="slide"><div class="shot" onclick="openLB(5)"><span class="num">6</span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Enlarge</span><img src="assets/carousel-6.jpg?v=9" alt="Carousel slide 6 — How to enter"></div><div class="cap"><div class="ct">How to Enter</div><div class="cd">The clear call to action — enter free, link in bio.</div></div></div>
     </div>
     <div style="margin-top:20px">
       <a class="dlbtn" style="max-width:280px" href="assets/french_atelier_adkit.zip?v=4" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>Download all 6 slides</a>
