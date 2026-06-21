@@ -109,16 +109,17 @@ section{position:relative;scroll-margin-top:84px}
 .sec-head .lede-lg{font-size:clamp(1.35rem,2vw,1.75rem);line-height:1.55;font-weight:300;color:var(--on-light-soft)}
 .sec-head .lede-lg.on-dark{color:var(--on-dark-soft)}
 
-/* ===== HOW IT WORKS — clean, right after hero ===== */
-.hiw-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;margin-top:1rem;counter-reset:hiw}
-.hiw-card{position:relative;background:#fff;border:1px solid var(--light-line);border-radius:18px;padding:2.4rem 1.8rem 2rem;box-shadow:0 24px 50px -38px rgba(20,26,51,.4);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
-.hiw-card:hover{transform:translateY(-4px);box-shadow:0 32px 60px -38px rgba(20,26,51,.45)}
-.hiw-num{display:inline-flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:50%;background:linear-gradient(150deg,var(--gold-bright),var(--gold-deep));color:#fff;font-family:var(--display);font-weight:700;font-size:1.55rem;margin-bottom:1.2rem;box-shadow:0 10px 24px -12px rgba(170,140,85,.7)}
-.hiw-card h3{font-family:var(--display);font-size:1.5rem;color:var(--on-light);margin-bottom:.55rem;font-weight:600}
-.hiw-card p{font-size:1.04rem;color:var(--on-light-soft);line-height:1.6}
-.hiw-card .hl{color:var(--gold-deep);font-weight:600}
-.hiw-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1.4rem;margin-top:3rem;text-align:center}
-.hiw-foot .hiw-note{font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,1.6vw,1.45rem);color:var(--on-light-soft)}
+/* ===== HOW IT WORKS — dramatic dark fold, premium cards ===== */
+.hiw-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:1rem}
+.hiw-card{position:relative;background:linear-gradient(168deg,rgba(40,46,78,.9),rgba(10,13,33,.96));border:1px solid var(--gold-line-soft);border-radius:20px;padding:2.6rem 1.9rem 2.2rem;overflow:hidden;box-shadow:0 30px 60px -40px rgba(0,0,0,.85),inset 0 1px 0 rgba(255,255,255,.06);transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease)}
+.hiw-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-deep),var(--gold-bright),var(--gold-deep));opacity:.85}
+.hiw-card:hover{transform:translateY(-6px);border-color:var(--gold-line);box-shadow:0 44px 80px -42px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.08)}
+.hiw-num{display:inline-flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:16px;background:linear-gradient(150deg,var(--gold-bright),var(--gold-deep));color:var(--navy-deep);font-family:var(--display);font-weight:800;font-size:1.8rem;margin-bottom:1.4rem;box-shadow:0 14px 30px -12px rgba(170,140,85,.8)}
+.hiw-card h3{font-family:var(--display);font-size:1.55rem;color:var(--on-dark);margin-bottom:.6rem;font-weight:600;line-height:1.15}
+.hiw-card p{font-size:1.05rem;color:var(--on-dark-soft);line-height:1.62}
+.hiw-card .hl{color:var(--gold-soft);font-weight:600}
+.hiw-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1.6rem;margin-top:3.4rem;text-align:center}
+.hiw-foot .hiw-note{font-family:var(--serif);font-style:italic;font-size:clamp(1.25rem,1.8vw,1.6rem);color:var(--gold-soft)}
 
 /* ===== WHAT IT IS — TIER 3: compact inline strip ===== */
 .what-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem;margin-top:2rem}
@@ -143,25 +144,29 @@ section{position:relative;scroll-margin-top:84px}
 .pb-list .ck{color:var(--gold-bright);flex-shrink:0;font-size:1.15rem}
 @media(max-width:860px){.pb-list{grid-template-columns:1fr}.prize-banner .pb-inner{padding:6rem 1.3rem}}
 
-/* ===== ITINERARY — COMPACT SIDE-BY-SIDE CARDS (video thumb top, text below) ===== */
-.day-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:1rem;align-items:stretch}
-.day-card{display:flex;flex-direction:column;background:linear-gradient(165deg,var(--navy-soft),var(--navy-deep));border:1px solid var(--dark-line);border-radius:20px;overflow:hidden;box-shadow:0 30px 60px -45px rgba(0,0,0,.8);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
-.day-card:hover{transform:translateY(-5px);box-shadow:0 40px 70px -45px rgba(0,0,0,.85)}
-.day-card.featured{border-color:rgba(224,198,140,.5);box-shadow:0 30px 60px -40px rgba(170,140,85,.5)}
-.day-thumb{position:relative;aspect-ratio:16/10;overflow:hidden}
-.day-thumb video,.day-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.day-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,20,.05) 0%,rgba(0,0,20,.1) 55%,rgba(0,0,20,.62) 100%)}
-.day-thumb .day-badge{position:absolute;z-index:2;top:.9rem;left:.9rem;display:inline-flex;align-items:center;gap:.4rem;font-family:var(--serif);font-style:italic;font-size:1.02rem;font-weight:600;color:#fff;background:rgba(0,0,28,.62);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:.35rem .95rem;backdrop-filter:blur(4px)}
-.day-thumb .day-badge.flag{background:rgba(200,52,75,.92);border-color:rgba(255,255,255,.32)}
-.day-thumb .day-date{position:absolute;z-index:2;left:1rem;bottom:.85rem;font-family:var(--sans);font-size:.92rem;font-weight:600;letter-spacing:.01em;color:var(--gold-bright);text-shadow:0 1px 10px rgba(0,0,10,.9)}
-.day-body{display:flex;flex-direction:column;flex:1;padding:1.7rem 1.6rem 1.8rem}
-.day-body h3{font-family:var(--display);font-size:1.55rem;color:var(--on-dark);font-weight:600;line-height:1.12;margin-bottom:.5rem}
-.day-body .day-sub{font-family:var(--serif);font-style:italic;font-size:1.18rem;color:var(--gold-soft);line-height:1.35;margin-bottom:.9rem}
-.day-body p{font-size:1.0rem;color:var(--on-dark-soft);line-height:1.58;margin-bottom:1.1rem}
-.day-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:auto}
-.day-tag{font-family:var(--sans);font-size:.86rem;color:var(--on-dark-soft);background:rgba(255,255,255,.06);border:1px solid var(--dark-line);border-radius:999px;padding:.35rem .85rem}
-.day-note{margin-top:auto;padding-top:1rem}
-.day-alert{display:flex;gap:.5rem;align-items:flex-start;font-size:.92rem;color:var(--gold-bright);line-height:1.5;margin-top:1rem;border-top:1px solid var(--dark-line);padding-top:.9rem}
+/* ===== ITINERARY — LARGE DRAMATIC CARDS, 3-up, big tall video ===== */
+.day-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;margin-top:1.5rem;align-items:stretch}
+.day-card{position:relative;display:flex;flex-direction:column;background:linear-gradient(165deg,var(--navy-soft),var(--navy-deep));border:1px solid var(--dark-line);border-radius:22px;overflow:hidden;box-shadow:0 44px 80px -48px rgba(0,0,0,.9);transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease)}
+.day-card:hover{transform:translateY(-8px);box-shadow:0 60px 100px -48px rgba(0,0,0,.92)}
+.day-card.featured{border-color:rgba(224,198,140,.55);box-shadow:0 44px 90px -44px rgba(170,140,85,.55)}
+.day-card.featured::after{content:"";position:absolute;inset:0;border-radius:22px;border:1px solid rgba(224,198,140,.4);pointer-events:none;z-index:5}
+/* BIG, TALL cinematic video — taller than wide for drama */
+.day-thumb{position:relative;aspect-ratio:4/5;overflow:hidden}
+.day-thumb video,.day-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 7s var(--ease)}
+.day-card:hover .day-thumb video,.day-card:hover .day-thumb img{transform:scale(1.06)}
+.day-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,20,.12) 0%,rgba(0,0,20,.06) 38%,rgba(0,0,20,.4) 68%,rgba(0,0,20,.92) 100%)}
+/* title + date sit ON the footage for cinematic impact */
+.day-thumb .day-over{position:absolute;z-index:3;left:0;right:0;bottom:0;padding:1.8rem 1.6rem 1.5rem}
+.day-thumb .day-date{font-family:var(--sans);font-size:.95rem;font-weight:600;letter-spacing:.02em;color:var(--gold-bright);margin-bottom:.5rem;text-shadow:0 1px 12px rgba(0,0,10,.95)}
+.day-thumb h3{font-family:var(--display);font-size:clamp(1.7rem,2vw,2.05rem);color:#fff;font-weight:700;line-height:1.08;text-shadow:0 2px 22px rgba(0,0,10,.8)}
+.day-thumb .day-badge{position:absolute;z-index:4;top:1.1rem;left:1.1rem;display:inline-flex;align-items:center;gap:.4rem;font-family:var(--serif);font-style:italic;font-size:1.08rem;font-weight:600;color:#fff;background:rgba(0,0,28,.66);border:1px solid rgba(224,198,140,.5);border-radius:999px;padding:.4rem 1.05rem;backdrop-filter:blur(6px);box-shadow:0 6px 20px -8px rgba(0,0,10,.7)}
+.day-thumb .day-badge.flag{background:rgba(200,52,75,.94);border-color:rgba(255,255,255,.4)}
+.day-body{display:flex;flex-direction:column;flex:1;padding:1.7rem 1.7rem 1.9rem}
+.day-body .day-sub{font-family:var(--serif);font-style:italic;font-size:1.22rem;color:var(--gold-soft);line-height:1.35;margin-bottom:.9rem}
+.day-body p{font-size:1.02rem;color:var(--on-dark-soft);line-height:1.6;margin-bottom:1.2rem}
+.day-tags{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:auto}
+.day-tag{font-family:var(--sans);font-size:.88rem;color:var(--on-dark-soft);background:rgba(255,255,255,.06);border:1px solid var(--dark-line);border-radius:999px;padding:.4rem .9rem}
+.day-alert{display:flex;gap:.5rem;align-items:flex-start;font-size:.94rem;color:var(--gold-bright);line-height:1.5;margin-top:1.1rem;border-top:1px solid var(--dark-line);padding-top:1rem}
 
 /* ===== ENTRY FORM ===== */
 .entry{background:linear-gradient(165deg,var(--navy-soft),var(--navy-deep));border-radius:24px;padding:3.4rem 3rem;border:1px solid var(--dark-line);box-shadow:0 50px 90px -55px rgba(0,0,0,.8)}
@@ -349,13 +354,13 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
   </div>
 </section>
 
-<!-- ===== HOW IT WORKS — immediately after hero ===== -->
-<section class="sec sec-paper" id="how">
+<!-- ===== HOW IT WORKS — dramatic dark fold, immediately after hero ===== -->
+<section class="sec sec-dark" id="how">
   <div class="wrap">
     <div class="sec-head center reveal">
-      <span class="eyebrow eyebrow-line center">How It Works</span>
-      <h2 class="h2-xl">Win it in four simple steps.</h2>
-      <p class="lede-lg">About two minutes, no purchase, no emails. Follow us, share French Atelier with 10+ friends, upload the proof &mdash; the three biggest sharers fly to Paris.</p>
+      <span class="eyebrow on-dark eyebrow-line center">How It Works</span>
+      <h2 style="font-size:clamp(2.4rem,4.4vw,3.6rem)">Win it in four simple steps.</h2>
+      <p class="lede-lg on-dark">About two minutes, no purchase, no emails. Follow us, share French Atelier with 10+ friends, upload the proof &mdash; the three biggest sharers fly to Paris.</p>
     </div>
     <div class="hiw-steps">
       <div class="hiw-card reveal">
@@ -429,10 +434,12 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
             <source src="assets/mot-fireworks-web.mp4?v=10" type="video/mp4">
           </video>
           <span class="day-badge">Day 1</span>
-          <span class="day-date">Mon, July 13 &middot; The Golden Vigil</span>
+          <div class="day-over">
+            <p class="day-date">Mon, July 13 &middot; The Golden Vigil</p>
+            <h3>Classic Symmetry &amp; Symphonic Fireworks</h3>
+          </div>
         </div>
         <div class="day-body">
-          <h3>Classic Symmetry &amp; Symphonic Fireworks</h3>
           <p class="day-sub">Place des Vosges, a golden Seine sunset, and the national fireworks</p>
           <p>Begin at Place des Vosges and the &Icirc;le de la Cit&eacute;. A golden-hour Seine cruise past the Louvre and Orsay. Evening: the Concert de Paris, then the national fireworks at 23:00 with the Eiffel Tower ablaze.</p>
           <div class="day-tags">
@@ -451,10 +458,12 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
             <source src="assets/mot-tuileries-web.mp4?v=10" type="video/mp4">
           </video>
           <span class="day-badge flag">&#9733; Bastille Day</span>
-          <span class="day-date">Tue, July 14 &middot; Official Grandeur</span>
+          <div class="day-over">
+            <p class="day-date">Tue, July 14 &middot; Official Grandeur</p>
+            <h3>Air Shows, Belle &Eacute;poque &amp; Grand Opera</h3>
+          </div>
         </div>
         <div class="day-body">
-          <h3>Air Shows, Belle &Eacute;poque &amp; Grand Opera</h3>
           <p class="day-sub">The insider&rsquo;s approach to France&rsquo;s National Day</p>
           <p>Arrive early near Concorde and the Jardin des Tuileries for the military air-show flyover &mdash; skipping the dense crowds. On to the Palais-Royal and the gilded Op&eacute;ra Garnier, then the rooftop terraces of Boulevard Haussmann.</p>
           <div class="day-tags">
@@ -472,10 +481,12 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
             <source src="assets/mot-montmartre-web.mp4?v=10" type="video/mp4">
           </video>
           <span class="day-badge">Day 3</span>
-          <span class="day-date">Wed, July 15 &middot; Art, Light &amp; Water</span>
+          <div class="day-over">
+            <p class="day-date">Wed, July 15 &middot; Art, Light &amp; Water</p>
+            <h3>Slow Montmartre &amp; Impressionist Masters</h3>
+          </div>
         </div>
         <div class="day-body">
-          <h3>Slow Montmartre &amp; Impressionist Masters</h3>
           <p class="day-sub">Sacr&eacute;-C&oelig;ur, the Mus&eacute;e d&rsquo;Orsay, and Seine guinguettes</p>
           <p>A slow morning in Montmartre &mdash; the Moulin de la Galette and Sacr&eacute;-C&oelig;ur &mdash; then the Impressionist masters at the Mus&eacute;e d&rsquo;Orsay. End on the water at a riverside guinguette as the city slows and the light lingers.</p>
           <div class="day-tags">
