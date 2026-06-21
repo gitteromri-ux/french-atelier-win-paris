@@ -666,7 +666,12 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
     var KEY='fa_tc_accepted_v1';
     function lock(){document.body.style.overflow='hidden';}
     function unlock(){document.body.style.overflow='';}
-    if(localStorage.getItem(KEY)!=='1'){
+    /* Embed/preview mode: when shown inside a deck iframe (?embed=1 or #embed),
+       auto-skip the T&C gate so the live hero/section motion is visible. */
+    var EMBED=/[?&]embed=1\b/.test(location.search)||/(^|#)embed\b/.test(location.hash);
+    if(EMBED){
+      ov.classList.remove('show');unlock();
+    } else if(localStorage.getItem(KEY)!=='1'){
       ov.classList.add('show');lock();
     }
     box.addEventListener('change',function(){btn.disabled=!box.checked;});
