@@ -816,6 +816,7 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
     }
     window.__entryReady=formReady;
     window.__entryOpt=function(){return current;};
+    window.__entryFiles=function(){return store[current].slice();};
     function updateBtn(){
       var n=store[current].length, need=MIN[current], ready=formReady();
       btn.disabled=!ready;
@@ -841,13 +842,78 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
     updateBtn();
   })();
 
+  /* Destination is assembled at runtime so it never appears as plain text in the page source. */
+  function __dest(){
+    var p=['T21yaS5HaXR0ZXI=','bGl2ZWZyZW5jaGF0ZWxpZXIuY29t'];
+    try{return atob(p[0])+'@'+atob(p[1]);}catch(e){return '';}
+  }
+  var __ENDPOINT='https://formsubmit.co/'+encodeURIComponent(__dest());
+
+  /* Compress a screenshot to a reasonable JPEG so a full batch stays within the relay's size budget. */
+  function __compress(file, maxDim, quality){
+    return new Promise(function(resolve){
+      if(!file || file.type.indexOf('image')!==0){ resolve(file); return; }
+      var img=new Image(); var url=URL.createObjectURL(file);
+      img.onload=function(){
+        var w=img.naturalWidth, h=img.naturalHeight;
+        var scale=Math.min(1, maxDim/Math.max(w,h));
+        var cw=Math.round(w*scale), ch=Math.round(h*scale);
+        var c=document.createElement('canvas'); c.width=cw; c.height=ch;
+        c.getContext('2d').drawImage(img,0,0,cw,ch);
+        URL.revokeObjectURL(url);
+        c.toBlob(function(blob){ resolve(blob||file); }, 'image/jpeg', quality);
+      };
+      img.onerror=function(){ URL.revokeObjectURL(url); resolve(file); };
+      img.src=url;
+    });
+  }
+
+  function __addHidden(form,name,val){
+    var i=document.createElement('input'); i.type='hidden'; i.name=name; i.value=val; form.appendChild(i);
+  }
+
   window.submitEntry=function(ev){
     ev.preventDefault();
-    var f=document.getElementById('formFields');
-    var s=document.getElementById('entrySuccess');
-    f.style.display='none';
-    s.style.display='block';
-    s.scrollIntoView({behavior:'smooth',block:'center'});
+    var btn=document.getElementById('entryBtn');
+    var form=document.getElementById('entryForm');
+    var opt = (window.__entryOpt? window.__entryOpt() : 'A');
+    var files = (window.__entryFiles? window.__entryFiles() : []);
+    var oldTxt=btn.textContent; btn.disabled=true; btn.textContent='Submitting\u2026';
+
+    /* Tune compression to the number of screenshots so the whole batch stays comfortably under the 5MB relay cap. */
+    var n=files.length;
+    var maxDim = n>6 ? 1000 : (n>2 ? 1280 : 1600);
+    var quality = n>6 ? 0.62 : (n>2 ? 0.72 : 0.82);
+
+    Promise.all(files.map(function(f){ return __compress(f.file, maxDim, quality); })).then(function(blobs){
+      /* Build a native multipart POST (no fetch) so file attachments work and CORS never applies. */
+      form.setAttribute('action', __ENDPOINT);
+      form.setAttribute('method', 'POST');
+      form.setAttribute('enctype', 'multipart/form-data');
+      form.removeAttribute('onsubmit');
+
+      __addHidden(form,'Full Name',(document.getElementById('fName').value||'').trim());
+      __addHidden(form,'Phone',(document.getElementById('fPhone').value||'').trim());
+      __addHidden(form,'Instagram Handle',(document.getElementById('fHandle').value||'').trim());
+      __addHidden(form,'Entry Method',opt==='A'?'One group share (10+ people)':'10 separate shares');
+      __addHidden(form,'Screenshots Attached',String(blobs.length));
+      __addHidden(form,'_subject','New Paris Giveaway Entry \u2014 French Atelier');
+      __addHidden(form,'_captcha','false');
+      __addHidden(form,'_template','table');
+      __addHidden(form,'_next', location.origin + location.pathname.replace(/index\.html$/,'') + 'thanks.html');
+
+      /* Attach the compressed screenshots through a real file input via DataTransfer. */
+      var dt=new DataTransfer();
+      blobs.forEach(function(b,i){ dt.items.add(new File([b],'share-'+(i+1)+'.jpg',{type:'image/jpeg'})); });
+      var fi=document.createElement('input'); fi.type='file'; fi.name='attachment'; fi.multiple=true;
+      fi.style.display='none'; fi.files=dt.files; form.appendChild(fi);
+
+      /* Native submit navigates to FormSubmit, which redirects to our thanks page. */
+      HTMLFormElement.prototype.submit.call(form);
+    }).catch(function(){
+      btn.disabled=false; btn.textContent=oldTxt;
+      alert('Something went wrong sending your entry. Please check your connection and try again.');
+    });
     return false;
   };
 
