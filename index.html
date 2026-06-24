@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Win a Free Flight to Paris · Bastille Day with French Atelier</title>
-<meta name="description" content="French Atelier is flying three of our community to Paris for the Bastille Day celebrations, July 2026. Follow us, share our channel with 10+ friends, and you could win a round-trip flight from the USA. Here is exactly what it is and how to enter.">
+<meta name="description" content="French Atelier is flying members of our community to Paris for the Bastille Day celebrations, July 2026. Follow us, share our channel with 10+ friends, and you could win a flight from the USA. Here is exactly what it is and how to enter.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -194,10 +194,11 @@ section{position:relative;scroll-margin-top:84px}
 .up-bar{flex:1;height:8px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}
 .up-bar i{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--gold-deep),var(--gold-bright));transition:width .5s var(--ease)}
 .up-count{font-family:var(--display);font-weight:700;color:var(--gold-bright);font-size:1rem;white-space:nowrap}
-.dropzone{position:relative;border:2px dashed rgba(224,198,140,.4);border-radius:18px;background:linear-gradient(165deg,rgba(255,255,255,.06),rgba(255,255,255,.02));padding:2.4rem 1.4rem;text-align:center;cursor:pointer;transition:border-color .3s,background .3s,transform .2s}
+.dropzone{display:block;position:relative;border:2px dashed rgba(224,198,140,.4);border-radius:18px;background:linear-gradient(165deg,rgba(255,255,255,.06),rgba(255,255,255,.02));padding:2.4rem 1.4rem;text-align:center;cursor:pointer;transition:border-color .3s,background .3s,transform .2s}
 .dropzone:hover{border-color:var(--gold-soft);background:rgba(255,255,255,.08)}
 .dropzone.drag{border-color:var(--gold-bright);background:rgba(224,198,140,.12);transform:scale(1.01)}
-.dropzone .dz-ico{width:46px;height:46px;margin:0 auto .8rem;color:var(--gold-bright)}
+.dropzone .dz-ico{display:block;width:46px;height:46px;margin:0 auto .8rem;color:var(--gold-bright)}
+.dropzone .dz-ico svg{display:block}
 .dropzone .dz-ico svg{width:100%;height:100%}
 .dropzone h4{font-family:var(--display);font-size:1.4rem;color:var(--on-dark);font-weight:600;margin-bottom:.35rem}
 .dropzone p{font-size:1.02rem;color:var(--on-dark-soft);line-height:1.55}
@@ -220,6 +221,25 @@ section{position:relative;scroll-margin-top:84px}
 .up-success .chk{width:64px;height:64px;border-radius:50%;margin:0 auto 1.2rem;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,var(--gold-bright),var(--gold-deep));color:var(--navy-deep);font-size:2rem;box-shadow:0 12px 30px -10px rgba(170,140,85,.7)}
 .up-success h3{font-family:var(--display);font-size:1.7rem;color:var(--on-dark);margin-bottom:.6rem}
 .up-success p{color:var(--on-dark-soft);font-size:.96rem;line-height:1.6;max-width:420px;margin:0 auto}
+/* ===== TWO-OPTION ENTRY PICKER ===== */
+.opt-tabs{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:1.4rem}
+.opt-tab{position:relative;text-align:left;border:1.5px solid var(--dark-line);background:linear-gradient(165deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border-radius:16px;padding:1.05rem 1.05rem 1.05rem 1.05rem;cursor:pointer;transition:border-color .25s,background .25s,transform .2s;color:var(--on-dark)}
+.opt-tab:hover{border-color:var(--gold-soft);transform:translateY(-2px)}
+.opt-tab.active{border-color:var(--gold-bright);background:rgba(224,198,140,.1);box-shadow:0 10px 30px -16px rgba(224,198,140,.6)}
+.opt-tab .ot-top{display:flex;align-items:center;gap:.6rem;margin-bottom:.35rem}
+.opt-tab .ot-ico{width:34px;height:34px;flex:none;border-radius:10px;display:flex;align-items:center;justify-content:center;background:rgba(224,198,140,.16);color:var(--gold-bright)}
+.opt-tab .ot-ico svg{width:19px;height:19px}
+.opt-tab.active .ot-ico{background:linear-gradient(150deg,var(--gold-bright),var(--gold-deep));color:var(--navy-deep)}
+.opt-tab .ot-badge{position:absolute;top:-9px;right:12px;font-family:var(--sans);font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy-deep);background:linear-gradient(90deg,var(--gold-bright),var(--gold-deep));padding:.22rem .55rem;border-radius:999px}
+.opt-tab h5{font-family:var(--display);font-size:1.12rem;font-weight:700;color:var(--on-dark);line-height:1.15}
+.opt-tab p{font-size:.86rem;color:var(--on-dark-soft);line-height:1.45;margin:0}
+.opt-panel{display:none;animation:thumbin .35s var(--ease)}
+.opt-panel.active{display:block}
+.opt-howto{display:flex;flex-direction:column;gap:.55rem;margin:0 0 1.2rem;padding:1rem 1.1rem;border:1px solid var(--dark-line);border-radius:14px;background:rgba(255,255,255,.03)}
+.opt-howto .ohh{font-family:var(--sans);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-soft);font-weight:700;margin-bottom:.1rem}
+.opt-howto .ohrow{display:flex;gap:.6rem;align-items:flex-start;font-size:.92rem;color:var(--on-dark);line-height:1.45}
+.opt-howto .ohn{flex:none;width:20px;height:20px;border-radius:50%;background:rgba(224,198,140,.2);color:var(--gold-bright);font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:.05rem}
+@media(max-width:520px){.opt-tabs{grid-template-columns:1fr}}
 
 /* ===== LEGAL T&C POPUP ===== */
 .tc-overlay{position:fixed;inset:0;z-index:2000;display:none;align-items:center;justify-content:center;padding:1.4rem;background:rgba(0,0,16,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
@@ -313,8 +333,8 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
     <div class="tc-body">
       <p>Welcome to the French Atelier <strong>&ldquo;Win a Free Flight to Paris&rdquo;</strong> giveaway for Bastille Day 2026. Please review and accept the key terms before entering.</p>
       <p><strong>Eligibility.</strong> Open to participants aged 18+ residing in the United States. You must follow <strong>@livefrenchatelier</strong> on Instagram and Meta and share our channel with at least 10 friends to qualify.</p>
-      <p><strong>How winners are chosen.</strong> The three participants who share our channel with the most friends (minimum 10, verified by the screenshots you upload) are selected as winners by the French Atelier committee. Winners are contacted by phone, text, and Instagram DM and must respond within 7 days or an alternate is selected.</p>
-      <p><strong>The prize.</strong> Each of the three winners receives one round-trip economy flight from the USA to Paris, flying in July 10, 2026 and returning July 16, 2026, plus the guided 3-day French Atelier program (July 13&ndash;15, 2026). Flight-date changes are valid within July only and carry an additional $80 per ticket. The prize covers flights and the guided program only; meals, transfers, and personal expenses are not included unless stated.</p>
+      <p><strong>How winners are chosen.</strong> The participants who share our channel with the most friends (minimum 10, verified by the screenshots you upload) are selected as winners by the French Atelier committee. Winners are contacted directly &mdash; by phone and our official email &mdash; in early June 2026 or before, and must respond within 7 days or an alternate is selected.</p>
+      <p><strong>The prize.</strong> Winners receive a flight from the USA to Paris, which French Atelier books from an airport near the winner, with dates arranged around the guided program (July 13&ndash;15, 2026). The prize covers the flight and the guided program only; hotel, meals, transfers, and personal expenses are not included unless stated in writing.</p>
       <p><strong>Your uploads &amp; privacy.</strong> The screenshots and contact details you submit are used solely to verify entries and contact winners. We do not sell your data. See the full <a href="terms.html" target="_blank" rel="noopener">contest rules &amp; privacy terms</a>.</p>
       <p><strong>Not affiliated with Instagram or Meta.</strong> This promotion is in no way sponsored, endorsed, administered by, or associated with Instagram or Meta.</p>
     </div>
@@ -354,13 +374,13 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
   <div class="wrap hero-content">
     <p class="hero-tag reveal">French Atelier presents</p>
     <h1 class="reveal">Win a Free Flight to Paris for <span class="gold-ital">Bastille Day</span></h1>
-    <p class="hero-sub reveal">We are flying <strong>three</strong> members of our community to Paris for the F&ecirc;te Nationale &mdash; France&rsquo;s national celebration on July 14, 2026. Follow French Atelier, share our channel with 10+ friends, and you could win a round-trip flight from the USA.</p>
+    <p class="hero-sub reveal">We are flying members of our community to Paris for the F&ecirc;te Nationale &mdash; France&rsquo;s national celebration on July 14, 2026. Follow French Atelier, share our channel with 10+ friends, and you could win a flight from the USA.</p>
     <div class="hero-ctas reveal">
       <a href="#enter" class="btn btn-gold btn-lg">Enter to Win &mdash; It&rsquo;s Free</a>
       <a href="#how" class="btn btn-glass btn-lg">See How It Works</a>
     </div>
     <div class="hero-meta reveal">
-      <div class="item"><span class="k">3</span><span class="l">Winners Fly Free</span></div>
+      <div class="item"><span class="k">&#9992;</span><span class="l">Win a Flight to Paris</span></div>
       <div class="item"><span class="k">3</span><span class="l">Days in Paris</span></div>
       <div class="item"><span class="k">Jul 14</span><span class="l">Bastille Day 2026</span></div>
     </div>
@@ -374,7 +394,7 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
       <div class="hiw-rail reveal">
         <span class="kicker">How it works</span>
         <h2>Win it in <em>four</em> simple steps.</h2>
-        <p>About two minutes. No purchase, no emails. The three biggest sharers fly to Paris.</p>
+        <p>About two minutes. No purchase, no emails. Our biggest sharers fly to Paris.</p>
         <a href="#enter" class="btn btn-gold btn-lg">Enter to Win &mdash; It&rsquo;s Free</a>
       </div>
       <div class="hiw-list">
@@ -409,7 +429,7 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
       </div>
     </div>
     <div class="hiw-foot reveal">
-      <span class="hiw-note">The three biggest sharers each win a round-trip flight to Paris.</span>
+      <span class="hiw-note">Our biggest sharers win a flight to Paris.</span>
       <a href="#enter" class="btn btn-gold btn-lg">Enter to Win &mdash; It&rsquo;s Free</a>
     </div>
   </div>
@@ -425,13 +445,13 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
   <div class="pb-inner">
     <div class="pb-panel">
       <span class="pb-eyebrow reveal">The prize</span>
-      <h2 class="pb-title reveal">Three winners.<br>One <span class="gold-ital">free flight</span> to Paris each.</h2>
-      <p class="pb-sub reveal">Picture it: you land in Paris as the whole city prepares for its biggest night of the year. This is what three of you will win &mdash; a round-trip flight from the USA, timed perfectly around the Bastille Day celebrations.</p>
+      <h2 class="pb-title reveal">Win a <span class="gold-ital">free flight</span><br>to Paris.</h2>
+      <p class="pb-sub reveal">Picture it: you land in Paris as the whole city prepares for its biggest night of the year. This is what you could win &mdash; a flight from the USA, timed perfectly around the Bastille Day celebrations.</p>
       <ul class="pb-list reveal">
-        <li><span class="ck">&#10003;</span> <span><strong>Round-trip flight</strong> USA &rarr; Paris for each of the 3 winners</span></li>
-        <li><span class="ck">&#10003;</span> <span><strong>Fly in July 10</strong> &mdash; arrive rested, days before the tour</span></li>
-        <li><span class="ck">&#10003;</span> <span><strong>Fly home July 16</strong> &mdash; the day after the celebrations</span></li>
-        <li><span class="ck">&#10003;</span> <span>The full <strong>3-day Parisian Bastille Day program</strong></span></li>
+        <li><span class="ck">&#10003;</span> <span>A <strong>flight</strong> from the USA to Paris &mdash; we&rsquo;ll book it from an airport near you</span></li>
+        <li><span class="ck">&#10003;</span> <span>Timed around <strong>Bastille Day</strong> &mdash; the F&ecirc;te Nationale, July 14, 2026</span></li>
+        <li><span class="ck">&#10003;</span> <span>Join the <strong>guided French Atelier Bastille Day program</strong></span></li>
+        <li><span class="ck">&#10003;</span> <span>Covers your <strong>flight + the guided program</strong> (hotel &amp; extras not included)</span></li>
       </ul>
       <div class="hero-ctas reveal">
         <a href="#enter" class="btn btn-gold btn-lg">Enter to Win &mdash; It&rsquo;s Free</a>
@@ -447,7 +467,7 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
     <div class="sec-head center reveal">
       <span class="eyebrow on-dark eyebrow-line center">The Itinerary</span>
       <h2 style="font-size:clamp(2.2rem,4.6vw,3.6rem)">Three days, lived like a Parisian.</h2>
-      <p class="lede-lg on-dark">Each winner experiences the French Atelier signature program &mdash; the exact guided tour, July 13&ndash;15, 2026.</p>
+      <p class="lede-lg on-dark">Winners experience the French Atelier signature program &mdash; the guided Bastille Day tour, July 13&ndash;15, 2026.</p>
     </div>
 
     <div class="day-cards">
@@ -533,7 +553,7 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
     <div class="sec-head center reveal">
       <span class="eyebrow on-dark eyebrow-line center">Your turn</span>
       <h2 class="h2-xl">Enter to win your flight.</h2>
-      <p class="lede-lg on-dark">Upload the screenshots of you sharing French Atelier with 10+ friends, add your details, and you&rsquo;re in. The three biggest sharers fly to Paris.</p>
+      <p class="lede-lg on-dark">Upload the screenshots of you sharing French Atelier with 10+ friends, add your details, and you&rsquo;re in. Our biggest sharers fly to Paris.</p>
     </div>
 
     <div id="entry" style="max-width:var(--maxw-narrow);margin:0 auto">
@@ -543,33 +563,66 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
           <span class="eyebrow on-dark eyebrow-line" style="margin-bottom:1rem;display:inline-block">Your Entry</span>
           <h2 style="color:var(--on-dark);font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1rem">Upload your shares. You&rsquo;re in.</h2>
           <p class="lede on-dark">No emails, no back-and-forth. Just drop in the screenshots of you sharing French Atelier with your friends &mdash; <strong>10 or more</strong> &mdash; add your details, and submit.</p>
-          <p class="note">By entering you confirm you have followed @livefrenchatelier and shared our channel with 10 or more friends. Winners are selected by the French Atelier committee and contacted by phone, text, and Instagram DM. See full <a href="terms.html" style="color:var(--gold-soft);text-decoration:underline">contest rules</a>.</p>
+          <p class="note">By entering you confirm you have followed @livefrenchatelier and shared our channel with 10 or more friends. Winners are selected by the French Atelier committee and contacted directly &mdash; by phone and our official email &mdash; in early June 2026 or before. See full <a href="terms.html" style="color:var(--gold-soft);text-decoration:underline">contest rules</a>.</p>
         </div>
         <form id="entryForm" onsubmit="return submitEntry(event)">
           <div id="formFields">
-            <div class="uploader">
-              <div class="up-progress">
-                <div class="up-bar"><i id="upBar"></i></div>
-                <span class="up-count"><span id="upNum">0</span>/10 shares</span>
-              </div>
-              <label class="dropzone" id="dropzone">
-                <span class="dz-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m0 0L7 9m5-5l5 5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg></span>
-                <h4>Drop your share screenshots here</h4>
-                <p>Drag &amp; drop, or <span class="dz-browse">browse your photos</span>. Add all 10+ at once &mdash; JPG or PNG.</p>
-                <input type="file" id="fileInput" accept="image/*" multiple>
-              </label>
-              <div class="thumbs" id="thumbs"></div>
-              <div class="up-hint warn" id="upHint"><span class="dotn">!</span><span>Add at least 10 screenshots to qualify.</span></div>
+            <p style="color:var(--on-dark-soft);font-size:.95rem;margin:0 0 1rem;line-height:1.5">Pick the way that&rsquo;s easiest for you &mdash; both count the same.</p>
+            <div class="opt-tabs">
+              <button type="button" class="opt-tab active" id="tabA" onclick="pickOpt('A')">
+                <span class="ot-badge">Easiest</span>
+                <span class="ot-top"><span class="ot-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><h5>One group share</h5></span>
+                <p>Share to a group of 10+ &mdash; upload <strong>one</strong> screenshot.</p>
+              </button>
+              <button type="button" class="opt-tab" id="tabB" onclick="pickOpt('B')">
+                <span class="ot-top"><span class="ot-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><h5>10 separate shares</h5></span>
+                <p>Share one by one &mdash; upload all your screenshots.</p>
+              </button>
             </div>
+
+            <div class="opt-panel active" id="panelA">
+              <div class="opt-howto">
+                <span class="ohh">How &mdash; about 30 seconds</span>
+                <div class="ohrow"><span class="ohn">1</span><span>On Instagram, tap <strong>Share</strong> on @livefrenchatelier and send it to a <strong>group of 10+ friends</strong> at once.</span></div>
+                <div class="ohrow"><span class="ohn">2</span><span>Take <strong>one screenshot</strong> showing it was sent to all of them.</span></div>
+                <div class="ohrow"><span class="ohn">3</span><span>Upload that screenshot below &mdash; done.</span></div>
+              </div>
+              <label class="dropzone" id="dropzoneA">
+                <span class="dz-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m0 0L7 9m5-5l5 5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg></span>
+                <h4>Upload your group-share screenshot</h4>
+                <p>Drag &amp; drop, or <span class="dz-browse">browse your photos</span>. One clear screenshot &mdash; JPG or PNG.</p>
+                <input type="file" id="fileInputA" accept="image/*" multiple>
+              </label>
+              <div class="thumbs" id="thumbsA" style="margin-top:1rem"></div>
+              <div class="up-hint warn" id="upHintA" style="margin-top:.7rem"><span class="dotn">!</span><span>Add your group-share screenshot to qualify.</span></div>
+            </div>
+
+            <div class="opt-panel" id="panelB">
+              <div class="uploader">
+                <div class="up-progress">
+                  <div class="up-bar"><i id="upBar"></i></div>
+                  <span class="up-count"><span id="upNum">0</span>/10 shares</span>
+                </div>
+                <label class="dropzone" id="dropzoneB">
+                  <span class="dz-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m0 0L7 9m5-5l5 5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg></span>
+                  <h4>Drop your share screenshots here</h4>
+                  <p>Drag &amp; drop, or <span class="dz-browse">browse your photos</span>. Add all 10+ at once &mdash; JPG or PNG.</p>
+                  <input type="file" id="fileInputB" accept="image/*" multiple>
+                </label>
+                <div class="thumbs" id="thumbsB"></div>
+                <div class="up-hint warn" id="upHintB"><span class="dotn">!</span><span>Add at least 10 screenshots to qualify.</span></div>
+              </div>
+            </div>
+
             <div class="form-row" style="margin-top:1.4rem"><label>Full Name</label><input type="text" id="fName" placeholder="Your full name" required></div>
             <div class="form-row"><label>Phone</label><input type="tel" id="fPhone" placeholder="+1 (___) ___-____" required></div>
             <div class="form-row"><label>Instagram Handle</label><input type="text" id="fHandle" placeholder="@yourhandle" required></div>
-            <button type="submit" id="entryBtn" class="btn btn-gold btn-lg" style="width:100%;margin-top:.6rem" disabled>Add 10 shares to submit</button>
+            <button type="submit" id="entryBtn" class="btn btn-gold btn-lg" style="width:100%;margin-top:.6rem" disabled>Add your shares to submit</button>
           </div>
           <div class="up-success" id="entrySuccess" style="display:none">
             <div class="chk">&#10003;</div>
             <h3>You&rsquo;re entered.</h3>
-            <p>Your shares are in. The three biggest sharers win a round-trip flight to Paris &mdash; we&rsquo;ll reach the winners by phone, text, and Instagram DM. Bonne chance!</p>
+            <p>Your shares are in. Our biggest sharers win a flight to Paris &mdash; we&rsquo;ll contact winners directly by phone and our official email in early June 2026 or before. Bonne chance!</p>
           </div>
         </form>
       </div>
@@ -583,13 +636,13 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
   <div class="wrap">
     <div class="sec-head tight reveal">
       <span class="eyebrow eyebrow-line">What this is</span>
-      <h2 class="h2-sm">A free trip to Paris, in plain terms.</h2>
+      <h2 class="h2-sm">A free flight to Paris, in plain terms.</h2>
     </div>
     <div class="what-grid">
       <div class="what-card reveal">
         <span class="num">01</span>
         <h3>What you can win</h3>
-        <p>A <strong>round-trip flight</strong> from the USA to Paris. Three winners, three flights. You travel July 10&ndash;16, 2026.</p>
+        <p>A <strong>flight</strong> from the USA to Paris, booked from an airport near you. Travel is timed around Bastille Day, July 2026.</p>
       </div>
       <div class="what-card reveal">
         <span class="num">02</span>
@@ -599,7 +652,7 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
       <div class="what-card reveal">
         <span class="num">03</span>
         <h3>How you take part</h3>
-        <p>Follow us, then <strong>share our channel with 10+ friends</strong>. The three who share most win. Steps are above.</p>
+        <p>Follow us, then <strong>share our channel with 10+ friends</strong>. Our biggest sharers win. Steps are above.</p>
       </div>
     </div>
   </div>
@@ -615,7 +668,7 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
     <div class="faq-wrap reveal">
       <div class="faq-item">
         <div class="faq-q">Is the trip really free?<span class="ic">+</span></div>
-        <div class="faq-a">Yes. Each of the three winners receives a round-trip flight from the USA to Paris at no cost. You simply follow us and share our channel with 10+ friends to enter.</div>
+        <div class="faq-a">Yes. Winners receive a flight from the USA to Paris at no cost &mdash; we book it from an airport near you. The prize covers your flight and the guided program; hotel and personal expenses are not included. You simply follow us and share our channel with 10+ friends to enter.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">What exactly do I have to do to enter?<span class="ic">+</span></div>
@@ -623,15 +676,15 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
       </div>
       <div class="faq-item">
         <div class="faq-q">When do I travel?<span class="ic">+</span></div>
-        <div class="faq-a">You fly into Paris on July 10, 2026 &mdash; three days before the guided program begins &mdash; and fly home on July 16, 2026, the day after the celebrations end. The guided 3-day program runs July 13&ndash;15.</div>
+        <div class="faq-a">Your travel is timed around the Bastille Day celebrations. The guided program runs July 13&ndash;15, 2026; our representative will arrange your flight dates with you around those dates.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">How are the winners chosen?<span class="ic">+</span></div>
-        <div class="faq-a">The three people who share our channel with the most friends (minimum 10) win. Winners are confirmed by the French Atelier committee and contacted by phone, text, and Instagram DM. If a winner doesn&rsquo;t respond within 7 days, an alternate is selected.</div>
+        <div class="faq-a">The people who share our channel with the most friends (minimum 10) win. Winners are confirmed by the French Atelier committee and contacted directly &mdash; by phone and our official email &mdash; in early June 2026 or before. If a winner doesn&rsquo;t respond within 7 days, an alternate is selected.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Can I change my flight dates?<span class="ic">+</span></div>
-        <div class="faq-a">Booking changes are valid within July only and carry an additional $80 per ticket. Full details are in the <a href="terms.html" style="color:var(--gold-deep);text-decoration:underline">contest rules</a>.</div>
+        <div class="faq-q">Where do I fly from?<span class="ic">+</span></div>
+        <div class="faq-a">Your flight is booked from an airport near you, and our representative will work with you on dates around the program. Full details are in the <a href="terms.html" style="color:var(--gold-deep);text-decoration:underline">contest rules</a>.</div>
       </div>
     </div>
   </div>
@@ -707,62 +760,83 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
     });
   })();
 
-  /* ===== BULK SHARE-PROOF UPLOADER ===== */
+  /* ===== TWO-OPTION SHARE-PROOF UPLOADER ===== */
   (function(){
-    var input=document.getElementById('fileInput');
-    if(!input) return;
-    var dz=document.getElementById('dropzone');
-    var thumbs=document.getElementById('thumbs');
-    var hint=document.getElementById('upHint');
-    var bar=document.getElementById('upBar');
-    var num=document.getElementById('upNum');
     var btn=document.getElementById('entryBtn');
-    var MIN=10, files=[];
+    if(!btn) return;
+    var current='A';
+    var MIN={A:1,B:10};
+    var store={A:[],B:[]};
 
-    function render(){
-      thumbs.innerHTML='';
-      files.forEach(function(f,i){
-        var t=document.createElement('div');t.className='thumb';
-        var img=document.createElement('img');img.src=f.url;img.alt='Share screenshot '+(i+1);
-        var rm=document.createElement('button');rm.type='button';rm.className='rm';rm.setAttribute('aria-label','Remove');rm.textContent='\u00d7';
-        rm.addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();URL.revokeObjectURL(f.url);files.splice(i,1);render();});
-        t.appendChild(img);t.appendChild(rm);thumbs.appendChild(t);
-      });
-      var n=files.length;
-      num.textContent=n;
-      bar.style.width=Math.min(100,(n/MIN)*100)+'%';
-      var ok=n>=MIN;
-      hint.className='up-hint '+(ok?'ok':'warn');
-      hint.querySelector('.dotn').textContent=ok?'\u2713':'!';
-      hint.querySelector('span:last-child').textContent=ok
-        ?('Great \u2014 '+n+' shares attached. You qualify!')
-        :('Add at least '+MIN+' screenshots to qualify ('+(MIN-n)+' to go).');
-      updateBtn();
+    function setup(opt, inputId, dzId, thumbsId, hintId){
+      var input=document.getElementById(inputId);
+      var dz=document.getElementById(dzId);
+      var thumbs=document.getElementById(thumbsId);
+      var hint=document.getElementById(hintId);
+      if(!input) return;
+      function render(){
+        thumbs.innerHTML='';
+        store[opt].forEach(function(f,i){
+          var t=document.createElement('div');t.className='thumb';
+          var img=document.createElement('img');img.src=f.url;img.alt='Share screenshot '+(i+1);
+          var rm=document.createElement('button');rm.type='button';rm.className='rm';rm.setAttribute('aria-label','Remove');rm.textContent='\u00d7';
+          rm.addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();URL.revokeObjectURL(f.url);store[opt].splice(i,1);render();});
+          t.appendChild(img);t.appendChild(rm);thumbs.appendChild(t);
+        });
+        var n=store[opt].length, need=MIN[opt], ok=n>=need;
+        if(opt==='B'){
+          var bar=document.getElementById('upBar'), num=document.getElementById('upNum');
+          if(num)num.textContent=n;
+          if(bar)bar.style.width=Math.min(100,(n/need)*100)+'%';
+        }
+        hint.className='up-hint '+(ok?'ok':'warn')+(opt==='A'?'':'');
+        if(opt==='A'){hint.style.marginTop='.7rem';}
+        hint.querySelector('.dotn').textContent=ok?'\u2713':'!';
+        hint.querySelector('span:last-child').textContent= opt==='A'
+          ? (ok?'Perfect \u2014 your group-share screenshot is attached. You qualify!':'Add your group-share screenshot to qualify.')
+          : (ok?('Great \u2014 '+n+' shares attached. You qualify!'):('Add at least '+need+' screenshots to qualify ('+(need-n)+' to go).'));
+        updateBtn();
+      }
+      function add(list){
+        [].slice.call(list).forEach(function(f){ if(f.type.indexOf('image')!==0) return; store[opt].push({file:f,url:URL.createObjectURL(f)}); });
+        render();
+      }
+      input.addEventListener('change',function(){add(input.files);input.value='';});
+      ['dragenter','dragover'].forEach(function(e){dz.addEventListener(e,function(ev){ev.preventDefault();dz.classList.add('drag');});});
+      ['dragleave','drop'].forEach(function(e){dz.addEventListener(e,function(ev){ev.preventDefault();dz.classList.remove('drag');});});
+      dz.addEventListener('drop',function(ev){if(ev.dataTransfer&&ev.dataTransfer.files)add(ev.dataTransfer.files);});
+      setup['render_'+opt]=render;
     }
+
     function formReady(){
       var nm=document.getElementById('fName').value.trim();
       var ph=document.getElementById('fPhone').value.trim();
       var hd=document.getElementById('fHandle').value.trim();
-      return files.length>=MIN && nm && ph && hd;
+      return store[current].length>=MIN[current] && nm && ph && hd;
     }
+    window.__entryReady=formReady;
+    window.__entryOpt=function(){return current;};
     function updateBtn(){
-      var ready=formReady();
+      var n=store[current].length, need=MIN[current], ready=formReady();
       btn.disabled=!ready;
-      btn.textContent = files.length<MIN
-        ? ('Add '+Math.max(0,MIN-files.length)+' more share'+((MIN-files.length)===1?'':'s')+' to submit')
+      btn.textContent = n<need
+        ? (current==='A' ? 'Add your screenshot to submit'
+             : ('Add '+Math.max(0,need-n)+' more share'+((need-n)===1?'':'s')+' to submit'))
         : (ready?'Submit My Entry':'Fill in your details to submit');
     }
-    function add(list){
-      [].slice.call(list).forEach(function(f){
-        if(f.type.indexOf('image')!==0) return;
-        files.push({file:f,url:URL.createObjectURL(f)});
-      });
-      render();
-    }
-    input.addEventListener('change',function(){add(input.files);input.value='';});
-    ['dragenter','dragover'].forEach(function(e){dz.addEventListener(e,function(ev){ev.preventDefault();dz.classList.add('drag');});});
-    ['dragleave','drop'].forEach(function(e){dz.addEventListener(e,function(ev){ev.preventDefault();dz.classList.remove('drag');});});
-    dz.addEventListener('drop',function(ev){if(ev.dataTransfer&&ev.dataTransfer.files)add(ev.dataTransfer.files);});
+    window.__updateEntryBtn=updateBtn;
+
+    window.pickOpt=function(opt){
+      current=opt;
+      document.getElementById('tabA').classList.toggle('active',opt==='A');
+      document.getElementById('tabB').classList.toggle('active',opt==='B');
+      document.getElementById('panelA').classList.toggle('active',opt==='A');
+      document.getElementById('panelB').classList.toggle('active',opt==='B');
+      updateBtn();
+    };
+
+    setup('A','fileInputA','dropzoneA','thumbsA','upHintA');
+    setup('B','fileInputB','dropzoneB','thumbsB','upHintB');
     ['fName','fPhone','fHandle'].forEach(function(id){document.getElementById(id).addEventListener('input',updateBtn);});
     updateBtn();
   })();
