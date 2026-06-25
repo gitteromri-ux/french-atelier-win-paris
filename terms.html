@@ -128,19 +128,6 @@ main{padding:var(--sp-7) 0 var(--sp-6)}
 .date-pill .dl{font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--on-light-faint);font-weight:600}
 .date-pill .dv{font-family:var(--serif);font-size:1.3rem;color:var(--navy);margin-top:.3rem;font-weight:600}
 
-/* AIRPORTS — on-brand dark band */
-.airports{position:relative;color:#F4EEE2;border:1px solid rgba(200,165,96,.22);border-radius:12px;padding:2.6rem 2.4rem;margin:1.2rem 0 .3rem;overflow:hidden;
-  background:
-    radial-gradient(120% 100% at 15% 0%, rgba(196,122,78,.16) 0%, transparent 48%),
-    radial-gradient(110% 100% at 90% 10%, rgba(228,166,184,.13) 0%, transparent 46%),
-    linear-gradient(180deg,#0A1030 0%,#0B1340 60%,#080C26 100%);}
-.airports .ap-eye{font-family:var(--sans);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);font-weight:600;margin-bottom:.7rem}
-.airports h3{color:#F4EEE2;font-family:var(--serif);font-size:clamp(1.5rem,2.4vw,2rem);margin-bottom:.4rem;font-weight:600}
-.airports .ap-sub{color:var(--on-dark-soft);font-size:.95rem;margin-bottom:1.6rem;font-weight:300}
-.ap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.2rem 1.6rem}
-.ap-grid div{padding:.7rem 0;border-top:1px solid rgba(255,255,255,.1);color:var(--on-dark-soft);font-size:.94rem;font-weight:300;display:flex;align-items:baseline;gap:.7rem}
-.ap-grid div b{color:var(--gold-soft);font-weight:700;font-family:var(--sans);letter-spacing:.05em;min-width:38px}
-.ap-note{font-size:.84rem;color:var(--on-dark-faint);margin-top:1.5rem;line-height:1.6;font-weight:300}
 
 .back-cta{text-align:center;margin-top:3rem}
 
@@ -159,9 +146,8 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem
   .tc-layout{grid-template-columns:1fr}
   .toc{position:static;margin-bottom:1rem}
   .toc a{display:inline-block;border:1px solid var(--light-line);border-radius:999px;padding:.4rem .9rem;margin:.2rem .3rem .2rem 0;font-size:.78rem}
-  .ap-grid{grid-template-columns:1fr 1fr}
-}
-@media (max-width:560px){.ap-grid{grid-template-columns:1fr}.tc .card{padding:1.8rem 1.5rem}}
+  }
+@media (max-width:560px){.tc .card{padding:1.8rem 1.5rem}}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .reveal.in{opacity:1;transform:none}
 .reveal-d1{transition-delay:.08s}.reveal-d2{transition-delay:.16s}
