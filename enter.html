@@ -135,6 +135,7 @@ section{position:relative;scroll-margin-top:84px}
 
 /* ===== WHAT IT IS — TIER 3: compact inline strip ===== */
 .what-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem;margin-top:2rem}
+.mob-hint{display:none}
 .what-card{background:none;border:0;border-top:2px solid var(--gold-line);border-radius:0;padding:1.4rem 0 0;box-shadow:none;backdrop-filter:none}
 .what-card .num{font-family:var(--display);font-size:1.15rem;font-weight:700;color:var(--gold-deep);line-height:1}
 .what-card h3{font-family:var(--display);font-size:1.35rem;margin:.5rem 0 .5rem;font-weight:600}
@@ -243,6 +244,27 @@ section{position:relative;scroll-margin-top:84px}
 .opt-howto .ohn{flex:none;width:20px;height:20px;border-radius:50%;background:rgba(224,198,140,.2);color:var(--gold-bright);font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:.05rem}
 @media(max-width:520px){.opt-tabs{grid-template-columns:1fr}}
 
+/* ===== ENTER SPLIT: upload + lead-gen ===== */
+.enter-split{display:grid;grid-template-columns:1.55fr 1fr;gap:1.6rem;align-items:start;max-width:1080px;margin:0 auto}
+.enter-col{background:linear-gradient(165deg,var(--navy-soft),var(--navy-deep));border-radius:24px;border:1px solid var(--dark-line);box-shadow:0 50px 90px -55px rgba(0,0,0,.8)}
+.enter-col.upload-col{padding:2.6rem 2.4rem}
+.enter-col.lead-col{padding:2.6rem 2.2rem;background:linear-gradient(168deg,#10162e,#0a0e22);position:relative;overflow:hidden}
+.enter-col.lead-col::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 100% 0,rgba(224,198,140,.14),transparent 60%);pointer-events:none}
+.enter-head{display:flex;align-items:center;gap:.7rem;margin-bottom:.5rem}
+.enter-head .eh-ico{flex:none;width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,var(--gold-bright),var(--gold-deep));color:var(--navy-deep)}
+.enter-head .eh-ico svg{width:20px;height:20px}
+.enter-col h3.col-title{font-family:var(--display);font-size:1.55rem;font-weight:700;color:var(--on-dark);line-height:1.12;letter-spacing:-.01em}
+.enter-col .col-sub{font-size:1rem;color:var(--on-dark-soft);line-height:1.55;margin:.5rem 0 1.4rem}
+.lead-col .lead-perks{list-style:none;margin:0 0 1.5rem;padding:0;display:flex;flex-direction:column;gap:.7rem;position:relative;z-index:1}
+.lead-col .lead-perks li{display:flex;gap:.6rem;align-items:flex-start;font-size:.96rem;color:var(--on-dark);line-height:1.45}
+.lead-col .lead-perks .lk{flex:none;width:20px;height:20px;border-radius:50%;background:rgba(224,198,140,.18);color:var(--gold-bright);font-size:.7rem;display:flex;align-items:center;justify-content:center;margin-top:.1rem}
+.lead-form{position:relative;z-index:1}
+.lead-success{display:none;text-align:center;padding:1rem 0;position:relative;z-index:1}
+.lead-success .chk{width:56px;height:56px;border-radius:50%;margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,var(--gold-bright),var(--gold-deep));color:var(--navy-deep);font-size:1.7rem}
+.lead-success h4{font-family:var(--display);font-size:1.4rem;color:var(--on-dark);margin-bottom:.5rem}
+.lead-success p{color:var(--on-dark-soft);font-size:.95rem;line-height:1.55}
+@media(max-width:880px){.enter-split{grid-template-columns:1fr;gap:1.2rem;max-width:560px}}
+
 /* ===== LEGAL T&C POPUP ===== */
 .tc-overlay{position:fixed;inset:0;z-index:2000;display:none;align-items:center;justify-content:center;padding:1.4rem;background:rgba(0,0,16,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .tc-overlay.show{display:flex;animation:tcfade .4s var(--ease)}
@@ -308,7 +330,13 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
   .nav-menu{position:fixed;inset:0 0 0 auto;width:min(82vw,340px);flex-direction:column;justify-content:center;gap:1.6rem;background:rgba(7,9,28,.97);backdrop-filter:blur(18px);transform:translateX(100%);transition:transform .45s var(--ease);z-index:120;padding:2rem}
   .nav-open .nav-menu{transform:none}
   .nav-toggle{display:flex;z-index:130}
-  .what-grid{grid-template-columns:1fr}
+  .what-grid,.day-cards{display:flex;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:1rem;margin-left:-1.3rem;margin-right:-1.3rem;padding:.4rem 1.3rem 1.2rem;scrollbar-width:none}
+  .what-grid::-webkit-scrollbar,.day-cards::-webkit-scrollbar{display:none}
+  .what-grid>*,.day-cards>*{scroll-snap-align:center;flex:0 0 84%;max-width:84%}
+  .mob-hint{display:flex;align-items:center;justify-content:center;gap:.5rem;font-family:var(--sans);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);opacity:.85;margin-top:.2rem}
+  .mob-hint svg{width:15px;height:15px}
+  .day.featured .day-body p,.day-body p{font-size:1.02rem}
+  body{font-size:16.5px}
   .entry .grid{grid-template-columns:1fr}
   .sec{padding:4.6rem 0}
   .wrap,.narrow{padding:0 1.3rem}
@@ -335,7 +363,7 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
       <p>Welcome to the French Atelier <strong>&ldquo;Win a Free Flight to Paris&rdquo;</strong> giveaway for Bastille Day 2026. Please review and accept the key terms before entering.</p>
       <p><strong>Eligibility.</strong> Open to participants aged 18+ residing in the United States. You must follow <strong>@livefrenchatelier</strong> on Instagram and Meta and share our channel with at least 10 friends to qualify.</p>
       <p><strong>How winners are chosen.</strong> The participants who share our channel with the most friends (minimum 10, verified by the screenshots you upload) are selected as winners by the French Atelier committee. Winners are contacted directly &mdash; by phone and our official email &mdash; in early June 2026 or before, and must respond within 7 days or an alternate is selected.</p>
-      <p><strong>The prize.</strong> Winners receive a flight from the USA to Paris, which French Atelier books from an airport near the winner, with dates arranged around the guided program (July 13&ndash;15, 2026). The prize covers the flight and the guided program only; hotel, meals, transfers, and personal expenses are not included unless stated in writing.</p>
+      <p><strong>The prize.</strong> Selected winners receive a flight to Paris, arranged and coordinated by French Atelier from one of the participating airports, with dates timed around the guided program (July 13&ndash;15, 2026). The prize covers the flight and the guided program. Other personal expenses are the responsibility of the winner.</p>
       <p><strong>Your uploads &amp; privacy.</strong> The screenshots and contact details you submit are used solely to verify entries and contact winners. We do not sell your data. See the full <a href="terms.html" target="_blank" rel="noopener">contest rules &amp; privacy terms</a>.</p>
       <p><strong>Not affiliated with Instagram or Meta.</strong> This promotion is in no way sponsored, endorsed, administered by, or associated with Instagram or Meta.</p>
     </div>
@@ -351,11 +379,10 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
   <div class="wrap nav">
     <a href="index.html" aria-label="French Atelier"><img src="assets/logo-white.png" alt="French Atelier" class="nav-logo-img"></a>
     <nav class="nav-menu" id="navMenu">
-      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#how" class="nav-link">How It Works</a>
       <a href="prize.html" class="nav-link">The Prize</a>
-      <a href="bastille.html" class="nav-link">Bastille Day</a>
-      <a href="program.html" class="nav-link">The Program</a>
-      <a href="enter.html" class="nav-link active">How to Enter</a>
+      <a href="program.html" class="nav-link">The Itinerary</a>
+      <a href="index.html#faq" class="nav-link">FAQ</a>
       <a href="terms.html" class="nav-link">Terms</a>
       <a href="enter.html" class="btn btn-gold nav-cta">Enter to Win</a>
     </nav>
@@ -416,15 +443,14 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
       <p class="lede-lg on-dark">Upload the screenshots of you sharing French Atelier with 10+ friends, add your details, and you&rsquo;re in. Our biggest sharers fly to Paris.</p>
     </div>
 
-    <div id="entry" style="max-width:var(--maxw-narrow);margin:0 auto">
-    <div class="entry reveal">
-      <div class="grid">
-        <div>
-          <span class="eyebrow on-dark eyebrow-line" style="margin-bottom:1rem;display:inline-block">Your Entry</span>
-          <h2 style="color:var(--on-dark);font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1rem">Upload your shares. You&rsquo;re in.</h2>
-          <p class="lede on-dark">No emails, no back-and-forth. Just drop in the screenshots of you sharing French Atelier with your friends &mdash; <strong>10 or more</strong> &mdash; add your details, and submit.</p>
-          <p class="note">By entering you confirm you have followed @livefrenchatelier and shared our channel with 10 or more friends. Winners are selected by the French Atelier committee and contacted directly &mdash; by phone and our official email &mdash; in early June 2026 or before. See full <a href="terms.html" style="color:var(--gold-soft);text-decoration:underline">contest rules</a>.</p>
+    <div id="entry" class="enter-split reveal">
+      <!-- ===== UPLOAD ENTRY (sleeker) ===== -->
+      <div class="enter-col upload-col">
+        <div class="enter-head">
+          <span class="eh-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m0 0L7 9m5-5l5 5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg></span>
+          <h3 class="col-title">Enter with your share screenshots</h3>
         </div>
+        <p class="col-sub">No emails, no back-and-forth. Drop in the screenshots of you sharing French Atelier with <strong>10+ friends</strong>, add your details, and you&rsquo;re in. Our biggest sharers fly to Paris.</p>
         <form id="entryForm" onsubmit="return submitEntry(event)">
           <div id="formFields">
             <p style="color:var(--on-dark-soft);font-size:.95rem;margin:0 0 1rem;line-height:1.5">Pick the way that&rsquo;s easiest for you &mdash; both count the same.</p>
@@ -485,8 +511,33 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
             <p>Your shares are in. Our biggest sharers win a flight to Paris &mdash; we&rsquo;ll contact winners directly by phone and our official email in early June 2026 or before. Bonne chance!</p>
           </div>
         </form>
+        <p class="note" style="margin-top:1.1rem">By entering you confirm you have followed @livefrenchatelier and shared our channel with 10+ friends. Winners are selected by the French Atelier committee and contacted by phone and our official email. See full <a href="terms.html" style="color:var(--gold-soft);text-decoration:underline">contest rules</a>.</p>
       </div>
-    </div>
+
+      <!-- ===== LEAD-GEN: enroll + advisor callback ===== -->
+      <div class="enter-col lead-col">
+        <div class="enter-head">
+          <span class="eh-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <h3 class="col-title">Prefer to enroll? Get a call back</h3>
+        </div>
+        <p class="col-sub">Want to join French Atelier or have questions first? Leave your details and one of our <strong>academic advisors</strong> will call you back.</p>
+        <ul class="lead-perks">
+          <li><span class="lk">&#10003;</span><span>A personal call from a French Atelier advisor</span></li>
+          <li><span class="lk">&#10003;</span><span>Enrollment guidance &mdash; programs, dates &amp; pricing</span></li>
+          <li><span class="lk">&#10003;</span><span>No obligation, no pressure</span></li>
+        </ul>
+        <form id="leadForm" class="lead-form" onsubmit="return submitLead(event)">
+          <div class="form-row"><label>Full Name</label><input type="text" id="lName" placeholder="Your full name" autocomplete="name" required></div>
+          <div class="form-row"><label>Email</label><input type="email" id="lEmail" placeholder="you@email.com" autocomplete="email" required></div>
+          <div class="form-row"><label>Phone</label><input type="tel" id="lPhone" placeholder="+1 (___) ___-____" autocomplete="tel" required></div>
+          <button type="submit" id="leadBtn" class="btn btn-gold btn-lg" style="width:100%;margin-top:.5rem">Request my callback</button>
+        </form>
+        <div class="lead-success" id="leadSuccess">
+          <div class="chk">&#10003;</div>
+          <h4>Thank you &mdash; you&rsquo;re on the list.</h4>
+          <p>One of our academic advisors will call you back shortly. À bientôt!</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -714,6 +765,34 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
       btn.disabled=false; btn.textContent=oldTxt;
       alert('Something went wrong sending your entry. Please check your connection and try again.');
     });
+    return false;
+  };
+
+  /* Lead-gen advisor callback — sends name/email/phone via the same relay, no page navigation. */
+  window.submitLead=function(ev){
+    ev.preventDefault();
+    var btn=document.getElementById('leadBtn');
+    var name=(document.getElementById('lName').value||'').trim();
+    var email=(document.getElementById('lEmail').value||'').trim();
+    var phone=(document.getElementById('lPhone').value||'').trim();
+    if(!name||!email||!phone){return false;}
+    var old=btn.textContent; btn.disabled=true; btn.textContent='Sending\u2026';
+    var fd=new FormData();
+    fd.append('Full Name',name);
+    fd.append('Email',email);
+    fd.append('Phone',phone);
+    fd.append('Request','Academic advisor callback / enrollment');
+    fd.append('_subject','New Advisor Callback Request \u2014 French Atelier');
+    fd.append('_captcha','false');
+    fd.append('_template','table');
+    fetch(__ENDPOINT,{method:'POST',body:fd,headers:{'Accept':'application/json'}})
+      .then(function(){ done(); })
+      .catch(function(){ done(); });
+    function done(){
+      var f=document.getElementById('leadForm'); var s=document.getElementById('leadSuccess');
+      if(f) f.style.display='none';
+      if(s) s.style.display='block';
+    }
     return false;
   };
 

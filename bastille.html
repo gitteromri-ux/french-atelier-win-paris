@@ -135,6 +135,7 @@ section{position:relative;scroll-margin-top:84px}
 
 /* ===== WHAT IT IS — TIER 3: compact inline strip ===== */
 .what-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem;margin-top:2rem}
+.mob-hint{display:none}
 .what-card{background:none;border:0;border-top:2px solid var(--gold-line);border-radius:0;padding:1.4rem 0 0;box-shadow:none;backdrop-filter:none}
 .what-card .num{font-family:var(--display);font-size:1.15rem;font-weight:700;color:var(--gold-deep);line-height:1}
 .what-card h3{font-family:var(--display);font-size:1.35rem;margin:.5rem 0 .5rem;font-weight:600}
@@ -308,7 +309,13 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
   .nav-menu{position:fixed;inset:0 0 0 auto;width:min(82vw,340px);flex-direction:column;justify-content:center;gap:1.6rem;background:rgba(7,9,28,.97);backdrop-filter:blur(18px);transform:translateX(100%);transition:transform .45s var(--ease);z-index:120;padding:2rem}
   .nav-open .nav-menu{transform:none}
   .nav-toggle{display:flex;z-index:130}
-  .what-grid{grid-template-columns:1fr}
+  .what-grid,.day-cards{display:flex;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:1rem;margin-left:-1.3rem;margin-right:-1.3rem;padding:.4rem 1.3rem 1.2rem;scrollbar-width:none}
+  .what-grid::-webkit-scrollbar,.day-cards::-webkit-scrollbar{display:none}
+  .what-grid>*,.day-cards>*{scroll-snap-align:center;flex:0 0 84%;max-width:84%}
+  .mob-hint{display:flex;align-items:center;justify-content:center;gap:.5rem;font-family:var(--sans);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);opacity:.85;margin-top:.2rem}
+  .mob-hint svg{width:15px;height:15px}
+  .day.featured .day-body p,.day-body p{font-size:1.02rem}
+  body{font-size:16.5px}
   .entry .grid{grid-template-columns:1fr}
   .sec{padding:4.6rem 0}
   .wrap,.narrow{padding:0 1.3rem}
@@ -335,7 +342,7 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
       <p>Welcome to the French Atelier <strong>&ldquo;Win a Free Flight to Paris&rdquo;</strong> giveaway for Bastille Day 2026. Please review and accept the key terms before entering.</p>
       <p><strong>Eligibility.</strong> Open to participants aged 18+ residing in the United States. You must follow <strong>@livefrenchatelier</strong> on Instagram and Meta and share our channel with at least 10 friends to qualify.</p>
       <p><strong>How winners are chosen.</strong> The participants who share our channel with the most friends (minimum 10, verified by the screenshots you upload) are selected as winners by the French Atelier committee. Winners are contacted directly &mdash; by phone and our official email &mdash; in early June 2026 or before, and must respond within 7 days or an alternate is selected.</p>
-      <p><strong>The prize.</strong> Winners receive a flight from the USA to Paris, which French Atelier books from an airport near the winner, with dates arranged around the guided program (July 13&ndash;15, 2026). The prize covers the flight and the guided program only; hotel, meals, transfers, and personal expenses are not included unless stated in writing.</p>
+      <p><strong>The prize.</strong> Selected winners receive a flight to Paris, arranged and coordinated by French Atelier from one of the participating airports, with dates timed around the guided program (July 13&ndash;15, 2026). The prize covers the flight and the guided program. Other personal expenses are the responsibility of the winner.</p>
       <p><strong>Your uploads &amp; privacy.</strong> The screenshots and contact details you submit are used solely to verify entries and contact winners. We do not sell your data. See the full <a href="terms.html" target="_blank" rel="noopener">contest rules &amp; privacy terms</a>.</p>
       <p><strong>Not affiliated with Instagram or Meta.</strong> This promotion is in no way sponsored, endorsed, administered by, or associated with Instagram or Meta.</p>
     </div>
@@ -351,11 +358,10 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
   <div class="wrap nav">
     <a href="index.html" aria-label="French Atelier"><img src="assets/logo-white.png" alt="French Atelier" class="nav-logo-img"></a>
     <nav class="nav-menu" id="navMenu">
-      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#how" class="nav-link">How It Works</a>
       <a href="prize.html" class="nav-link">The Prize</a>
-      <a href="bastille.html" class="nav-link active">Bastille Day</a>
-      <a href="program.html" class="nav-link">The Program</a>
-      <a href="enter.html" class="nav-link">How to Enter</a>
+      <a href="program.html" class="nav-link active">The Itinerary</a>
+      <a href="index.html#faq" class="nav-link">FAQ</a>
       <a href="terms.html" class="nav-link">Terms</a>
       <a href="enter.html" class="btn btn-gold nav-cta">Enter to Win</a>
     </nav>
