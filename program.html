@@ -332,52 +332,57 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
   *{scroll-behavior:auto}
 }
 
-.days-wide{max-width:1340px;margin:0 auto}
-.day{position:relative;display:grid;grid-template-columns:1.15fr 1fr;gap:0;align-items:stretch;border-radius:28px;overflow:hidden;margin-bottom:2.8rem;border:1px solid var(--light-line);background:#fff;box-shadow:0 40px 90px -50px rgba(25,29,48,.5);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
-.day:hover{transform:translateY(-4px);box-shadow:0 44px 90px -50px rgba(25,29,48,.6)}
-.day{--accent:var(--gold-deep)}
-.day:nth-child(1){--accent:var(--bleu)}
-.day:nth-child(2){--accent:var(--rouge)}
-.day:nth-child(3){--accent:var(--gold-deep)}
-.day:nth-child(4){--accent:#2E6E4E}
-.day::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent);z-index:4}
-.day-num{position:absolute;font-family:var(--display);font-weight:700;font-size:8.5rem;line-height:1;color:var(--accent);opacity:.07;z-index:0;pointer-events:none;bottom:.2rem;right:1.4rem}
-.day-media{position:relative;min-height:520px;overflow:hidden}
-.day-media video,.day-media img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform 1.2s var(--ease)}
-.day:hover .day-media img,.day:hover .day-media video{transform:scale(1.05)}
-.day-media .badge{position:absolute;top:1.3rem;left:1.3rem;z-index:3;background:linear-gradient(150deg,rgba(255,255,255,.22),rgba(255,255,255,.08));backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:.5rem 1.1rem;font-family:var(--sans);font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#fff;box-shadow:0 1px 0 rgba(255,255,255,.4) inset}
-.day-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,20,.22),transparent 28%,transparent 64%,rgba(0,0,20,.4));z-index:2}
-.day-body{position:relative;z-index:1;padding:2.8rem 2.6rem;display:flex;flex-direction:column;justify-content:center}
-.day:not(.featured) .day-body h3{color:var(--on-light)}
-.day:not(.featured) .day-body .sub{color:var(--gold-deep)}
-.day:not(.featured) .day-body p{color:var(--on-light-soft)}
-.day:not(.featured) .day-tag{color:var(--on-light-soft)}
-.day-date{font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem;display:flex;align-items:center;gap:.6rem}
-.day-date::before{content:"";width:1.8rem;height:2px;background:var(--accent);display:inline-block}
-.day-body h3{font-family:var(--display);font-size:clamp(1.7rem,2.6vw,2.3rem);font-weight:700;margin-bottom:.4rem}
-.day-body .sub{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--gold-deep);margin-bottom:1.1rem}
-.day-body p{font-size:.98rem;color:var(--on-light-soft);line-height:1.62;margin-bottom:1rem}
-.day-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.4rem}
-.day-tag{font-family:var(--sans);font-size:.72rem;letter-spacing:.04em;color:var(--on-light-soft);background:var(--cream);border:1px solid var(--light-line);border-radius:999px;padding:.34rem .85rem}
-.day-alert{margin-top:1.1rem;font-size:.86rem;color:var(--rouge);font-weight:500;display:flex;gap:.5rem;align-items:flex-start}
-.day.featured{border-color:rgba(200,52,75,.4);box-shadow:0 40px 90px -45px rgba(200,52,75,.45)}
-.day.featured .day-media{min-height:600px}
-.day.featured .day-body{background:linear-gradient(165deg,var(--navy-soft),var(--navy-deep));color:#fff}
-.day.featured .day-body h3{color:#fff}
-.day.featured .day-body p{color:rgba(255,255,255,.82)}
-.day.featured .day-body .sub{color:var(--gold-soft)}
-.day.featured .day-tag{color:rgba(255,255,255,.85);background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16)}
-.day.featured .day-num{opacity:.13;color:var(--gold-soft)}
-.day.featured .day-date{color:var(--gold-soft)}
-.day.featured .day-date::before{background:var(--gold-soft)}
-.day-flag{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-size:.66rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#fff;background:rgba(200,52,75,.9);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:.4rem 1rem;margin-bottom:1.1rem;align-self:flex-start}
-
-@media(min-width:861px){
-  .day:nth-child(odd) .day-media{order:2}
-  .day:nth-child(odd) .day-body{order:1}
-}
+/* ===== CINEMATIC FULL-BLEED ITINERARY DAYS ===== */
+.cine-days{margin-top:3.2rem}
+.cine-day{--accent:var(--gold-deep);position:relative;width:100%;min-height:80vh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.cine-day:nth-of-type(1){--accent:var(--bleu)}
+.cine-day:nth-of-type(2){--accent:var(--rouge)}
+.cine-day:nth-of-type(3){--accent:var(--gold-deep)}
+.cine-day:nth-of-type(4){--accent:#3E8B63}
+.cine-day .cine-media{position:absolute;inset:0;z-index:0;overflow:hidden}
+.cine-day .cine-media video,.cine-day .cine-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 6s var(--ease)}
+.cine-day:hover .cine-media video,.cine-day:hover .cine-media img{transform:scale(1.06)}
+/* directional scrim so overlay text is always legible */
+.cine-day::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(8,11,28,.88) 0%,rgba(8,11,28,.58) 38%,rgba(8,11,28,.12) 68%,rgba(8,11,28,0) 100%)}
+.cine-day.right::before{background:linear-gradient(270deg,rgba(8,11,28,.88) 0%,rgba(8,11,28,.58) 38%,rgba(8,11,28,.12) 68%,rgba(8,11,28,0) 100%)}
+.cine-day::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(8,11,28,.55),transparent 42%)}
+.cine-day .cine-num{position:absolute;z-index:2;top:clamp(2rem,6vh,4.5rem);font-family:var(--display);font-weight:700;font-size:clamp(7rem,18vw,16rem);line-height:.8;color:#fff;opacity:.1;pointer-events:none}
+.cine-day .cine-num.l{left:clamp(2rem,5vw,5rem)}
+.cine-day .cine-num.r{right:clamp(2rem,5vw,5rem)}
+.cine-day .badge{position:absolute;z-index:3;top:clamp(2rem,5vh,3rem);background:linear-gradient(150deg,rgba(255,255,255,.24),rgba(255,255,255,.08));backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.32);border-radius:999px;padding:.55rem 1.2rem;font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#fff}
+.cine-day .badge.l{left:clamp(2rem,5vw,5rem)}
+.cine-day .badge.r{right:clamp(2rem,5vw,5rem)}
+.cine-content{position:relative;z-index:3;width:100%;max-width:1500px;margin:0 auto;padding:0 clamp(2rem,5vw,5rem) clamp(3rem,7vh,5.5rem)}
+.cine-panel{max-width:600px}
+.cine-day.right .cine-content{display:flex;justify-content:flex-end}
+.cine-day.right .cine-panel{text-align:right}
+.cine-date{font-family:var(--sans);font-size:.74rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:.8rem;display:flex;align-items:center;gap:.7rem}
+.cine-date::before{content:"";width:2.2rem;height:2px;background:var(--accent);display:inline-block}
+.cine-day.right .cine-date{justify-content:flex-end}
+.cine-day.right .cine-date::before{order:2}
+.cine-flag{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#fff;background:rgba(200,52,75,.92);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:.42rem 1.05rem;margin-bottom:1.1rem}
+.cine-panel h3{font-family:var(--display);font-size:clamp(2.1rem,4.2vw,3.4rem);font-weight:700;color:#fff;line-height:1.04;margin-bottom:.7rem;text-shadow:0 2px 30px rgba(0,0,10,.5)}
+.cine-panel .sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,1.8vw,1.55rem);color:var(--gold-soft);line-height:1.35;margin-bottom:1.2rem}
+.cine-panel p{font-size:1.08rem;color:rgba(255,255,255,.9);line-height:1.65;margin-bottom:1.3rem;max-width:56ch}
+.cine-day.right .cine-panel p{margin-left:auto}
+.cine-tags{display:flex;flex-wrap:wrap;gap:.6rem}
+.cine-day.right .cine-tags{justify-content:flex-end}
+.cine-tag{font-family:var(--sans);font-size:.82rem;letter-spacing:.03em;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:.42rem 1rem;backdrop-filter:blur(4px)}
+.cine-alert{display:flex;gap:.55rem;align-items:flex-start;font-size:.95rem;color:var(--gold-bright);line-height:1.5;margin-top:1.3rem;border-top:1px solid rgba(255,255,255,.18);padding-top:1.1rem;max-width:54ch}
+.cine-day.right .cine-alert{margin-left:auto;text-align:left}
+.cine-day.featured{box-shadow:inset 0 0 0 3px rgba(200,52,75,.5)}
 @media(max-width:860px){
-  .day-num{font-size:6rem;bottom:.1rem;right:.9rem}
+  .cine-day{min-height:auto}
+  .cine-day .cine-media{position:relative;height:50vw;min-height:230px}
+  .cine-day::before,.cine-day.right::before{background:linear-gradient(0deg,rgba(8,11,28,.96),rgba(8,11,28,.7))}
+  .cine-day::after{display:none}
+  .cine-day{display:block;background:var(--navy-deep)}
+  .cine-content{padding:1.8rem 1.4rem 2.4rem}
+  .cine-day.right .cine-content{justify-content:flex-start}
+  .cine-day.right .cine-panel,.cine-day.right .cine-date,.cine-day.right .cine-tags,.cine-day.right .cine-panel p{text-align:left;justify-content:flex-start;margin-left:0}
+  .cine-day.right .cine-date::before{order:0}
+  .cine-num{display:none}
+  .cine-panel{max-width:100%}
 }
 
 /* ===== ENTRY FORM ===== */
@@ -478,104 +483,116 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
       <h2>A Parisian Bastille Day, day by day.</h2>
       <p class="lede on-dark">Your winning week follows the French Atelier signature program: <strong>&ldquo;A Parisian Bastille Day Sojourn &mdash; Four Days as a Cultural Initiate.&rdquo;</strong> This is the exact tour each winner experiences, July 12&ndash;15, 2026.</p>
     </div>
+  </div>
 
-    <div class="days-wide">
-    <!-- DAY: Arrival Sun Jul 12 -->
-    <div class="day reveal">
-      <div class="day-media">
-        <span class="badge">Sunday &middot; July 12</span>
+    <div class="cine-days">
+
+    <!-- DAY 01 — Arrival, Sun Jul 12 (text LEFT) -->
+    <div class="cine-day reveal">
+      <div class="cine-media">
         <video autoplay muted loop playsinline poster="assets/mot-marais-poster.jpg?v=10">
-          <source src="assets/mot-marais.mp4?v=11" type="video/mp4">
+          <source src="assets/mot-marais.mp4?v=12" type="video/mp4">
         </video>
       </div>
-      <div class="day-body">
-        <span class="day-num" aria-hidden="true">01</span>
-        <span class="day-date">Arrival &middot; The Root of Paris</span>
-        <h3>First Taste of the Marais</h3>
-        <p class="sub">Settle into historic cobblestones &amp; discover the revolutionary past</p>
-        <p>Check into a boutique hotel in the Marais, take your first caf&eacute; en terrasse, and walk the cobblestone streets. If you arrive before 3pm, visit the Mus&eacute;e Carnavalet to decipher the story of the French Revolution and why July 14 matters.</p>
-        <div class="day-tags">
-          <span class="day-tag">Hôtel du Petit Moulin</span>
-          <span class="day-tag">Musée Carnavalet</span>
-          <span class="day-tag">Les Philosophes</span>
-          <span class="day-tag">Le Loir dans la Théière</span>
+      <span class="badge l">Sunday &middot; July 12</span>
+      <span class="cine-num r" aria-hidden="true">01</span>
+      <div class="cine-content">
+        <div class="cine-panel">
+          <span class="cine-date">Arrival &middot; The Root of Paris</span>
+          <h3>First Taste of the Marais</h3>
+          <p class="sub">Historic cobblestones &amp; the revolutionary past</p>
+          <p>Settle into a boutique hotel in the Marais, take your first caf&eacute; en terrasse, and wander the cobblestone streets. Arrive before 3pm and the Mus&eacute;e Carnavalet decodes the French Revolution &mdash; and why July 14 still matters.</p>
+          <div class="cine-tags">
+            <span class="cine-tag">H&ocirc;tel du Petit Moulin</span>
+            <span class="cine-tag">Mus&eacute;e Carnavalet</span>
+            <span class="cine-tag">Les Philosophes</span>
+            <span class="cine-tag">Le Loir dans la Th&eacute;i&egrave;re</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- DAY 1 Mon Jul 13 -->
-    <div class="day reveal">
-      <div class="day-media">
-        <span class="badge">Monday &middot; July 13</span>
+    <!-- DAY 02 — Golden Vigil, Mon Jul 13 (text RIGHT) -->
+    <div class="cine-day right reveal">
+      <div class="cine-media">
         <video autoplay muted loop playsinline poster="assets/mot-fireworks-poster.jpg?v=10">
-          <source src="assets/mot-fireworks.mp4?v=11" type="video/mp4">
+          <source src="assets/mot-fireworks.mp4?v=12" type="video/mp4">
         </video>
       </div>
-      <div class="day-body">
-        <span class="day-num" aria-hidden="true">02</span>
-        <span class="day-date">Day 1 &middot; The Golden Vigil</span>
-        <h3>Classic Symmetry &amp; Symphonic Fireworks</h3>
-        <p class="sub">Place des Vosges, a golden Seine sunset, and the national fireworks</p>
-        <p>Begin at the elegant Place des Vosges and &Icirc;le de la Cit&eacute;, then board a classic boat for a golden-hour Seine cruise past the Louvre and Grand Palais. In the evening: the Concert de Paris at the Champ-de-Mars and the national fireworks at 23:00, with the Eiffel Tower ablaze.</p>
-        <div class="day-tags">
-          <span class="day-tag">Place des Vosges</span>
-          <span class="day-tag">Seine Sunset Cruise</span>
-          <span class="day-tag">Concert de Paris</span>
-          <span class="day-tag">Eiffel Fireworks · 23:00</span>
+      <span class="badge r">Monday &middot; July 13</span>
+      <span class="cine-num l" aria-hidden="true">02</span>
+      <div class="cine-content">
+        <div class="cine-panel">
+          <span class="cine-date">Day 1 &middot; The Golden Vigil</span>
+          <h3>Classic Symmetry &amp; Symphonic Fireworks</h3>
+          <p class="sub">Place des Vosges, a golden Seine, the national fireworks</p>
+          <p>Begin at the elegant Place des Vosges and &Icirc;le de la Cit&eacute;, then board a classic boat for a golden-hour Seine cruise past the Louvre and Grand Palais. By night: the Concert de Paris at the Champ-de-Mars and the national fireworks at 23:00, the Eiffel Tower ablaze.</p>
+          <div class="cine-tags">
+            <span class="cine-tag">Place des Vosges</span>
+            <span class="cine-tag">Seine Sunset Cruise</span>
+            <span class="cine-tag">Concert de Paris</span>
+            <span class="cine-tag">Eiffel Fireworks &middot; 23:00</span>
+          </div>
+          <p class="cine-alert"><span>&#9888;</span> In 2026 the national fireworks fall on Monday evening, July 13. Dine early &mdash; the sun sets late in July.</p>
         </div>
-        <p class="day-alert"><span>&#9888;</span> Note: in 2026 the national fireworks fall on Monday evening, July 13. Dine early &mdash; the sun sets late in July.</p>
       </div>
     </div>
 
-    <!-- DAY 2 Tue Jul 14 -->
-    <div class="day featured reveal">
-      <div class="day-media">
-        <span class="badge">Tuesday &middot; July 14 &middot; Bastille Day</span>
+    <!-- DAY 03 — Bastille Day, Tue Jul 14 (featured, text LEFT) -->
+    <div class="cine-day featured reveal">
+      <div class="cine-media">
         <video autoplay muted loop playsinline poster="assets/mot-tuileries-poster.jpg?v=10">
-          <source src="assets/mot-tuileries-web.mp4?v=10" type="video/mp4">
+          <source src="assets/mot-tuileries-web.mp4?v=12" type="video/mp4">
         </video>
       </div>
-      <div class="day-body">
-        <span class="day-num" aria-hidden="true">03</span>
-        <span class="day-flag">&#9733; The Main Event</span>
-        <span class="day-date">Day 2 &middot; Parisian Elegance</span>
-        <h3>Air Shows, Belle &Eacute;poque &amp; Grand Opera</h3>
-        <p class="sub">The insider&rsquo;s approach to July 14</p>
-        <p>Arrive early near Concorde and the Jardin des Tuileries for the military air-show flyover &mdash; skipping the Champs-&Eacute;lys&eacute;es crowds. Continue to the Palais-Royal and the gilded Op&eacute;ra Garnier, then take in the rooftop terraces of Boulevard Haussmann.</p>
-        <div class="day-tags">
-          <span class="day-tag">Tuileries Air Show</span>
-          <span class="day-tag">Palais-Royal</span>
-          <span class="day-tag">Opéra Garnier</span>
-          <span class="day-tag">Café de la Paix</span>
+      <span class="badge l">Tuesday &middot; July 14 &middot; Bastille Day</span>
+      <span class="cine-num r" aria-hidden="true">03</span>
+      <div class="cine-content">
+        <div class="cine-panel">
+          <span class="cine-flag">&#9733; The Main Event</span>
+          <span class="cine-date">Day 2 &middot; Parisian Elegance</span>
+          <h3>Air Shows, Belle &Eacute;poque &amp; Grand Opera</h3>
+          <p class="sub">The insider&rsquo;s approach to July 14</p>
+          <p>Arrive early near Concorde and the Jardin des Tuileries for the military air-show flyover &mdash; clear of the Champs-&Eacute;lys&eacute;es crowds. On to the Palais-Royal and the gilded Op&eacute;ra Garnier, then the rooftop terraces of Boulevard Haussmann.</p>
+          <div class="cine-tags">
+            <span class="cine-tag">Tuileries Air Show</span>
+            <span class="cine-tag">Palais-Royal</span>
+            <span class="cine-tag">Op&eacute;ra Garnier</span>
+            <span class="cine-tag">Caf&eacute; de la Paix</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- DAY 3 Wed Jul 15 -->
-    <div class="day reveal">
-      <div class="day-media">
-        <span class="badge">Wednesday &middot; July 15</span>
+    <!-- DAY 04 — Montmartre, Wed Jul 15 (text RIGHT) -->
+    <div class="cine-day right reveal">
+      <div class="cine-media">
         <video autoplay muted loop playsinline poster="assets/mot-montmartre-poster.jpg?v=10">
-          <source src="assets/mot-montmartre.mp4?v=11" type="video/mp4">
+          <source src="assets/mot-montmartre.mp4?v=12" type="video/mp4">
         </video>
       </div>
-      <div class="day-body">
-        <span class="day-num" aria-hidden="true">04</span>
-        <span class="day-date">Day 3 &middot; Art, Light &amp; Water</span>
-        <h3>Slow Montmartre &amp; Impressionist Masters</h3>
-        <p class="sub">Sacr&eacute;-C&oelig;ur, the Mus&eacute;e d&rsquo;Orsay, and Seine guinguettes</p>
-        <p>A slow morning in Montmartre &mdash; the Moulin de la Galette and Sacr&eacute;-C&oelig;ur &mdash; then the Impressionist masters at the Mus&eacute;e d&rsquo;Orsay (Monet, Renoir, Van Gogh). End on the water at a riverside guinguette, with a glass of cold French wine as the city slows.</p>
-        <div class="day-tags">
-          <span class="day-tag">Sacré-Cœur</span>
-          <span class="day-tag">Musée d'Orsay</span>
-          <span class="day-tag">Seine Guinguette</span>
-          <span class="day-tag">Riverside Flânerie</span>
+      <span class="badge r">Wednesday &middot; July 15</span>
+      <span class="cine-num l" aria-hidden="true">04</span>
+      <div class="cine-content">
+        <div class="cine-panel">
+          <span class="cine-date">Day 3 &middot; Art, Light &amp; Water</span>
+          <h3>Slow Montmartre &amp; Impressionist Masters</h3>
+          <p class="sub">Sacr&eacute;-C&oelig;ur, the Mus&eacute;e d&rsquo;Orsay, and Seine guinguettes</p>
+          <p>A slow morning in Montmartre &mdash; the Moulin de la Galette and Sacr&eacute;-C&oelig;ur &mdash; then the Impressionist masters at the Mus&eacute;e d&rsquo;Orsay. End on the water at a riverside guinguette, a glass of cold French wine in hand as the city slows.</p>
+          <div class="cine-tags">
+            <span class="cine-tag">Sacr&eacute;-C&oelig;ur</span>
+            <span class="cine-tag">Mus&eacute;e d&rsquo;Orsay</span>
+            <span class="cine-tag">Seine Guinguette</span>
+            <span class="cine-tag">Riverside Fl&acirc;nerie</span>
+          </div>
         </div>
       </div>
     </div>
+
     </div>
 
-    <p class="lede on-dark reveal" style="text-align:center;max-width:680px;margin:1rem auto 0;font-style:italic;font-family:var(--serif);font-size:1.3rem;color:var(--gold-soft)">&ldquo;French Atelier is not just about learning French. It is about entering the most beautiful moments of French life.&rdquo;</p>
+  <div class="wrap">
+    <p class="lede on-dark reveal" style="text-align:center;max-width:680px;margin:3rem auto 0;font-style:italic;font-family:var(--serif);font-size:1.3rem;color:var(--gold-soft)">&ldquo;French Atelier is not just about learning French. It is about entering the most beautiful moments of French life.&rdquo;</p>
   </div>
 </section>
 <!-- ===== FOOTER ===== -->

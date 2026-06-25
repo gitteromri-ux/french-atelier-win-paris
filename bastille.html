@@ -332,7 +332,22 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
 }
 </style>
 </head>
-<style>.nav-link.active{color:var(--gold-soft);opacity:1}</style>
+<style>
+.nav-link.active{color:var(--gold-soft);opacity:1}
+/* ===== SPLIT FEATURE FOLD ===== */
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2.5rem,5vw,5rem);align-items:center}
+.split-media{position:relative;border-radius:24px;overflow:hidden;min-height:480px;box-shadow:0 50px 100px -55px rgba(0,0,0,.7)}
+.split-media video,.split-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.split-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,20,.1),rgba(0,0,20,.36))}
+.split-media .split-badge{position:absolute;z-index:2;left:1.4rem;bottom:1.4rem;font-family:var(--serif);font-style:italic;font-size:1.15rem;color:#fff;background:rgba(0,0,28,.6);border:1px solid rgba(224,198,140,.5);border-radius:999px;padding:.5rem 1.2rem;backdrop-filter:blur(6px)}
+.split-body h2{font-size:clamp(2.2rem,4vw,3.2rem);color:var(--navy);margin-bottom:1.2rem;line-height:1.05}
+.split-body h2 .gold-ital{color:var(--gold-deep)}
+.split-body p{font-size:1.12rem;color:var(--on-light-soft);line-height:1.7;margin-bottom:1.1rem}
+.split-body .split-quote{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--gold-deep);line-height:1.4;border-left:2px solid var(--gold-line);padding-left:1.3rem;margin:1.6rem 0}
+.split.flip .split-media{order:2}
+.split.flip .split-body{order:1}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:2rem}.split.flip .split-media,.split.flip .split-body{order:0}.split-media{min-height:300px}}
+</style>
 <body>
 <div class="tc-overlay" id="tcOverlay" role="dialog" aria-modal="true" aria-labelledby="tcTitle">
   <div class="tc-card">
@@ -391,6 +406,76 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
           </div>
         </div>
       </article></div><p class="reveal" style="text-align:center;max-width:680px;margin:3.2rem auto 0;font-style:italic;font-family:var(--serif);font-size:clamp(1.3rem,1.9vw,1.7rem);color:var(--gold-soft)">“Arrive early near the Tuileries for the flyover — then the gilded Opéra Garnier and the rooftops of Haussmann.”</p></div></section>
+<!-- ===== FOLD 3: THE FOUR MOMENTS — what-grid ===== -->
+<section class="sec sec-cream" id="moments">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow eyebrow-line">The rhythm of the day</span>
+      <h2>Four moments that make July 14th.</h2>
+      <p class="lede-lg">Bastille Day is not one event but a sequence &mdash; morning grandeur, afternoon ease, evening spectacle. Here is how the day unfolds when you live it from the inside.</p>
+    </div>
+    <div class="what-grid">
+      <div class="what-card reveal">
+        <span class="num">01</span>
+        <h3>The morning flyover</h3>
+        <p>The <strong>Patrouille de France</strong> streaks tricolour smoke over the Tuileries. We position you early, clear of the crush, for the best view of the sky.</p>
+      </div>
+      <div class="what-card reveal">
+        <span class="num">02</span>
+        <h3>Belle &Eacute;poque grandeur</h3>
+        <p>The gilded <strong>Op&eacute;ra Garnier</strong>, the arcades of Palais-Royal, and the rooftop terraces of Haussmann &mdash; the Paris of chandeliers and stone.</p>
+      </div>
+      <div class="what-card reveal">
+        <span class="num">03</span>
+        <h3>A golden-hour Seine</h3>
+        <p>As the light turns, drift past the <strong>Louvre and Notre-Dame</strong> by river &mdash; the city softening before the night&rsquo;s grand finale.</p>
+      </div>
+      <div class="what-card reveal">
+        <span class="num">04</span>
+        <h3>The national fireworks</h3>
+        <p>The <strong>Eiffel Tower ablaze</strong> over the Champ de Mars. The whole country looks up at once, and you are standing right beneath it.</p>
+      </div>
+    </div>
+    <div class="mob-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M4 12h16"/></svg><span>Swipe for more</span></div>
+  </div>
+</section>
+
+<!-- ===== FOLD 4: THE FIREWORKS — split feature ===== -->
+<section class="sec sec-paper" id="grand-finale">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-media reveal">
+        <video autoplay muted loop playsinline poster="assets/mot-fireworks-poster.jpg?v=10">
+          <source src="assets/mot-fireworks.mp4?v=12" type="video/mp4">
+        </video>
+        <span class="split-badge">Champ de Mars &middot; 11pm, July 14</span>
+      </div>
+      <div class="split-body reveal">
+        <span class="eyebrow eyebrow-line" style="margin-bottom:1rem">The grand finale</span>
+        <h2>The night the <span class="gold-ital">whole city</span> looks up.</h2>
+        <p>When darkness finally settles over the Champ de Mars, the Eiffel Tower becomes the centre of the largest fireworks display in France. The river glows. The crowd falls quiet, then roars.</p>
+        <p class="split-quote">&ldquo;Nowhere else does a nation throw itself a party quite like this &mdash; and you are inside it, not watching from afar.&rdquo;</p>
+        <p>It is the moment our winners remember most: standing in the heart of Paris on the one night the city belongs to everyone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOLD 5: CTA BAND ===== -->
+<section class="sec-xl sec-dark cta-band" style="text-align:center;position:relative;overflow:hidden">
+  <div class="wrap" style="max-width:760px">
+    <div class="sec-head center reveal">
+      <span class="eyebrow on-dark eyebrow-line center">Be there for it</span>
+      <h2 style="font-size:clamp(2.4rem,5vw,3.8rem)">See it for yourself this July.</h2>
+      <p class="lede-lg on-dark">Follow @livefrenchatelier and share our channel with 10+ friends. Our biggest sharers fly to Paris for Bastille Day &mdash; entry is free.</p>
+    </div>
+    <div class="hero-ctas reveal" style="justify-content:center;margin-top:1.6rem">
+      <a href="enter.html" class="btn btn-gold btn-lg">Enter to Win &mdash; It&rsquo;s Free</a>
+      <a href="program.html" class="btn btn-glass btn-lg">See the Full Itinerary</a>
+    </div>
+  </div>
+</section>
+
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="wrap">

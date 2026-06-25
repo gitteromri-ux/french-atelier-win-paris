@@ -332,7 +332,43 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
 }
 </style>
 </head>
-<style>.nav-link.active{color:var(--gold-soft);opacity:1}</style>
+<style>
+.nav-link.active{color:var(--gold-soft);opacity:1}
+/* ===== PRIZE: VALUE CARDS (what you win) ===== */
+.prz-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem;margin-top:2.4rem}
+.prz-card{position:relative;background:#fff;border:1px solid var(--light-line);border-radius:20px;padding:2.2rem 2.1rem;box-shadow:0 30px 60px -48px rgba(20,26,51,.5);transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease)}
+.prz-card:hover{transform:translateY(-6px);box-shadow:0 44px 80px -48px rgba(20,26,51,.55);border-color:var(--gold-line)}
+.prz-card .prz-ico{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,var(--gold-bright),var(--gold-deep));color:var(--navy-deep);margin-bottom:1.2rem;box-shadow:0 12px 26px -12px rgba(170,140,85,.7)}
+.prz-card .prz-ico svg{width:25px;height:25px}
+.prz-card h3{font-family:var(--display);font-size:1.5rem;font-weight:700;color:var(--navy);margin-bottom:.5rem;line-height:1.12}
+.prz-card p{font-size:1.04rem;color:var(--on-light-soft);line-height:1.6}
+.prz-card .prz-tag{display:inline-block;margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--gold-deep)}
+/* ===== PRIZE: SPLIT FEATURE FOLD (why it's special) ===== */
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2.5rem,5vw,5rem);align-items:center}
+.split-media{position:relative;border-radius:24px;overflow:hidden;min-height:480px;box-shadow:0 50px 100px -55px rgba(0,0,0,.7)}
+.split-media video,.split-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.split-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,20,.1),rgba(0,0,20,.36))}
+.split-media .split-badge{position:absolute;z-index:2;left:1.4rem;bottom:1.4rem;font-family:var(--serif);font-style:italic;font-size:1.15rem;color:#fff;background:rgba(0,0,28,.6);border:1px solid rgba(224,198,140,.5);border-radius:999px;padding:.5rem 1.2rem;backdrop-filter:blur(6px)}
+.split-body h2{font-size:clamp(2.2rem,4vw,3.2rem);color:var(--navy);margin-bottom:1.2rem;line-height:1.05}
+.split-body h2 .gold-ital{color:var(--gold-deep)}
+.split-body p{font-size:1.12rem;color:var(--on-light-soft);line-height:1.7;margin-bottom:1.1rem}
+.split-body .split-quote{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--gold-deep);line-height:1.4;border-left:2px solid var(--gold-line);padding-left:1.3rem;margin:1.6rem 0}
+.split.flip .split-media{order:2}
+.split.flip .split-body{order:1}
+/* ===== CTA BAND ===== */
+.cta-band{position:relative;overflow:hidden;text-align:center}
+.cta-band .cta-inner{position:relative;z-index:2;max-width:760px;margin:0 auto;padding:0 2rem}
+.cta-band h2{font-size:clamp(2.4rem,5vw,4rem);color:#fff;line-height:1.04;margin-bottom:1.2rem;text-shadow:0 2px 28px rgba(0,0,10,.6)}
+.cta-band h2 .gold-ital{color:var(--gold-soft)}
+.cta-band p{font-size:clamp(1.15rem,1.6vw,1.4rem);color:#F2ECDF;max-width:48ch;margin:0 auto 2.2rem;line-height:1.6}
+@media(max-width:860px){
+  .prz-grid{grid-template-columns:1fr}
+  .split{grid-template-columns:1fr;gap:2rem}
+  .split.flip .split-media{order:0}
+  .split.flip .split-body{order:0}
+  .split-media{min-height:300px}
+}
+</style>
 <body>
 <div class="tc-overlay" id="tcOverlay" role="dialog" aria-modal="true" aria-labelledby="tcTitle">
   <div class="tc-card">
@@ -368,7 +404,7 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
     <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-<section class="prize-banner" style="min-height:62vh"><div class="pb-media"><video autoplay muted loop playsinline poster="assets/mot-prize-poster.jpg?v=10"><source src="assets/mot-prize-web.mp4?v=10" type="video/mp4"></video></div><div class="pb-inner"><div class="pb-panel"><span class="pb-eyebrow reveal">The prize</span><h1 class="pb-title reveal" style="font-size:clamp(2.6rem,6vw,4.8rem)">Win a <span class="gold-ital">free flight</span> to Paris.</h1><p class="pb-sub reveal">A round-trip flight from the USA, timed perfectly around the Bastille Day celebrations — plus the guided French Atelier program.</p></div></div></section>
+<!-- ===== FOLD 1: HERO (one only) ===== -->
 <section class="prize-banner" id="prize">
   <div class="pb-media">
     <video autoplay muted loop playsinline poster="assets/mot-prize-poster.jpg?v=10">
@@ -378,21 +414,112 @@ footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.
   <div class="pb-inner">
     <div class="pb-panel">
       <span class="pb-eyebrow reveal">The prize</span>
-      <h2 class="pb-title reveal">Win a <span class="gold-ital">free flight</span><br>to Paris.</h2>
-      <p class="pb-sub reveal">Picture it: you land in Paris as the whole city prepares for its biggest night of the year. This is what you could win &mdash; a flight from the USA, timed perfectly around the Bastille Day celebrations.</p>
-      <ul class="pb-list reveal">
-        <li><span class="ck">&#10003;</span> <span>A <strong>flight to Paris</strong> &mdash; we arrange and coordinate it for you</span></li>
-        <li><span class="ck">&#10003;</span> <span>Timed around <strong>Bastille Day</strong> &mdash; the F&ecirc;te Nationale, July 14, 2026</span></li>
-        <li><span class="ck">&#10003;</span> <span>Join the <strong>guided French Atelier Bastille Day program</strong></span></li>
-        <li><span class="ck">&#10003;</span> <span>Covers your <strong>flight + the guided program</strong></span></li>
-      </ul>
+      <h1 class="pb-title reveal">Your prize:<br><span class="gold-ital">Paris.</span></h1>
+      <p class="pb-sub reveal">Picture it &mdash; you step off the plane as the whole city dresses for its biggest night of the year. This is what our biggest sharers win: a flight to Paris, arranged for you, timed around the F&ecirc;te Nationale.</p>
       <div class="hero-ctas reveal">
         <a href="enter.html" class="btn btn-gold btn-lg">Enter to Win &mdash; It&rsquo;s Free</a>
-        <a href="program.html" class="btn btn-glass btn-lg">See What You&rsquo;d Live</a>
+        <a href="#what-you-win" class="btn btn-glass btn-lg">See What You Win</a>
       </div>
     </div>
   </div>
 </section>
+
+<!-- ===== FOLD 2: WHAT YOU WIN — elegant breakdown cards ===== -->
+<section class="sec sec-cream" id="what-you-win">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow eyebrow-line">Everything included</span>
+      <h2>Everything you win.</h2>
+      <p class="lede-lg">Two gifts in one prize: the journey to Paris, and the days we have designed to live there. No guesswork &mdash; we coordinate the parts that matter.</p>
+    </div>
+    <div class="prz-grid">
+      <div class="prz-card reveal">
+        <span class="prz-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5a2.12 2.12 0 0 0-3-3L13 8 4.8 6.2a1 1 0 0 0-1 .3l-1 1a1 1 0 0 0 .3 1.6L8 12l-2 4-3-1-1 1 3.5 2.5L10 22l1-1-1-3 4-2 2.9 4.6a1 1 0 0 0 1.6.3l1-1a1 1 0 0 0 .3-1z"/></svg></span>
+        <h3>A flight to Paris</h3>
+        <p>A flight from the USA, <strong>arranged and coordinated by French Atelier</strong>. You tell us you&rsquo;re ready &mdash; we handle the booking around the celebration dates.</p>
+        <span class="prz-tag">We arrange &amp; coordinate it for you</span>
+      </div>
+      <div class="prz-card reveal">
+        <span class="prz-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 19.1 7.2 16.7l.9-5.4L4.2 7.5l5.4-.8z"/></svg></span>
+        <h3>Timed around Bastille Day</h3>
+        <p>Your trip is built around the <strong>F&ecirc;te Nationale &mdash; July 14, 2026</strong>. You arrive as Paris turns golden for its national celebration, not a day too early or too late.</p>
+        <span class="prz-tag">July 14, 2026 &mdash; France&rsquo;s national day</span>
+      </div>
+      <div class="prz-card reveal">
+        <span class="prz-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+        <h3>The guided French Atelier program</h3>
+        <p>You don&rsquo;t arrive to a list and a map. You join the <strong>signature guided program</strong> &mdash; the air-show flyover, the Belle &Eacute;poque grandeur, the national fireworks, slow Montmartre.</p>
+        <span class="prz-tag">The insider&rsquo;s Bastille Day, day by day</span>
+      </div>
+      <div class="prz-card reveal">
+        <span class="prz-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <h3>Simple, by design</h3>
+        <p>The prize covers your <strong>flight and the guided program</strong>. Other personal expenses are yours &mdash; so there are no surprises, just the trip.</p>
+        <span class="prz-tag">Flight + guided program, clearly</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOLD 3: CINEMATIC VALUE BANNER ===== -->
+<section class="prize-banner" style="min-height:64vh">
+  <div class="pb-media">
+    <video autoplay muted loop playsinline poster="assets/mot-tuileries-poster.jpg?v=10">
+      <source src="assets/mot-tuileries-web.mp4?v=10" type="video/mp4">
+    </video>
+  </div>
+  <div class="pb-inner">
+    <div class="pb-panel">
+      <span class="pb-eyebrow reveal">A trip you could not book yourself</span>
+      <h2 class="pb-title reveal">The version of Paris<br>most visitors <span class="gold-ital">never see.</span></h2>
+      <p class="pb-sub reveal">Anyone can fly to Paris. Almost no one arrives the way our winners do &mdash; on the one date the whole country celebrates, with the route already drawn by people who live it.</p>
+      <ul class="pb-list reveal">
+        <li><span class="ck">&#10003;</span> <span>The <strong>military air-show flyover</strong> &mdash; from the right vantage, away from the crush</span></li>
+        <li><span class="ck">&#10003;</span> <span>The <strong>national fireworks</strong> with the Eiffel Tower ablaze</span></li>
+        <li><span class="ck">&#10003;</span> <span>A golden-hour <strong>Seine cruise</strong> past the Louvre</span></li>
+        <li><span class="ck">&#10003;</span> <span>Slow <strong>Montmartre</strong> &amp; the Impressionist masters</span></li>
+      </ul>
+      <div class="hero-ctas reveal">
+        <a href="program.html" class="btn btn-gold btn-lg">See the Full Itinerary</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOLD 4: WHY IT'S SPECIAL — split feature ===== -->
+<section class="sec sec-paper" id="why-special">
+  <div class="wrap">
+    <div class="split flip">
+      <div class="split-media reveal">
+        <video autoplay muted loop playsinline poster="assets/mot-fireworks-poster.jpg?v=10">
+          <source src="assets/mot-fireworks.mp4?v=12" type="video/mp4">
+        </video>
+        <span class="split-badge">The Golden Vigil &middot; July 13</span>
+      </div>
+      <div class="split-body reveal">
+        <span class="eyebrow eyebrow-line" style="margin-bottom:1rem">Why it&rsquo;s special</span>
+        <h2>Landing in Paris for its <span class="gold-ital">biggest night.</span></h2>
+        <p>There is one evening a year when Paris belongs to everyone at once &mdash; the river, the rooftops, the gardens, all turned toward the same sky. To be there is not sightseeing. It is being inside the moment the city throws for itself.</p>
+        <p class="split-quote">&ldquo;French Atelier is not just about learning French. It is about entering the most beautiful moments of French life.&rdquo;</p>
+        <p>That is what this prize is: not a ticket and a hotel list, but a seat at the table on the one night that matters most.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOLD 5: CTA BAND ===== -->
+<section class="sec-xl sec-dark cta-band">
+  <div class="cta-inner reveal">
+    <span class="eyebrow on-dark eyebrow-line center" style="margin-bottom:1.1rem">Your turn</span>
+    <h2>This could be <span class="gold-ital">your</span> summer in Paris.</h2>
+    <p>Follow @livefrenchatelier, share our channel with 10+ friends, and upload your screenshots. Our biggest sharers fly to Paris &mdash; it&rsquo;s free to enter.</p>
+    <div class="hero-ctas reveal" style="justify-content:center">
+      <a href="enter.html" class="btn btn-gold btn-lg">Enter to Win &mdash; It&rsquo;s Free</a>
+      <a href="bastille.html" class="btn btn-glass btn-lg">Discover Bastille Day</a>
+    </div>
+  </div>
+</section>
+
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="wrap">
