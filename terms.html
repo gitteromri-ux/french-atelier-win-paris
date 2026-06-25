@@ -3,216 +3,439 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contest Rules &amp; Terms — French Atelier · Win a Flight to Paris</title>
-<meta name="description" content="Official rules and terms for the French Atelier flight-to-Paris contest.">
+<title>Terms &amp; Conditions · Win a Free Flight to Paris · French Atelier</title>
+<meta name="description" content="Official Terms & Conditions for the French Atelier 'Win a Free Flight to Paris for Bastille Day' contest. Eligibility, entry, judging, prize and the full list of eligible US airports.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#000034; --navy-deep:#00001F; --navy-soft:#141A33;
-  --gold:#C8A96B; --gold-soft:#E0C68C; --gold-deep:#A98D52; --gold-bright:#F0D89A;
-  --gold-line:rgba(200,169,107,.42); --gold-line-soft:rgba(200,169,107,.2);
-  --on-dark:#F5EFE3; --on-dark-soft:#C9C3B6; --on-dark-faint:#8E897E;
-  --dark-line:rgba(255,255,255,.1);
-  --display:'Playfair Display', Georgia, serif;
+  --navy:#000034; --navy-deep:#00001F; --navy-soft:#1C2238; --navy-mid:#00003E; --navy-line:#000049;
+  --ink:#000034; --ink-soft:#3A3F5C;
+  --gold:#C8A96B; --gold-soft:#D8BC85; --gold-deep:#A98D52;
+  --gold-line:rgba(200,169,107,.45); --gold-line-soft:rgba(200,169,107,.22);
+  --ivory:#F3EFE9; --paper:#FAF7F1; --cream:#E9E1D2; --cream-deep:#D8CAB5;
+  --pink:#F3D3D9; --pink-soft:#FBEFF2; --pink-mid:#E498A6; --pink-deep:#C77E94;
+  --terra:#C76F50; --terra-soft:#E2B5A5; --terra-deep:#A95436;
+  --white:#FFFFFF;
+  --on-dark:#F3EEE3; --on-dark-soft:rgba(243,238,227,.66); --on-dark-faint:rgba(243,238,227,.40);
+  --dark-line:rgba(243,238,227,.18); --dark-line-soft:rgba(243,238,227,.10);
+  --on-light:#1A1E33; --on-light-soft:rgba(26,30,51,.66); --on-light-faint:rgba(26,30,51,.42);
+  --light-line:rgba(26,30,51,.14);
   --serif:'Cormorant Garamond', Georgia, serif;
   --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --maxw:780px;
+  --sp-5:3rem; --sp-6:4rem; --sp-7:6rem; --sp-8:8rem;
+  --maxw:1240px; --maxw-narrow:880px; --radius:3px;
+  --ease:cubic-bezier(.22,.61,.36,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--navy-deep);color:var(--on-dark-soft);line-height:1.72;font-weight:400;font-size:17px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
-a{color:var(--gold-soft);text-decoration:none;transition:color .2s}
-a:hover{color:var(--gold-bright)}
+body{font-family:var(--sans);background:var(--paper);color:var(--on-light);line-height:1.7;font-weight:400;font-size:17px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 2rem}
+.narrow{max-width:var(--maxw-narrow);margin:0 auto;padding:0 2rem}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.05;letter-spacing:-.01em;color:var(--on-light)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
 
-/* top bar */
-.topbar{position:sticky;top:0;z-index:50;background:rgba(0,0,31,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--dark-line)}
-.topbar-in{max-width:var(--maxw);margin:0 auto;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.brand{font-family:var(--display);font-size:1.18rem;font-weight:700;color:var(--on-dark);letter-spacing:-.01em}
-.brand span{color:var(--gold-bright)}
-.back-link{font-family:var(--sans);font-size:.88rem;font-weight:600;color:var(--gold-soft);display:inline-flex;align-items:center;gap:.4rem;white-space:nowrap}
-.back-link svg{width:16px;height:16px}
+/* type helpers — matched to live site */
+.display-md{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4.4rem);line-height:1.03;font-weight:600}
+.display-lg{font-family:var(--serif);font-size:clamp(3.1rem,7vw,5.8rem);line-height:1.0;font-weight:600;letter-spacing:-.012em}
+.gold-ital{font-style:italic;color:var(--gold-deep);font-weight:500}
+.gold-ital.on-dark{color:var(--gold-soft)}
+.lede{font-family:var(--sans);font-size:clamp(1.1rem,1.5vw,1.35rem);line-height:1.6;color:var(--on-light-soft);font-weight:300}
+.lede.on-dark{color:var(--on-dark-soft)}
+.eyebrow{font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep)}
+.eyebrow.on-dark{color:var(--gold-soft)}
+.eyebrow-line{display:inline-flex;align-items:center;gap:.9rem}
+.eyebrow-line::before{content:"";width:34px;height:1px;background:var(--gold-line);display:inline-block}
+.eyebrow-line.center::after{content:"";width:34px;height:1px;background:var(--gold-line);display:inline-block}
 
-/* hero */
-.t-hero{max-width:var(--maxw);margin:0 auto;padding:3.6rem 1.5rem 2rem;text-align:center}
-.eyebrow{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:1rem}
-.t-hero h1{font-family:var(--display);font-size:clamp(2.1rem,5vw,3rem);font-weight:700;color:var(--on-dark);line-height:1.08;letter-spacing:-.015em;margin-bottom:1rem}
-.t-hero .sub{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--gold-soft)}
-.t-meta{margin-top:1.4rem;font-size:.86rem;color:var(--on-dark-faint)}
+/* buttons — matched to live site (blue glow primary + gold 3d) */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:1.05rem 2.2rem;border-radius:6px;transition:all .4s var(--ease);cursor:pointer;border:1px solid transparent}
+.btn-advisor{background:linear-gradient(135deg,#5EC8FF 0%,#3FA8F0 50%,#1F86D6 100%);color:#fff;box-shadow:0 10px 30px -8px rgba(63,168,240,.55),inset 0 1px 0 rgba(255,255,255,.4)}
+.btn-advisor:hover{transform:translateY(-2px);box-shadow:0 16px 40px -8px rgba(63,168,240,.7),inset 0 1px 0 rgba(255,255,255,.4)}
+.btn-gold{background:linear-gradient(135deg,var(--gold-soft),var(--gold) 55%,var(--gold-deep));color:var(--navy-deep);box-shadow:0 8px 22px -10px rgba(170,140,85,.7),inset 0 1px 0 rgba(255,255,255,.45);font-weight:700}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 34px -10px rgba(170,140,85,.85),inset 0 1px 0 rgba(255,255,255,.45)}
+.btn-ghost{border:1px solid var(--gold-line);color:var(--gold-soft);background:transparent}
+.btn-ghost:hover{border-color:var(--gold-soft);background:rgba(200,169,107,.08)}
+.btn-ghost.on-light{color:var(--gold-deep)}
+.btn-ghost.on-light:hover{background:rgba(200,169,107,.07)}
 
-/* content */
-.t-wrap{max-width:var(--maxw);margin:0 auto;padding:1.5rem 1.5rem 5rem}
-.t-intro{font-size:1.06rem;color:var(--on-dark-soft);line-height:1.74;border-left:2px solid var(--gold-line);padding:.4rem 0 .4rem 1.3rem;margin:1.5rem 0 2.6rem}
-section.clause{margin-bottom:2.5rem;scroll-margin-top:90px}
-section.clause h2{font-family:var(--display);font-size:1.45rem;font-weight:700;color:var(--on-dark);margin-bottom:.9rem;line-height:1.2;display:flex;align-items:baseline;gap:.7rem}
-section.clause h2 .n{font-family:var(--sans);font-size:.85rem;font-weight:700;color:var(--gold-bright);background:rgba(224,198,140,.14);border:1px solid var(--gold-line-soft);border-radius:8px;padding:.25rem .6rem;flex:none;line-height:1}
-section.clause h3{font-family:var(--sans);font-size:1.02rem;font-weight:700;color:var(--on-dark);margin:1.3rem 0 .5rem}
-section.clause p{margin-bottom:1rem;line-height:1.74}
-section.clause ul{margin:.4rem 0 1.1rem;padding-left:0;list-style:none}
-section.clause ul li{position:relative;padding-left:1.5rem;margin-bottom:.7rem;line-height:1.66}
-section.clause ul li::before{content:'';position:absolute;left:.2rem;top:.62rem;width:6px;height:6px;border-radius:50%;background:var(--gold-soft)}
-strong{color:var(--on-dark);font-weight:600}
+/* dividers */
+.leaf{display:flex;align-items:center;justify-content:center;gap:.6rem;margin:1.4rem auto}
+.leaf .line{height:1px;width:90px;background:linear-gradient(90deg,transparent,var(--gold-line),transparent)}
+.leaf .dot{color:var(--gold);font-size:.8rem}
 
-.callout{background:linear-gradient(165deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid var(--dark-line);border-radius:16px;padding:1.4rem 1.5rem;margin:1.4rem 0}
-.callout.gold{border-color:var(--gold-line);background:rgba(224,198,140,.06)}
-.callout h3{margin-top:0}
-.callout .ch{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:.6rem;display:block}
+/* ===== HEADER ===== */
+header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .45s var(--ease),padding .45s var(--ease),box-shadow .45s var(--ease);padding:1.5rem 0;background:rgba(0,0,26,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--dark-line-soft)}
+header.scrolled{padding:.85rem 0}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.nav-logo-img{height:46px;width:auto}
+header.scrolled .nav-logo-img{height:38px}
+.nav-menu{display:flex;align-items:center;gap:2rem;flex:1;justify-content:center}
+.nav-link{font-family:var(--sans);font-size:.82rem;font-weight:500;letter-spacing:.04em;color:var(--on-dark);opacity:.85;transition:opacity .3s,color .3s}
+.nav-link:hover{opacity:1;color:var(--gold-soft)}
+.nav-link.active{color:var(--gold-soft);opacity:1}
+.nav-cta{font-size:.72rem;padding:.85rem 1.7rem}
 
-.divider{height:1px;background:linear-gradient(90deg,transparent,var(--gold-line),transparent);margin:2.4rem 0;border:0}
+/* urgency strip */
+.urgency{background:linear-gradient(135deg,var(--gold-soft),var(--gold) 55%,var(--gold-deep));color:var(--navy-deep);text-align:center;font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:.7rem 1rem}
 
-.t-foot{max-width:var(--maxw);margin:0 auto;padding:2.4rem 1.5rem 4rem;border-top:1px solid var(--dark-line);text-align:center}
-.t-foot p{font-size:.84rem;color:var(--on-dark-faint);line-height:1.7;margin-bottom:.6rem}
-.t-foot .brand-sm{font-family:var(--display);color:var(--on-dark);font-size:1rem;font-weight:600}
-.btn-back{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.4rem;font-family:var(--sans);font-weight:600;font-size:.95rem;color:var(--navy-deep);background:linear-gradient(120deg,var(--gold-bright),var(--gold-deep));padding:.8rem 1.6rem;border-radius:999px;transition:transform .2s,box-shadow .2s}
-.btn-back:hover{transform:translateY(-2px);box-shadow:0 14px 34px -16px rgba(224,198,140,.7);color:var(--navy-deep)}
+/* ===== TERMS HERO (culture-dark) ===== */
+.culture-dark{position:relative;color:#F4EEE2;border-bottom:1px solid rgba(200,165,96,.14);overflow:hidden;
+  background:
+    radial-gradient(130% 90% at 18% 0%, rgba(196,122,78,.16) 0%, transparent 46%),
+    radial-gradient(120% 90% at 88% 14%, rgba(228,166,184,.14) 0%, transparent 44%),
+    radial-gradient(140% 120% at 50% 120%, rgba(200,165,96,.10) 0%, transparent 55%),
+    linear-gradient(180deg,#0A1030 0%,#0B1340 48%,#080C26 100%);}
+.culture-dark h1,.culture-dark h2,.culture-dark h3,.culture-dark h4{color:#F4EEE2}
+.tc-hero{padding:11rem 0 5rem;text-align:center}
+.tc-hero .eyebrow-line{justify-content:center;margin-bottom:1.3rem}
+.tc-hero h1{margin-bottom:1.2rem}
+.tc-hero .lede{margin:0 auto;max-width:60ch}
+.tc-hero .meta{display:inline-flex;flex-wrap:wrap;gap:2rem;margin-top:2.4rem;padding-top:1.7rem;border-top:1px solid var(--dark-line);justify-content:center}
+.tc-hero .meta .item{display:flex;flex-direction:column}
+.tc-hero .meta .k{font-family:var(--serif);font-size:1.5rem;color:var(--gold-soft);line-height:1;font-weight:600}
+.tc-hero .meta .v{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--on-dark-soft);margin-top:.45rem}
 
-@media(max-width:600px){
-  body{font-size:16px}
-  .t-hero{padding:2.6rem 1.3rem 1.6rem}
-  .t-wrap{padding:1rem 1.3rem 4rem}
-  section.clause h2{font-size:1.28rem}
+/* ===== TERMS BODY ===== */
+main{padding:var(--sp-7) 0 var(--sp-6)}
+.tc-layout{display:grid;grid-template-columns:230px 1fr;gap:3.5rem;align-items:start}
+.toc{position:sticky;top:7rem}
+.toc .toc-title{font-family:var(--sans);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--on-light-faint);font-weight:600;margin-bottom:1.1rem}
+.toc a{display:block;font-size:.92rem;color:var(--on-light-soft);padding:.42rem 0;border-bottom:1px solid var(--light-line);transition:color .3s;font-weight:400}
+.toc a:last-child{border-bottom:none}
+.toc a:hover{color:var(--gold-deep)}
+
+.tc{counter-reset:sec}
+.tc .card{background:var(--white);border:1px solid var(--light-line);border-radius:10px;padding:2.2rem 2.4rem;margin-bottom:1.4rem;transition:box-shadow .45s var(--ease)}
+.tc .card:hover{box-shadow:0 18px 44px rgba(11,19,64,.08)}
+.tc h2{font-family:var(--serif);font-size:clamp(1.5rem,2.4vw,2rem);color:var(--navy);margin-bottom:.9rem;display:flex;gap:.85rem;align-items:baseline;font-weight:600}
+.tc h2 .secnum{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--gold-deep);font-weight:500;font-variant-numeric:tabular-nums}
+.tc p{color:var(--on-light-soft);margin-bottom:.9rem;font-weight:300}
+.tc p:last-child{margin-bottom:0}
+.tc ul{list-style:none;margin:.5rem 0 .4rem}
+.tc li{padding:.55rem 0 .55rem 1.7rem;position:relative;color:var(--on-light-soft);border-top:1px solid var(--light-line);font-weight:300}
+.tc li:first-child{border-top:none}
+.tc li::before{content:"✦";position:absolute;left:0;color:var(--gold-deep);font-size:.78rem;top:.85rem}
+.tc b{color:var(--navy);font-weight:600}
+.callout{background:linear-gradient(160deg,rgba(200,169,107,.13),rgba(200,169,107,.04));border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:1.2rem 1.5rem;margin:1.1rem 0 .2rem;color:var(--on-light-soft);font-weight:300}
+.callout b{color:var(--navy)}
+
+/* prize date pills */
+.date-row{display:flex;flex-wrap:wrap;gap:1rem;margin:.6rem 0 .2rem}
+.date-pill{flex:1;min-width:180px;background:var(--ivory);border:1px solid var(--light-line);border-radius:10px;padding:1.1rem 1.3rem}
+.date-pill .dl{font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--on-light-faint);font-weight:600}
+.date-pill .dv{font-family:var(--serif);font-size:1.3rem;color:var(--navy);margin-top:.3rem;font-weight:600}
+
+/* AIRPORTS — on-brand dark band */
+.airports{position:relative;color:#F4EEE2;border:1px solid rgba(200,165,96,.22);border-radius:12px;padding:2.6rem 2.4rem;margin:1.2rem 0 .3rem;overflow:hidden;
+  background:
+    radial-gradient(120% 100% at 15% 0%, rgba(196,122,78,.16) 0%, transparent 48%),
+    radial-gradient(110% 100% at 90% 10%, rgba(228,166,184,.13) 0%, transparent 46%),
+    linear-gradient(180deg,#0A1030 0%,#0B1340 60%,#080C26 100%);}
+.airports .ap-eye{font-family:var(--sans);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);font-weight:600;margin-bottom:.7rem}
+.airports h3{color:#F4EEE2;font-family:var(--serif);font-size:clamp(1.5rem,2.4vw,2rem);margin-bottom:.4rem;font-weight:600}
+.airports .ap-sub{color:var(--on-dark-soft);font-size:.95rem;margin-bottom:1.6rem;font-weight:300}
+.ap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.2rem 1.6rem}
+.ap-grid div{padding:.7rem 0;border-top:1px solid rgba(255,255,255,.1);color:var(--on-dark-soft);font-size:.94rem;font-weight:300;display:flex;align-items:baseline;gap:.7rem}
+.ap-grid div b{color:var(--gold-soft);font-weight:700;font-family:var(--sans);letter-spacing:.05em;min-width:38px}
+.ap-note{font-size:.84rem;color:var(--on-dark-faint);margin-top:1.5rem;line-height:1.6;font-weight:300}
+
+.back-cta{text-align:center;margin-top:3rem}
+
+/* ===== FOOTER ===== */
+footer{background:var(--navy-deep);color:var(--on-dark-soft);padding:3rem 0 2rem;border-top:1px solid var(--dark-line-soft)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;align-items:center}
+.foot .nav-logo-img{height:40px}
+.foot-links{display:flex;gap:1.6rem;font-size:.82rem;letter-spacing:.04em}
+.foot-links a{opacity:.8}
+.foot-links a:hover{color:var(--gold-soft);opacity:1}
+.foot-fine{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--dark-line-soft);font-size:.78rem;color:var(--on-dark-faint);line-height:1.7;font-weight:300}
+.foot-fine a{color:var(--gold-soft)}
+
+@media (max-width:980px){.nav-menu{display:none}}
+@media (max-width:900px){
+  .tc-layout{grid-template-columns:1fr}
+  .toc{position:static;margin-bottom:1rem}
+  .toc a{display:inline-block;border:1px solid var(--light-line);border-radius:999px;padding:.4rem .9rem;margin:.2rem .3rem .2rem 0;font-size:.78rem}
+  .ap-grid{grid-template-columns:1fr 1fr}
 }
+@media (max-width:560px){.ap-grid{grid-template-columns:1fr}.tc .card{padding:1.8rem 1.5rem}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal-d1{transition-delay:.08s}.reveal-d2{transition-delay:.16s}
 </style>
 </head>
 <body>
 
-<div class="topbar">
-  <div class="topbar-in">
-    <span class="brand">French <span>Atelier</span></span>
-    <a class="back-link" href="index.html">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m0 0l7 7m-7-7l7-7"/></svg>
-      Back to contest
-    </a>
-  </div>
-</div>
+<div class="urgency">Entries open tonight · Winners announced after Bastille Day · Three round-trip flights to Paris</div>
 
-<header class="t-hero">
-  <p class="eyebrow">Official Contest Rules</p>
-  <h1>Win a Flight to Paris</h1>
-  <p class="sub">Terms &amp; Conditions</p>
-  <p class="t-meta">French Atelier by ACADOMIA &middot; Last updated June 2026</p>
+<header id="header">
+  <div class="wrap nav">
+    <a class="nav-logo" href="https://gitteromri-ux.github.io/french-atelier/">
+      <img class="nav-logo-img" src="assets/logo-white.png" alt="The French Atelier by Acadomia">
+    </a>
+    <nav class="nav-menu" aria-label="Primary">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="index.html#prize">The Prize</a>
+      <a class="nav-link" href="index.html#bastille">Bastille Day</a>
+      <a class="nav-link" href="index.html#program">The Program</a>
+      <a class="nav-link" href="index.html#enter">How to Enter</a>
+      <a class="nav-link active" href="terms.html">Terms</a>
+    </nav>
+    <a href="index.html#enter" class="btn btn-gold nav-cta">Enter to Win</a>
+  </div>
 </header>
 
-<main class="t-wrap">
-
-  <p class="t-intro">These Official Rules govern the French Atelier &ldquo;Win a Flight to Paris&rdquo; contest (the &ldquo;Contest&rdquo;). By entering, you agree to these Rules and to the decisions of the Sponsor, which are final and binding on all matters relating to the Contest. <strong>No purchase is necessary to enter or win.</strong> A purchase will not improve your chances of winning.</p>
-
-  <section class="clause" id="sponsor">
-    <h2><span class="n">1</span> The Sponsor</h2>
-    <p>The Contest is run by <strong>French Atelier by ACADOMIA</strong> (the &ldquo;Sponsor,&rdquo; &ldquo;we,&rdquo; &ldquo;us&rdquo;). The Contest is in no way sponsored, endorsed, administered by, or associated with Instagram, Meta, or any other social platform. You understand that you are providing your information to the Sponsor and not to any social platform.</p>
-  </section>
-
-  <section class="clause" id="eligibility">
-    <h2><span class="n">2</span> Who Can Enter</h2>
-    <ul>
-      <li>You must be <strong>18 years of age or older</strong> at the time of entry.</li>
-      <li>You must hold a valid passport (or be able to obtain one in time for travel) and be legally able to travel internationally to France.</li>
-      <li>Employees of the Sponsor and their immediate family or household members are not eligible.</li>
-      <li>The Contest is void where prohibited or restricted by law.</li>
-    </ul>
-    <p>Entrants are responsible for ensuring they meet all eligibility requirements, including any visa, passport, or travel-document requirements that apply to them.</p>
-  </section>
-
-  <section class="clause" id="how-to-enter">
-    <h2><span class="n">3</span> How to Enter</h2>
-    <p>To enter the Contest, you must:</p>
-    <ul>
-      <li><strong>Follow</strong> our official account, @livefrenchatelier.</li>
-      <li><strong>Share</strong> our channel with at least ten (10) friends.</li>
-      <li><strong>Submit</strong> proof of your shares, along with your name, phone number, and social handle, through the entry form on our Contest page.</li>
-    </ul>
-    <h3>Two ways to submit your proof &mdash; both count equally:</h3>
-    <ul>
-      <li><strong>One group share.</strong> Share our channel to a group of ten or more friends at once, then upload a single screenshot that clearly shows it was sent to all of them.</li>
-      <li><strong>Separate shares.</strong> Share our channel with friends one at a time, then upload a screenshot of each individual share.</li>
-    </ul>
-    <p>Whichever method you choose, your entry must clearly demonstrate that you have shared our channel with at least ten friends. Entries that do not clearly show the required shares may be disqualified at the Sponsor's discretion. Incomplete, illegible, or fraudulent entries are void.</p>
-  </section>
-
-  <section class="clause" id="selection">
-    <h2><span class="n">4</span> How Winners Are Chosen</h2>
-    <p>Winners will be selected by the French Atelier committee from among valid entrants who have shared our channel with the most friends, subject to the minimum requirement above. The committee's selection is final. The number of winners is at the sole discretion of the Sponsor and may vary.</p>
-    <p>The Sponsor reserves the right to verify any entry and to request additional proof of sharing before confirming a winner. Failure to provide satisfactory verification may result in disqualification.</p>
-  </section>
-
-  <section class="clause" id="notification">
-    <h2><span class="n">5</span> Winner Notification</h2>
-    <div class="callout gold">
-      <span class="ch">Important</span>
-      <p style="margin:0">We will contact valid winners directly &mdash; by <strong>phone</strong> and from our <strong>official email address</strong> &mdash; in <strong>early June 2026 or before</strong>. We will never ask a winner to pay a fee, send money, or share a password or payment details in order to claim a prize.</p>
+<!-- HERO -->
+<section class="culture-dark" style="position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;z-index:0">
+    <img src="assets/img-fireworks-eiffel.png" alt="Bastille Day fireworks over the Eiffel Tower" style="width:100%;height:100%;object-fit:cover;opacity:.34">
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,12,38,.72) 0%,rgba(8,12,38,.6) 50%,rgba(8,12,38,.9) 100%)"></div>
+  </div>
+  <div class="narrow tc-hero" style="position:relative;z-index:1">
+    <p class="eyebrow eyebrow-line on-dark center reveal">Official Rules</p>
+    <h1 class="display-md reveal reveal-d1">Terms &amp; <span class="gold-ital on-dark">Conditions</span></h1>
+    <p class="lede on-dark reveal reveal-d2">Official Rules of the "Win a Free Flight to Paris for Bastille Day" contest, presented by French Atelier. By entering, you agree to be bound by these Official Rules in their entirety. <b style="color:var(--gold-soft);font-weight:600">NO PURCHASE NECESSARY TO ENTER OR WIN.</b></p>
+    <div class="meta reveal reveal-d2">
+      <div class="item"><span class="k">3</span><span class="v">Winners</span></div>
+      <div class="item"><span class="k">Jul 14</span><span class="v">Bastille Day 2026</span></div>
+      <div class="item"><span class="k">USA → Paris</span><span class="v">Round-Trip Flights</span></div>
+      <div class="item"><span class="k">18+</span><span class="v">Age of Majority</span></div>
     </div>
-    <p>If a selected winner cannot be reached, does not respond within a reasonable time after we attempt contact, declines the prize, or is found to be ineligible or in breach of these Rules, the Sponsor may disqualify that entrant and select an alternate winner.</p>
-  </section>
+  </div>
+</section>
 
-  <section class="clause" id="prize">
-    <h2><span class="n">6</span> The Prize</h2>
-    <p>The prize is a <strong>round-trip flight from the United States to Paris, France</strong>, together with participation in the French Atelier guided program timed around Bastille Day in July 2026.</p>
+<!-- BODY -->
+<main>
+<div class="wrap">
+  <div class="tc-layout">
 
-    <div class="callout">
-      <span class="ch">Flights are flexible</span>
-      <p style="margin:0">We do not depart from any single fixed airport. After a winner is confirmed, <strong>our representative will be in contact to arrange the flight from an airport near the winner</strong>, subject to availability and reasonable routing. Specific dates, times, airline, and routing are determined by the Sponsor.</p>
+    <!-- TOC -->
+    <aside class="toc reveal">
+      <div class="toc-title">Official Rules</div>
+      <a href="#sponsor">1 · Sponsor</a>
+      <a href="#period">2 · Promotion Period</a>
+      <a href="#eligibility">3 · Eligibility</a>
+      <a href="#enter">4 · How to Enter</a>
+      <a href="#selection">5 · Winner Selection &amp; Odds</a>
+      <a href="#prize">6 · Prize &amp; Approximate Value</a>
+      <a href="#dates">7 · Flight Dates &amp; Changes</a>
+      <a href="#airports">8 · Eligible US Airports</a>
+      <a href="#notification">9 · Notification &amp; Claim</a>
+      <a href="#taxes">10 · Taxes</a>
+      <a href="#publicity">11 · Publicity &amp; Release</a>
+      <a href="#travel">12 · Travel Conditions</a>
+      <a href="#liability">13 · Release &amp; Liability</a>
+      <a href="#general">14 · General Conditions</a>
+      <a href="#disputes">15 · Disputes &amp; Governing Law</a>
+      <a href="#privacy">16 · Privacy</a>
+      <a href="#platform">17 · Platform Disclaimer</a>
+      <a href="#severability">18 · Severability</a>
+    </aside>
+
+    <!-- CONTENT -->
+    <div class="tc">
+
+      <p class="reveal" style="color:var(--on-light-faint);font-size:.82rem;letter-spacing:.04em;margin-bottom:1.6rem">Effective date: June 2026 · Last updated: June 2026. These Official Rules govern the “Win a Free Flight to Paris for Bastille Day” contest (the “Promotion”). Please read them carefully and retain a copy for your records.</p>
+
+      <div class="card reveal" id="sponsor">
+        <h2><span class="secnum">01</span>Sponsor &amp; Promotion</h2>
+        <p>The “Win a Free Flight to Paris for Bastille Day” promotion (the “Promotion”) is sponsored and administered by <b>French Atelier</b>, operated by Acadomia (the “Sponsor,” “we,” “us” or “our”). The Promotion is a skill- and merit-based contest conducted through the Sponsor’s official Meta (Facebook) and Instagram channels, inviting eligible participants to share the French Atelier channel with their network for the chance to win one of three (3) round-trip flights to Paris, timed for the Bastille Day (Fête Nationale) celebrations of July 2026.</p>
+        <p>These Official Rules form a binding agreement between each participant and the Sponsor. <b>By entering, you accept and agree to be bound by these Official Rules and by the decisions of the Sponsor, which are final and binding in all matters relating to the Promotion.</b></p>
+      </div>
+
+      <div class="card reveal" id="period">
+        <h2><span class="secnum">02</span>Promotion Period</h2>
+        <p>The Promotion begins at the date and time announced on the Sponsor’s official channels and the Promotion landing page (the “Start Date”) and closes at the entry deadline stated on those channels (together, the “Promotion Period”). Entries submitted before the Start Date or after the entry deadline will not be eligible. The Sponsor’s system clock is the official timekeeping device for the Promotion.</p>
+        <div class="callout"><b>No purchase or payment of any kind is necessary to enter or win.</b> A purchase will not improve a participant’s chances of winning.</div>
+      </div>
+
+      <div class="card reveal" id="eligibility">
+        <h2><span class="secnum">03</span>Eligibility</h2>
+        <ul>
+          <li>The Promotion is open only to individuals who are <b>at least eighteen (18) years of age</b> (or the age of majority in their jurisdiction of residence, whichever is greater) at the time of entry.</li>
+          <li>Participants must be able to <b>depart from one of the eligible major US airports</b> listed in Section 8, and must be legally able to enter and travel to France on the eligible travel dates.</li>
+          <li>Participants must hold, and are solely responsible for obtaining, <b>valid travel documentation</b> — including a passport valid for the duration of travel and any required visa or entry authorization.</li>
+          <li><b>Employees, officers, directors, agents and representatives</b> of the Sponsor, Acadomia and their respective affiliates, and the immediate family (spouse, parent, child, sibling) and household members of each, are <b>not eligible</b>.</li>
+          <li>The Promotion is <b>void where prohibited or restricted by law</b> and is subject to all applicable federal, state, local and international laws and regulations.</li>
+        </ul>
+      </div>
+
+      <div class="card reveal" id="enter">
+        <h2><span class="secnum">04</span>How to Enter</h2>
+        <p>To enter and qualify, a participant must complete <b>all</b> of the following during the Promotion Period:</p>
+        <ul>
+          <li><b>Follow</b> French Atelier on Instagram and Meta (Facebook).</li>
+          <li><b>Share the official French Atelier channel link</b> with friends, family and your network. A participant must make <b>a minimum of ten (10) shares</b> (channel-link messages sent) to qualify.</li>
+          <li><b>Capture a screenshot (print-screen)</b> clearly showing at least ten (10) channel-link share messages you sent, as proof of entry.</li>
+          <li><b>Complete and submit the official entry form</b>, attaching your screenshot.</li>
+        </ul>
+        <div class="callout">
+          <b>A minimum of ten (10) qualifying shares is required to be eligible to win.</b> Entries showing fewer than ten channel-link share messages will not be eligible. Limit one (1) entry per person; duplicate, automated, or fraudulent entries will be disqualified.
+        </div>
+      </div>
+
+      <div class="card reveal" id="selection">
+        <h2><span class="secnum">05</span>Winner Selection &amp; Odds</h2>
+        <p>This is a <b>skill- and merit-based contest</b>, not a game of chance. From among all eligible entries, a French Atelier judging committee (the “Committee”) will select the <b>three (3) participants whose sharing performance is judged strongest</b>, applying the following criteria:</p>
+        <ul>
+          <li><b>Shared activity</b> — the breadth, consistency and authenticity of channel-link shares.</li>
+          <li><b>New channel followers</b> reasonably attributable to the participant’s shares.</li>
+          <li><b>Engagement</b> — the quality and genuineness of the reach generated.</li>
+        </ul>
+        <p>A valid screenshot demonstrating the ten-share minimum is required for any entry to be considered. <b>The Committee’s evaluations and decisions are final and binding in all respects.</b> Because winners are selected on merit, the odds of winning depend on the number and quality of eligible entries received.</p>
+      </div>
+
+      <div class="card reveal" id="prize">
+        <h2><span class="secnum">06</span>Prize &amp; Approximate Value</h2>
+        <ul>
+          <li><b>Three (3) prizes</b> are available. Each winner receives one (1) <b>round-trip economy-class flight between an eligible US airport and Paris, France</b>, on dates within the eligible travel window (Section 7).</li>
+          <li>Each winner also receives access to the French Atelier <b>three-day insider program of recommendations</b> (neighborhoods, museums, cruises, terrasses and curated dining) as published on the Promotion landing page. This program consists of recommendations and itinerary guidance only.</li>
+          <li><b>Approximate retail value (“ARV”)</b> of each prize: up to approximately US&nbsp;$1,500, depending on departure airport, carrier and booking dates. The ARV is a maximum; any difference between the stated ARV and the actual prize value will not be awarded.</li>
+          <li>The prize is awarded <b>“as is,” is non-transferable, may not be substituted, and has no cash alternative</b>, except that the Sponsor reserves the right, in its sole discretion, to substitute a prize (or component) of equal or greater value if the advertised prize becomes unavailable.</li>
+          <li><b>Not included:</b> accommodation, ground transport, meals, beverages, gratuities, travel insurance, passport and visa fees, baggage charges, seat upgrades, in-flight purchases, and any other cost not expressly stated as included — all of which are the sole responsibility of the winner.</li>
+        </ul>
+      </div>
+
+      <div class="card reveal" id="dates">
+        <h2><span class="secnum">07</span>Flight Dates &amp; Changes</h2>
+        <div class="date-row">
+          <div class="date-pill"><div class="dl">Outbound · US Departure</div><div class="dv">July 10, 11 or 12</div></div>
+          <div class="date-pill"><div class="dl">Return · From Paris</div><div class="dv">July 13, 14 or 15</div></div>
+          <div class="date-pill"><div class="dl">Booking Changes</div><div class="dv">July only · +$80 / ticket</div></div>
+        </div>
+        <p style="margin-top:1.1rem">Any booking changes are valid for the <b>month of July only</b>, at an additional <b>$80 per ticket</b>. Accommodation, ground transport, meals, insurance, visas and any costs not expressly stated as included are the responsibility of the winner.</p>
+      </div>
+
+      <div class="card reveal" id="airports" style="padding:0;border:none;background:transparent;box-shadow:none">
+        <div class="airports">
+          <div class="ap-eye">Section 08 · Eligible US Airports</div>
+          <h3>Where you can depart from</h3>
+          <p class="ap-sub">Round-trip flights, USA → Paris (Charles de Gaulle / Orly). Winners select their nearest eligible airport, subject to carrier availability.</p>
+          <div class="ap-grid">
+            <div><b>JFK</b> New York, NY</div>
+            <div><b>EWR</b> Newark, NJ</div>
+            <div><b>BOS</b> Boston, MA</div>
+            <div><b>IAD</b> Washington, DC</div>
+            <div><b>PHL</b> Philadelphia, PA</div>
+            <div><b>ATL</b> Atlanta, GA</div>
+            <div><b>MIA</b> Miami, FL</div>
+            <div><b>ORD</b> Chicago, IL</div>
+            <div><b>DTW</b> Detroit, MI</div>
+            <div><b>MSP</b> Minneapolis, MN</div>
+            <div><b>DFW</b> Dallas, TX</div>
+            <div><b>IAH</b> Houston, TX</div>
+            <div><b>DEN</b> Denver, CO</div>
+            <div><b>LAX</b> Los Angeles, CA</div>
+            <div><b>SFO</b> San Francisco, CA</div>
+            <div><b>SEA</b> Seattle, WA</div>
+            <div><b>LAS</b> Las Vegas, NV</div>
+            <div><b>CLT</b> Charlotte, NC</div>
+          </div>
+          <p class="ap-note">Airport availability and routing are subject to carrier schedules for the eligible travel dates. If a winner's nearest listed airport is unavailable for the chosen dates, French Atelier will offer the closest available eligible airport.</p>
+        </div>
+      </div>
+
+      <div class="card reveal" id="notification">
+        <h2><span class="secnum">09</span>Winner Notification &amp; Claim</h2>
+        <ul>
+          <li>Potential winners will be notified by <b>telephone call, text message and email</b>, using the contact details provided on the entry form.</li>
+          <li>A potential winner who has been contacted and <b>fails to respond within seven (7) calendar days</b> of the first notification attempt will <b>forfeit the prize</b>, and the Sponsor may, in its sole discretion, <b>select an alternate winner</b> from the remaining eligible entries.</li>
+          <li>Before a prize is awarded, a potential winner may be required to <b>verify eligibility</b> and to <b>execute and return an Affidavit of Eligibility, Liability Release and (where lawful) a Publicity Release</b>, together with any travel details requested. Failure to comply within the time specified will result in forfeiture.</li>
+          <li>If a potential winner is found to be ineligible, cannot be contacted, declines the prize, or does not comply with these Official Rules, the prize may be forfeited and awarded to an alternate.</li>
+        </ul>
+      </div>
+
+      <div class="card reveal" id="taxes">
+        <h2><span class="secnum">10</span>Taxes</h2>
+        <p><b>All federal, state, local and foreign taxes</b>, and any other costs and expenses associated with prize acceptance and use not expressly stated as included, are the <b>sole responsibility of the winner</b>. Where required by law, the Sponsor may report the value of a prize to tax authorities and may require a winner to provide a valid taxpayer identification number (for example, a completed IRS Form W-9) before the prize is awarded. Winners are advised to consult their own tax advisors.</p>
+      </div>
+
+      <div class="card reveal" id="publicity">
+        <h2><span class="secnum">11</span>Publicity &amp; Likeness Release</h2>
+        <p>Except where prohibited by law, by accepting a prize each winner <b>grants the Sponsor and its affiliates the right to use the winner’s name, social handle, voice, statements, photographs, likeness and entry materials</b>, in any and all media now known or later developed, worldwide, for advertising, promotional and publicity purposes in connection with the Promotion, <b>without further notice, review, approval or compensation</b>, unless prohibited by law.</p>
+      </div>
+
+      <div class="card reveal" id="travel">
+        <h2><span class="secnum">12</span>Travel Conditions &amp; Assumption of Risk</h2>
+        <ul>
+          <li>Travel is subject to the <b>terms, conditions and restrictions of the issuing airline and applicable tariffs</b>, and to seat and flight availability for the eligible dates.</li>
+          <li>The winner is responsible for ensuring they meet all <b>passport, visa, health, vaccination and entry requirements</b> for travel to France and re-entry to the United States.</li>
+          <li>The Sponsor is <b>not responsible for cancellations, delays, schedule changes, overbooking, diversions, strikes, weather, acts of God, government action, or any other event</b> beyond its reasonable control that affects travel.</li>
+          <li>By accepting the prize, the winner <b>voluntarily assumes all risks</b> associated with travel and prize use, and agrees that the prize is accepted “as is.”</li>
+        </ul>
+      </div>
+
+      <div class="card reveal" id="liability">
+        <h2><span class="secnum">13</span>Release &amp; Limitation of Liability</h2>
+        <p>By participating, each entrant agrees to <b>release, indemnify and hold harmless</b> the Sponsor, Acadomia, and their respective affiliates, officers, directors, employees, agents and representatives (the “Released Parties”) from and against any and all claims, liabilities, losses, damages, costs and expenses arising out of or in connection with participation in the Promotion or the acceptance, use or misuse of any prize, including without limitation personal injury, death and property damage.</p>
+        <p>To the fullest extent permitted by law, the Released Parties are <b>not responsible</b> for: (i) lost, late, incomplete, misdirected, illegible, corrupted or non-delivered entries or communications; (ii) technical, hardware, software, network, telephone or internet failures; (iii) unauthorized access to, or alteration of, entries; or (iv) any error, omission, interruption, deletion or defect in the operation of the Promotion. <b>In no event will the Released Parties’ total liability exceed the actual value of the applicable prize.</b></p>
+      </div>
+
+      <div class="card reveal" id="general">
+        <h2><span class="secnum">14</span>General Conditions</h2>
+        <ul>
+          <li>The Sponsor reserves the right, in its sole discretion, to <b>disqualify any entrant</b> it believes has tampered with the entry process, used fake, purchased or automated shares/followers, acted in violation of these Official Rules, or acted in an unsportsmanlike or disruptive manner.</li>
+          <li>The Sponsor reserves the right to <b>modify, suspend, cancel or terminate</b> the Promotion, in whole or in part, if fraud, technical failure, or any other factor beyond its reasonable control impairs the integrity or proper functioning of the Promotion, and in such case may select winners from eligible, non-suspect entries received prior to the action taken.</li>
+          <li>The Sponsor may <b>amend these Official Rules</b> where reasonably necessary and will communicate material changes through its official channels and the Promotion landing page.</li>
+          <li><b>Any attempt to deliberately damage the Promotion or undermine its legitimate operation may be a violation of law</b>, and the Sponsor reserves the right to seek remedies and damages to the fullest extent permitted.</li>
+        </ul>
+      </div>
+
+      <div class="card reveal" id="disputes">
+        <h2><span class="secnum">15</span>Disputes &amp; Governing Law</h2>
+        <p>Except where prohibited, all issues and questions concerning the construction, validity, interpretation and enforceability of these Official Rules, or the rights and obligations of any entrant and the Sponsor, shall be governed by and construed in accordance with <b>applicable law, without regard to conflict-of-law principles</b>. By entering, each participant agrees that any dispute arising out of or relating to the Promotion shall be resolved <b>individually, without resort to any form of class action</b>, and exclusively by the competent courts having jurisdiction over the Sponsor, to which the parties submit.</p>
+      </div>
+
+      <div class="card reveal" id="privacy">
+        <h2><span class="secnum">16</span>Privacy &amp; Data</h2>
+        <p>Information you submit with your entry — including your screenshot, name and contact details — is collected and used <b>solely to administer the Promotion</b>, verify eligibility, contact winners, and fulfill prizes. The Sponsor processes this information in accordance with the French Atelier / Acadomia privacy practices, <b>does not sell entrants’ personal information</b>, and retains it only for as long as necessary for these purposes or as required by law. By entering, you consent to this use of your information.</p>
+      </div>
+
+      <div class="card reveal" id="platform">
+        <h2><span class="secnum">17</span>Platform Disclaimer</h2>
+        <p><b>This Promotion is in no way sponsored, endorsed, administered by, or associated with Meta, Facebook or Instagram.</b> By entering, participants release Meta, Facebook and Instagram from any and all liability arising from or related to the Promotion and acknowledge that any information provided is supplied to the Sponsor and not to those platforms.</p>
+      </div>
+
+      <div class="card reveal" id="severability">
+        <h2><span class="secnum">18</span>Severability</h2>
+        <p>If any provision of these Official Rules is held to be invalid, unlawful or unenforceable, that provision shall be severed and the remaining provisions shall continue in full force and effect. The Sponsor’s failure to enforce any provision shall not constitute a waiver of that or any other provision. These Official Rules constitute the entire agreement between the entrant and the Sponsor with respect to the Promotion.</p>
+      </div>
+
+      <div class="back-cta reveal">
+        <a href="index.html#enter" class="btn btn-gold">Back to the Contest &amp; Enter</a>
+      </div>
+
     </div>
-
-    <h3>What the prize includes</h3>
-    <ul>
-      <li>A round-trip flight to Paris, booked by the Sponsor from an airport near the winner.</li>
-      <li>Participation in the French Atelier guided program during the program dates.</li>
-    </ul>
-
-    <div class="callout gold">
-      <span class="ch">Please read carefully</span>
-      <h3 style="margin-top:0">What the prize does <em>not</em> include</h3>
-      <p style="margin-bottom:.6rem">The prize is <strong>not</strong> an all-expenses-paid trip. Unless expressly stated above, the prize does <strong>not</strong> include and the winner is solely responsible for:</p>
-      <ul style="margin-bottom:0">
-        <li><strong>Hotel and any accommodation</strong></li>
-        <li>Meals, food, and drinks</li>
-        <li>Local transport, transfers to and from airports, and travel within Paris</li>
-        <li>Travel insurance, passport and visa fees, and any travel documents</li>
-        <li>Spending money and any personal expenses</li>
-        <li>Any taxes, baggage fees, or other costs not expressly included above</li>
-      </ul>
-    </div>
-
-    <p>The prize is non-transferable and may not be exchanged or redeemed for cash, except that the Sponsor may, at its sole discretion, substitute a prize of equal or greater value if the stated prize becomes unavailable for any reason. The winner is responsible for any taxes that may apply to the prize. Travel is subject to the terms and conditions of the airline and any third-party providers, and to applicable travel advisories and regulations.</p>
-  </section>
-
-  <section class="clause" id="privacy">
-    <h2><span class="n">7</span> Your Information &amp; Privacy</h2>
-    <p>When you enter, you provide your name, phone number, social handle, and screenshots of your shares. We use this information only to <strong>administer the Contest</strong> &mdash; to verify entries, select and contact winners, and arrange a prize. We do <strong>not</strong> sell your information, and we do not share it with third parties except as needed to operate the Contest (for example, to arrange flights) or as required by law.</p>
-    <p>Uploaded screenshots are used solely to confirm eligibility and are not published or used for any other purpose without your consent. You may contact us to request that we delete your entry information after the Contest concludes.</p>
-  </section>
-
-  <section class="clause" id="conduct">
-    <h2><span class="n">8</span> Fair Play</h2>
-    <p>Entries that are fraudulent, automated, manipulated, or that misrepresent the entrant's sharing activity will be disqualified. The Sponsor reserves the right to disqualify any entrant who tampers with the entry process, violates these Rules, or acts in a disruptive or unsporting manner.</p>
-  </section>
-
-  <section class="clause" id="general">
-    <h2><span class="n">9</span> General Terms</h2>
-    <p>The Sponsor reserves the right, at its sole discretion, to modify, suspend, or cancel the Contest if fraud, technical failure, or any other factor beyond the Sponsor's reasonable control impairs the integrity or proper functioning of the Contest.</p>
-    <p>To the fullest extent permitted by law, the Sponsor and its affiliates are not liable for any loss, damage, or injury arising from participation in the Contest or acceptance, use, or misuse of any prize. By entering, you release the Sponsor from any such claims.</p>
-    <p>These Rules are the complete and exclusive agreement regarding the Contest. If any provision is found unenforceable, the remaining provisions remain in full effect. These Rules are governed by applicable law in the Sponsor's jurisdiction.</p>
-  </section>
-
-  <hr class="divider">
-
-  <section class="clause" id="contact">
-    <h2><span class="n">10</span> Questions</h2>
-    <p>For any questions about the Contest or these Rules, reach out to us through our official account, <a href="https://instagram.com/livefrenchatelier" target="_blank" rel="noopener">@livefrenchatelier</a>, or our official email. Always confirm you are speaking with an official French Atelier representative before sharing any personal details.</p>
-  </section>
-
+  </div>
+</div>
 </main>
 
-<footer class="t-foot">
-  <p class="brand-sm">French Atelier <span style="color:var(--gold-soft)">by ACADOMIA</span></p>
-  <p>This Contest is not sponsored, endorsed, or administered by, or associated with, any social media platform.</p>
-  <p>&copy; 2026 French Atelier by ACADOMIA. All rights reserved.</p>
-  <a class="btn-back" href="index.html">
-    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m0 0l7 7m-7-7l7-7"/></svg>
-    Back to the contest
-  </a>
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <img class="nav-logo-img" src="assets/logo-white.png" alt="The French Atelier by Acadomia">
+      <div class="foot-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#program">The Program</a>
+        <a href="index.html#enter">How to Enter</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+    </div>
+    <div class="foot-fine">
+      Win a Free Flight to Paris — a French Atelier community celebration for Bastille Day 2026. No purchase necessary. Open to eligible participants who complete all entry requirements, including a minimum of 10 shares. Round-trip flights from a major US airport. Winners selected by committee and notified by phone, text and email; non-response within 7 days forfeits the prize. This Contest is not sponsored, endorsed or administered by Meta or Instagram. French Atelier by Acadomia.
+    </div>
+  </div>
 </footer>
 
+<script>
+const header=document.getElementById('header');
+window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>40)});
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08,rootMargin:'0px 0px -5% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+window.addEventListener('load',()=>{setTimeout(()=>{document.querySelectorAll('.reveal:not(.in)').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<window.innerHeight*1.2)el.classList.add('in')})},400)});
+</script>
 </body>
 </html>
